@@ -1,0 +1,31 @@
+{
+  "name": "russtrade",
+  "version": "1.0.0",
+  "description": "This is project of RussTrade website",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniil (fregire)",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.5.0",
+    "browser-sync": "^2.24.4",
+    "del": "^3.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-less": "^3.5.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.3",
+    "gulp-uglifyjs": "^0.6.2",
+    "run-sequence": "^2.2.1"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "browserslist": [
+    "last 4 version",
+    "IE 10 "
+  ]
+}
