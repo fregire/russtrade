@@ -4,7 +4,7 @@
   "description": "This is project of RussTrade website",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp serve"
   },
   "author": "Daniil (fregire)",
   "license": "ISC",
