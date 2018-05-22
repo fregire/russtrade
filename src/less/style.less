@@ -1,3 +1,4 @@
+/*** Общие стили для всех страниц ***/
 * {
 	box-sizing: border-box;
 }
@@ -216,72 +217,8 @@ body {
 .main__inner {
 	max-width: 1000px;
 	padding: 0 30px;
-	padding-top: 85px;
 	margin: 0 auto;
 }
-
-.main__content {
-	padding: 0 80px;
-	margin-bottom: 65px;
-	
-	text-align: center;
-}
-
-/* Block - clients */
-
-.clients__item {
-	display: flex;
-}
-.clients__image,
-.clients__content {
-	display: inline-block;
-}
-
-.clients__image {
-	width: 45%;
-}
-
-.clients__content {
-	flex: 1;
-	margin-left: 50px;
-	margin-top: 25px;
-	padding-right: 50px;
-}
-
-.clients__text,
-.clients__headline {
-	margin: 0;
-}
-
-.clients__headline {
-	margin-bottom: 9px;
-
-	color: #5f929e;
-	text-transform: uppercase;
-	font-weight: 600;
-	font-size: 14px;
-}
-
-.clients__text {
-	margin-bottom: 26px;
-}
-
-.clients__date {
-	color: #3a3a3a;
-	font-weight: 600;
-	font-size: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
 
 /* Block - footer */
 .footer {
@@ -316,6 +253,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	margin-top: 40px;
 }
 .footer__phones {
 	flex: 1;
@@ -397,4 +335,134 @@ body {
 	font-style: normal;
 	font-weight: 600;
 	line-height: .68;
+}
+
+
+
+
+
+
+
+
+/*** Страница - клиенты ***/
+
+
+/* Block - clients */
+.clients {
+	padding-top: 85px;
+}
+.clients__main-block {
+	padding: 0 80px;
+	margin-bottom: 65px;
+	
+	text-align: center;
+}
+
+.clients__item {
+	margin-bottom: 82px;
+}
+
+.clients__item:last-child {
+	margin-bottom: 93px;
+}
+
+.clients__image,
+.clients__content {
+	display: inline-block;
+}
+
+.clients__image {
+	width: 436px;
+}
+
+.clients__content {
+	margin-left: 50px;
+	margin-top: 25px;
+	padding-right: 50px;
+}
+
+.clients__text,
+.clients__headline {
+	margin: 0;
+}
+
+.clients__headline {
+	margin-bottom: 9px;
+
+	color: #5f929e;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.clients__text {
+	margin-bottom: 26px;
+}
+
+.clients__date {
+	color: #3a3a3a;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+/* Block - thanks */
+.thanks__content {
+	padding: 0 80px;
+	margin-bottom: 50px;
+	
+	text-align: center;
+}
+
+.thanks__letters {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-bottom: 50px;
+}
+
+
+/* Block - post-item */
+.post-item {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.post-item__content {
+	flex: 1;
+}
+
+.post-item__headline {
+	text-transform: uppercase;
+}
+
+/*** Страница - Блог ***/
+
+/* Block - blog */
+.blog {
+	padding-top: 80px;
+}
+
+.blog__item {
+	position: relative;
+
+	padding-bottom: 46px;
+	margin-bottom: 46px;
+}
+
+.blog__item:after {
+	position: absolute;
+	bottom: 0;
+	left: -500%;
+	right: -500%;
+
+	content: "";
+	display: block;
+	height: 2px;
+
+	background-color: #cecece;
+}
+
+.blog__headline {
+	font-weight: normal;
+	color: #3f3f3f;
 }
