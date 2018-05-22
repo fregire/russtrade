@@ -1,0 +1,98 @@
+@media screen and (max-width: 1060px){
+	/* Block - footer*/
+	.phone,
+	.footer__faq {
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width: 980px){
+	/* Block - footer*/
+	.footer__politics,
+	.footer__social,
+	.footer__phones,
+	.footer__directions {
+		flex: 1;
+	}
+}
+
+@media screen and (max-width: 830px){
+	/* Block - header */
+	.header__menu {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 15px;
+	}
+	.header__menu-list li.active-page {
+		border-left: 5px solid #5f929e;
+		border-bottom: none;
+	}
+
+	/* Block - menu */
+	.menu__list {
+		position: absolute;
+		top: 48px;
+		left: 0;
+		width: 100%;
+		display: none;
+
+		background-color: #fff;
+	}
+
+	.menu__list li a {
+		padding-left: 10px;
+	}
+
+	.menu__title,
+	.menu__btn {
+		display: block;
+	}
+
+	/* Block - footer*/
+	.footer__bottom {
+		justify-content: flex-start;
+	}
+	.footer__politics,
+	.footer__social,
+	.footer__phones,
+	.footer__directions  {
+		flex-basis: 50%;
+		width: 50%;
+		margin-bottom: 15px;
+	}
+
+	.footer__directions {
+		padding-left: 0;
+	}
+
+	.footer__directions a {
+		width: 100%;
+	}
+}
+
+
+@media screen and (max-width: 380px){
+
+	/* Block - footer */
+	.footer__politics,
+	.footer__social,
+	.footer__phones,
+	.footer__directions  {
+		flex-basis: 100%;
+		width: 100%;
+		margin-bottom: 15px;
+	}
+
+	.footer__directions img {
+		text-align: center;
+	}
+
+	.footer__directions a {
+		width: 49%;
+	}
+
+	.footer__social a {
+		width: 49%;
+	}
+}

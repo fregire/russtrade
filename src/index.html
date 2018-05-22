@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/media.css">
 </head>
 <body>
 	<header class="header">
@@ -13,20 +15,24 @@
 				<a href="#" class="logo">
 					<img src="img/logo.png" alt="">
 				</a>
-				<div class="page-options">
-					<!-- Переключатели языков -->
-					<button class="search-btn">
-						<span class="visually-hidden">Поиск по сайту</span>
-					</button>
+				<div class="options">
+					<button class="options__lang">EN</button>
+					<button class="options__lang">CH</button>
+					<form class="options__search" action="#">
+						<input class="options__search-form" type="text">
+					</form>
 				</div>
 			</div>
 			<div class="header__title">
-				<h1>Доступ к закрытым предложениям производителей</h1>
+				<h1 class="headline">Доступ к закрытым предложениям производителей</h1>
 				<p>Обеспечим бизнес навигацию по Китаю вашему сотруднику в командировке</p>
 			</div>
 		</div>
 		<nav class="header__menu menu">
-			<h2 class="visually-hidden">Меню сайта</h2>
+			<h2 class="menu__title">Меню сайта</h2>
+			<button class="menu__btn">
+				<span class="visually-hidden">Открыть меню сайта</span>
+			</button>
 			<ul class="header__menu-list menu__list">
 				<li><a href="#">Компания</a></li>
 				<li class="active-page"><a href="#">Услуги</a></li>
@@ -47,8 +53,8 @@
 			</a>
 			<nav class="footer__menu menu">
 				<ul class="menu__list">
-					<li class="active-page"><a href="#">Компания</a></li>
-					<li><a href="#">Услуги</a></li>
+					<li><a href="#">Компания</a></li>
+					<li class="active-page"><a href="#">Услуги</a></li>
 					<li><a href="#">Решения</a></li>
 					<li><a href="#">Клиенты</a></li>
 					<li><a href="#">Блог</a></li>
@@ -56,46 +62,64 @@
 				</ul>
 			</nav>
 			<div class="options">
-				<!-- Переключатели языков -->
-					<button class="search-btn">
-						<span class="visually-hidden">Поиск по сайту</span>
-					</button>
+					<button class="options__lang options__lang--footer">EN</button>
+					<button class="options__lang options__lang--footer">CH</button>
+					<form class="options__search options__search--footer" action="#">
+						<input class="options__search-form" type="text">
+					</form>
 			</div>
 		</div>
 		<div class="footer__bottom">
 			<div class="footer__phones">
-				<p>Бесплатный звонок по России</p>
-				<address>8 800 211 21 21</address>
-				<p>Телефон в Москве</p>
-				<address>8 800 211 21 21</address>
-				<p>Задать вопрос</p>
+				<h4 class="footer__headline">Бесплатный звонок по России</h4>
+				<address class="phone">8 800 211 21 21</address>
+				<h4 class="footer__headline">Телефон в Москве</h4>
+				<address class="phone">8 800 211 21 21</address>
+				<a href="#" class="footer__faq">Задать вопрос</a>
 			</div>
 			<div class="footer__politics">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis amet explicabo velit earum adipisci, iste quis accusantium, iusto, mollitia eum laborum sit sequi provident harum, aspernatur deserunt. Suscipit obcaecati vero nulla assumenda, explicabo ipsam, cum possimus quod laborum ducimus beatae consequuntur perferendis, fugit ipsum! Illum cum est sit quasi. Maiores.</p>
-				<h4>Политика конфеденциальности</h4>
+				<p>Сайт«RUSSTRADE» использует файлы «cookie» с целью персонализации сервисов и повышения удобства пользования веб-сайтом. «Cookie» представляют собой небольшие файлы, содержащие информацию о предыдущих посещениях веб-сайта. Если вы не хотите использовать файлы «cookie», измените настройки браузера.</p>
+				<h4 class="footer__headline">Политика конфеденциальности</h4>
 			</div>
 			<div class="footer__directions">
-				<h4>Наши направления</h4>
-				<a href="#"><img src="../img/logo.png" alt=""></a>
-				<a href="#"><img src="../img/logo.png" alt=""></a>
-				<a href="#"><img src="../img/logo.png" alt=""></a>
+				<h4 class="footer__headline">Наши направления</h4>
+				<a href="#"><img src="img/RUSSTRADE-baverrages.png" alt=""></a>
+				<a href="#"><img src="img/RUSSTRADE-HOTELS.png" alt=""></a>
+				<a href="#"><img src="img/RUSSTRADE-LIGHT-свет.png" alt=""></a>
+				<a href="#"><img src="img/russconctruction.png" alt=""></a>
 			</div>
 			<div class="footer__social social">
-				<h4>Мы в соцсетях</h4>	
+				<h4 class="footer__headline">Мы в соцсетях</h4>	
 				<a href="#" class="social__item">
+					<span>
+						<img src="img/FB-ICON.png" alt="">
+					</span>
 					Facebook
 				</a>
 				<a href="#" class="social__item">
+					<span>
+						<img src="img/SKYPE-ICIN.png" alt="">
+					</span>
 					Skype
 				</a>
 				<a href="#" class="social__item">
+					<span>
+						<img src="img/WHATS-UP-ICON.png" alt="">
+					</span>
 					WhatsApp
 				</a>
 				<a href="#" class="social__item">
+					<span>
+						<img src="img/YOUUBE-ICON.png" alt="">
+					</span>
 					YouTube
 				</a>
 			</div>
 		</div>
 	</footer>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
