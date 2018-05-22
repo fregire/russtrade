@@ -9,6 +9,8 @@ html {
 img {
 	max-width:100%;
 	height: auto;
+	/* Для IE */
+	border: none;
 }
 
 body {
@@ -109,6 +111,8 @@ body {
 }
 
 
+
+
 /* Block - options */
 .options {
 	display: flex;
@@ -136,10 +140,12 @@ body {
 }
 
 .options__lang {
-	
+	padding: 0;
+
 	color: #fff;
 	font-size: 15px;
 	font-weight: 600;
+	text-align: center;
 
 	outline: none;
 	background-color: transparent;
