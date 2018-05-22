@@ -1,10 +1,7 @@
 /*** Общие стили для всех страниц ***/
+
 * {
 	box-sizing: border-box;
-}
-
-html {
-	overflow-x: hidden;
 }
 
 img {
@@ -359,6 +356,8 @@ body {
 }
 
 .clients__item {
+	display: flex;
+	flex-wrap: wrap;
 	margin-bottom: 82px;
 }
 
@@ -376,6 +375,7 @@ body {
 }
 
 .clients__content {
+	flex: 1;
 	margin-left: 50px;
 	margin-top: 25px;
 	padding-right: 50px;
@@ -421,19 +421,6 @@ body {
 }
 
 
-/* Block - post-item */
-.post-item {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.post-item__content {
-	flex: 1;
-}
-
-.post-item__headline {
-	text-transform: uppercase;
-}
 
 /*** Страница - Блог ***/
 
@@ -444,7 +431,10 @@ body {
 
 .blog__item {
 	position: relative;
-
+	
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
 	padding-bottom: 46px;
 	margin-bottom: 46px;
 }
@@ -462,7 +452,159 @@ body {
 	background-color: #cecece;
 }
 
+.blog__content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	align-self: stretch;
+
+	padding-right: 50px;
+	padding-left: 28px;
+}
+
 .blog__headline {
-	font-weight: normal;
+	margin: 0;
+
+	font-weight: 600;
 	color: #3f3f3f;
+	text-transform: uppercase;
+}
+
+.blog__image {
+	width: 425px;
+
+}
+
+.blog__more {
+	margin-top: auto;
+	padding-bottom: 5px;
+
+	color: #b4b2b2;
+
+	background-color: transparent;
+	border: none;
+	outline: none;
+}
+
+.blog__more:hover {
+	cursor: pointer;
+}
+
+
+/*** Страница - О комании ***/
+.company__about {
+	max-width: 684px;
+	margin: 0 auto;
+	padding: 70px 0;
+
+	text-align: center;
+}
+
+.company__important,
+.company__text {
+	margin: 0;
+}
+
+.company__important {
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #5f929e;
+}
+
+.company__statistics {
+	padding: 112px 0;
+
+	background: url(../img/компания-подложка.png) no-repeat;
+	background-size: cover;
+}
+
+.company__numbers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	max-width: 1000px;
+	padding: 0 30px;
+	margin: 0 auto;
+}
+
+.company__num {
+	text-align: center;
+	color: #fff;
+}
+
+.company__num span {
+	font-size: 80px;
+	font-weight: bold;
+}
+
+.company__num p {
+	margin: 0;
+
+	font-size: 19px;
+	text-transform: uppercase;
+}
+
+/* Block - news */
+.news__inner {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 30px;
+	padding-top: 83px;
+}
+
+.news__headline {
+	height: 38px;
+	font-size: 19px;
+	font-weight: 600;
+	color: #3f3f3f;
+	line-height: 1.6;
+
+	border-bottom: 2px solid #ebebeb;
+}
+
+.news__list {
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.news__item {
+	display: flex;
+	align-items: flex-start;
+	flex: 1;
+}
+
+.news__date {
+	text-align: center;
+}
+
+.news__day {
+	display: inline-block;
+	width: 44px;
+	height: 44px;
+
+	color: #1f1f1f;
+	font-size: 31px;
+	font-weight: 300;
+
+	border: 2px solid #5f929e;
+	border-radius: 50%;
+}
+
+.news__month {
+	margin-top: 5px;
+
+	color: #5f929e;
+	font-weight: 600;
+}
+.news__title {
+	margin: 0;
+	margin-left: 15px;
+	padding-right: 10px;
+
+	color: #3f3f3f;
+	font-weight: 600;
 }

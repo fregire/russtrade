@@ -75,8 +75,8 @@
   .clients__main-block {
     padding: 0;
   }
-  /* Block - post-item */
-  .post-item {
+  .clients__item {
+    max-width: 480px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -85,7 +85,7 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  .post-item__content {
+  .clients__content {
     margin: 0;
     padding: 0;
   }
@@ -97,6 +97,22 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  /*** Страница - блог ***/
+  .blog__item {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .blog__item img {
+    width: 100%;
+  }
+  .blog__content {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    width: 100%;
+    padding: 0;
+    margin-top: 10px;
   }
 }
 @media screen and (max-width: 380px) {
