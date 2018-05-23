@@ -25,7 +25,9 @@ $(document).ready(function(){
 	// Форма поиска на сайте
 	$(".options__search-btn").click(function(e) {
 		var btn = $(this);
-		e.preventDefault();
+		if($(this).parent().hasClass("options__search--closed")){
+			e.preventDefault();
+		};
 		$(this).parent().removeClass("options__search--closed");
 		$(this).siblings(".options__search-form").css("visibility", "visible");
 		$(this).siblings(".options__search-form").focus();
@@ -36,9 +38,6 @@ $(document).ready(function(){
 		// Форма поиска в футере
 		if($(this).parent().hasClass("options__search--footer")){
 			$(this).parent().css("border-color", 'transparent');
-
-			// // Исчезновение лого т. к. он не помещается при открытой форме поиска
-			// $("footer .logo").addClass("logo--hidden");
 		}
 	});
 
@@ -54,8 +53,6 @@ $(document).ready(function(){
 		// Форма поиска в футере
 		if($(this).parent().hasClass("options__search--footer")){
 			$(this).parent().removeAttr("style");
-			// // Исчезновение лого т. к. он не помещается при открытой форме поиска
-			// $("footer .logo").removeClass("logo--hidden");
 		}
 	});
 

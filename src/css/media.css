@@ -146,6 +146,10 @@
   }
 }
 @media screen and (max-width: 380px) {
+  /* Block - options */
+  .options__search {
+    right: -15px;
+  }
   /* Block - footer */
   .footer__politics,
   .footer__social,
