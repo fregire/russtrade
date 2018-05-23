@@ -4,6 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="css/slick-theme.css">
+	<link rel="stylesheet" href="css/slick.css">
+
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/media.css">
@@ -73,8 +77,34 @@
 		</nav>	
 	</header>
 	<main class="main">
-		<div class="main__inner">
-		</div>
+			<section class="address">
+				<div class="address__slider">
+					<div class="address__slide">
+						<h2 class="address__city headline">Россия, Москва</h2>
+						<address class="address__item">ул.Киевская, дом 14, строение 4, оф.202</address>
+						<address class="address__item">Тел.: +7(977)941-8177</address>
+						<address class="address__item">E-mail: msk@russtrade.com</address>
+					</div>
+					<div class="address__slide">
+						<h2 class="address__city headline">Россия, Москва</h2>
+						<address class="address__item">ул.Киевская, дом 14, строение 4, оф.202</address>
+						<address class="address__item">Тел.: +7(977)941-8177</address>
+						<address class="address__item">E-mail: msk@russtrade.com</address>
+					</div>
+				</div>
+				<div class="address__map">
+					<div class="address__header">
+						<div class="address__wrapper">
+							<div class="address__item-city" data-lng="121.044" data-lat="-50.363">Пятигорск</div>
+							<div class="address__item-city" data-lng="131.044" data-lat="-27.363">Гуанчжоу</div>
+							<div class="address__item-city" data-lng="125.044" data-lat="-28.363">Санкт-Петербург</div>
+						</div>
+					</div>
+					<div class="address__map-main">
+						
+					</div>
+				</div>
+			</section>
 	</main>
 	<footer class="footer">
 		<div class="footer__top">
@@ -153,5 +183,10 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/main.js"></script>
+	<!-- Google maps -->
+	<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAk58GUG0LK9LhJc16PkD78Nib1qry0N4&callback=initMap">
+  </script>
+	
 </body>
 </html>

@@ -896,12 +896,81 @@ body {
 .contacts__textarea {
 	flex: 1;
 	margin-left: 30px;
+
+	resize: none;
 }
 
 .contacts__btn {
 	margin-top: 17px;
 }
 
+
+/* Block - address */
+.address__slider {
+	max-width: 362px;
+	padding: 0 30px;
+	margin: 56px auto;
+
+	text-align: center;
+}
+
+.address__city {
+	margin-bottom: 10px;
+}
+
+.address__item {
+	font-style: normal;
+}
+
+.address__header {
+	height: 30px;
+	margin-bottom: 1px;
+
+	border-bottom: 1px solid #ababab;
+	background-color: #5f929e;
+}
+
+.address__wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+
+.address__item-city {
+	margin: 0 45px;
+	text-transform: uppercase;
+	line-height: 30px;
+	color: #fff;
+}
+.address__map-main {
+	height: 340px;
+
+	border-top: 1px solid #ababab;
+}
+
+/* Block - slick */
+.slick-arrow {
+	transform: translate(-50%, -50%);
+	transform-origin: 50% 50%;
+	width: 42px;
+	height: 42px;
+
+	background: url(../img/svg/arrow-left-icon_address.svg) no-repeat;
+	background-size: 30px;
+	background-position: 5px 10px;
+
+	border: 1px solid #5f929e;
+	border-radius: 50%;
+}
+
+.slick-prev {
+	transform: rotate(360deg);
+}
+
+.slick-next {
+	transform: rotate(180deg);
+}
 
 
 

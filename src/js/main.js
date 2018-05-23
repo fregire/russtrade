@@ -68,5 +68,39 @@ $(document).ready(function(){
 		}
 	});
 
+	//Слайдер для страницы контактов
+	$(".address__slider").slick({
+		slidesToShow: 1
+	});
+
+	
+
 
 });
+console.log(parseFloat(127.2));
+// Google карта 
+var cities = document.querySelectorAll(".address__item-city");
+function initMap() {
+    var uluru = {lat: -25.363, lng: 131.044};
+    var map = new google.maps.Map(document.querySelector('.address__map-main'), {
+      zoom: 4,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+	for(let i = 0; i < cities.length; i++){
+		cities[i].addEventListener("click", function(){
+			map = new google.maps.Map(document.querySelector('.address__map-main'), {
+		      zoom: 4,
+		      center: {lat: parseFloat(cities[i].getAttribute('data-lat')), lng: parseInt(cities[i].getAttribute('data-lng'))}
+		    });
+		    marker = new google.maps.Marker({
+		      position: {lat: parseFloat(cities[i].getAttribute('data-lat')), lng: parseInt(cities[i].getAttribute('data-lng'))},
+		      map: map,
+		      icon: '/img/geo-icon.png'
+		    });
+		});
+	}
+}
