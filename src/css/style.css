@@ -606,10 +606,15 @@ body {
   font-weight: 600;
 }
 .news__title {
+  display: inline-block;
   margin: 0;
-  margin-left: 15px;
-  padding-right: 10px;
+  padding-left: 15px;
+  padding-right: 50px;
   color: #3f3f3f;
   font-weight: 600;
   text-decoration: none;
+  /* Для IE */
+  display: table-cell;
+  word-wrap: break-word;
+  word-break: break-all;
 }
