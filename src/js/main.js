@@ -22,6 +22,43 @@ $(document).ready(function(){
 
 	});
 
+	// Форма поиска на сайте
+	$(".options__search-btn").click(function(e) {
+		var btn = $(this);
+		e.preventDefault();
+		$(this).parent().removeClass("options__search--closed");
+		$(this).siblings(".options__search-form").css("visibility", "visible");
+		$(this).siblings(".options__search-form").focus();
+		setTimeout(function(){
+			btn.siblings(".options__close").fadeIn(400);
+		}, 300);
+		btn.addClass("options__search-btn--opened");
+		// Форма поиска в футере
+		if($(this).parent().hasClass("options__search--footer")){
+			$(this).parent().css("border-color", 'transparent');
+
+			// // Исчезновение лого т. к. он не помещается при открытой форме поиска
+			// $("footer .logo").addClass("logo--hidden");
+		}
+	});
+
+	$(".options__close").click(function(e) {
+		e.preventDefault();
+		$(this).parent().addClass("options__search--closed");
+		$(this).siblings(".options__search-form").css("visibility", "hidden");
+		$(this).siblings(".options__search-form").blur();
+		$(this).siblings('.options__search-btn').removeClass("options__search-btn--opened");
+		$(this).fadeOut(400);
+		$(this).removeAttr("style");
+
+		// Форма поиска в футере
+		if($(this).parent().hasClass("options__search--footer")){
+			$(this).parent().removeAttr("style");
+			// // Исчезновение лого т. к. он не помещается при открытой форме поиска
+			// $("footer .logo").removeClass("logo--hidden");
+		}
+	});
+
 
 
 });

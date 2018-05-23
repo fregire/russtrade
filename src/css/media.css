@@ -114,6 +114,36 @@
     padding: 0;
     margin-top: 10px;
   }
+  /*** Страница - компания ***/
+  /* Block - company */
+  .company__numbers {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  /* Block - news */
+  .news__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+    width: 48%;
+  }
+}
+@media screen and (max-width: 550px) {
+  /* Block - header */
+  .header__title {
+    padding-right: 0;
+  }
+  /* Block - news */
+  .news__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    width: 100%;
+  }
 }
 @media screen and (max-width: 380px) {
   /* Block - footer */

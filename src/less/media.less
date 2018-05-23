@@ -111,8 +111,37 @@
 		padding: 0;
 		margin-top: 10px;
 	}
+
+	/*** Страница - компания ***/
+	/* Block - company */
+	.company__numbers {
+		justify-content: space-around;
+	}
+
+	/* Block - news */
+	.news__item {
+		flex: 0;
+		flex-basis: 48%;
+		width: 48%;
+	}
+
 }
 
+@media screen and (max-width: 550px){
+	/* Block - header */
+	.header__title {
+		padding-right: 0;
+	}
+	
+	/* Block - news */
+	.news__list {
+	}
+	.news__item {
+		flex: 0;
+		flex-basis: 100%;
+		width: 100%;
+	}
+}
 
 @media screen and (max-width: 380px){
 

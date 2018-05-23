@@ -88,28 +88,38 @@ body {
 .logo {
   display: block;
   width: 200px;
+  -webkit-transition: visibility 400ms;
+  -o-transition: visibility 400ms;
+  transition: visibility 400ms;
+}
+.logo--hidden {
+  visibility: hidden;
 }
 /* Block - options */
 .options {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-right: 50px;
 }
 .options__lang,
 .options__search {
-  width: 33px;
   height: 33px;
   display: inline-block;
   margin: 0 9px;
   border: 1px solid #dfdfde;
   border-radius: 5px;
 }
+.options__lang {
+  width: 33px;
+}
 .options__lang--footer,
 .options__search--footer {
   border-color: #63adbe;
 }
 .options__lang:hover,
-.options__search:hover {
+.options__search-btn:hover {
   cursor: pointer;
 }
 .options__lang {
@@ -125,14 +135,69 @@ body {
   color: #3f3f3f;
 }
 .options__search {
+  position: absolute;
+  right: 0;
+  width: 300px;
+  background-color: #fff;
+  -webkit-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+}
+.options__search--closed {
+  width: 33px;
+  overflow: hidden;
+  background-color: transparent;
+}
+.options__search-btn {
+  position: absolute;
+  right: 0;
+  width: 33px;
+  height: 100%;
+  border: none;
   background: url(../img/header_search-icon.png) no-repeat;
   background-position: center;
+  outline: none;
+  z-index: 2;
+  -webkit-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
 }
-.options__search--footer {
+.options__search-btn--opened {
+  right: 35px;
+  background-image: url(../img/search-icon_clicked.png);
+}
+.options__search-btn--footer {
   background-image: url(../img/footer_search-icon.png);
 }
 .options__search-form {
+  position: absolute;
+  right: 0;
+  top: -1px;
+  height: 33px;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 66px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  visibility: hidden;
+}
+.options__close {
+  position: absolute;
+  right: 0;
+  top: -2px;
+  height: 34px;
+  width: 33px;
   display: none;
+  text-decoration: none;
+  background: url(../img/svg/close_icon.svg) no-repeat;
+  background-size: cover;
+  background-position: -8px -5px;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.options__close:hover {
+  background-position: -8px -50px;
 }
 /* Block - menu */
 .menu {
@@ -432,6 +497,9 @@ body {
   cursor: pointer;
 }
 /*** Страница - О комании ***/
+.company {
+  padding-bottom: 85px;
+}
 .company__about {
   max-width: 684px;
   margin: 0 auto;
@@ -471,12 +539,15 @@ body {
 }
 .company__num span {
   font-size: 80px;
-  font-weight: bold;
 }
 .company__num p {
   margin: 0;
   font-size: 19px;
   text-transform: uppercase;
+}
+.company__num span,
+.company__num p {
+  font-weight: 600;
 }
 /* Block - news */
 .news__inner {
@@ -540,4 +611,5 @@ body {
   padding-right: 10px;
   color: #3f3f3f;
   font-weight: 600;
+  text-decoration: none;
 }
