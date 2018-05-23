@@ -25,29 +25,11 @@
 					</form>
 				</div>
 			</div>
-			<div class="header__contacts contacts">
-				<div class="contacts__phones">
-					<address>
-						<span>Поддержка для клиентов сервиса:</span>
-						<p class="contacts__phone phone phone--header">8 (800) 775 77 28</p>
-					</address>	
-					<address>
-						<span class="contacts__section-sell">Отдел продаж:</span>
-						<p class="contacts__phone phone phone--header">+7 (495) 181-01-78</p>
-					</address>
-				</div>
-				<form action="" class="contacts__form">
-					<p class="contacts__title">Задайте ваш вопрос или кратко опишите ситуацию. Мы очень быстро свяжемся с вами :)</p>
-					<div class="contacts__fields">
-						<div class="contacts__wrapper">
-							<input class="contacts__input input" type="text" name="name" placeholder="Ваше имя">
-							<input class="contacts__input input" type="tel" name="phone" placeholder="Ваш телефон">
-							<input class="contacts__input input" type="text" name="email" placeholder="Email">
-						</div>
-						<textarea class="contacts__textarea input" name="text" id="" cols="30" rows="10" placeholder="Дополнительная информация"></textarea>
-					</div>
-					<input class="contacts__btn btn" type="submit" value="Связаться с нами">
-				</form>
+			<div class="header__title">
+				<h1 class="headline">Поиск по сайту</h1>
+				<p>Обеспечим бизнес навигацию по Китаю вашему сотруднику в командировке</p>
+				<!-- php если эта страница поиска то выводить-->
+				<a href="index.html" class="header__link">На главную</a>
 			</div>
 		</div>
 		<nav class="header__menu menu">
@@ -65,6 +47,22 @@
 	</header>
 	<main class="main">
 		<div class="main__inner">
+			<section class="search">
+				<div class="search__header">
+					<div class="search__count-news">
+						По запросу <span class="search__count-res">&laquo;123&raquo;</span> найдено <span>32</span> результатов
+					</div>
+					<div class="search__find-news">
+						<label class="search__label" for="checkbox-field">Искать в новостях</label>
+						<div class="checkbox-field">
+							<input class="checkbox-field__checkbox" type="checkbox" id="checkbox-field">
+						</div>
+					</div>
+				</div>
+				<div class="search__content">
+					По Вашему запросу ничего не найдено
+				</div>
+			</section>
 		</div>
 	</main>
 	<footer class="footer">
