@@ -57,5 +57,16 @@ $(document).ready(function(){
 	});
 
 
+	// Чекбокс для поиска в новостях
+	$(".checkbox-field").click(function(){
+		if($(this).children(".checkbox-field__checkbox").prop("checked") === false){
+			$(this).children(".checkbox-field__checkbox").prop("checked", true);
+			$(this).addClass("checkbox-field--checked");	
+		} else {
+			$(this).children(".checkbox-field__checkbox").prop("checked", false);
+			$(this).removeClass("checkbox-field--checked");
+		}
+	});
+
 
 });

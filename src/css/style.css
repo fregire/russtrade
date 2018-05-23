@@ -84,6 +84,15 @@ body {
 .header__menu-list li.active-page {
   border-bottom: 5px solid #5f929e;
 }
+.header__link {
+  display: inline-block;
+  margin-top: 57px;
+  padding-left: 34px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  background: url(../img/svg/arrow-left-icon.svg) no-repeat 0 center;
+}
 /* Block - logo */
 .logo {
   display: block;
@@ -617,4 +626,73 @@ body {
   display: table-cell;
   word-wrap: break-word;
   word-break: break-all;
+}
+/*** Страница поиска ***/
+/* Block - search */
+.search {
+  padding-top: 123px;
+  padding-bottom: 94px;
+  font-weight: 600;
+}
+.search__header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cdcdcd;
+}
+.search__count-res {
+  color: #000;
+}
+.search__header,
+.search__find-news {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.search__content {
+  padding-top: 20px;
+}
+.search__label {
+  margin-right: 20px;
+}
+/* Block - checkbox */
+.checkbox-field {
+  position: relative;
+  width: 65px;
+  height: 25px;
+  background-color: #ababab;
+  border-radius: 7px;
+}
+.checkbox-field:hover {
+  cursor: pointer;
+}
+.checkbox-field:after {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  content: "";
+  display: block;
+  width: 30px;
+  height: 21px;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  outline: none;
+  border-radius: 5px;
+  -webkit-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+}
+.checkbox-field--checked {
+  background-color: #5f929e;
+}
+.checkbox-field--checked:after {
+  left: 33px;
+}
+.checkbox-field__checkbox {
+  visibility: hidden;
 }
