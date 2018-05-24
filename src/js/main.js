@@ -88,7 +88,8 @@ function initMap() {
     });
     var marker = new google.maps.Marker({
       position: uluru,
-      map: map
+      map: map,
+      icon: '../img/geo-icon.png'
     });
 	for(let i = 0; i < cities.length; i++){
 		cities[i].addEventListener("click", function(){
@@ -99,7 +100,7 @@ function initMap() {
 		    marker = new google.maps.Marker({
 		      position: {lat: parseFloat(cities[i].getAttribute('data-lat')), lng: parseInt(cities[i].getAttribute('data-lng'))},
 		      map: map,
-		      icon: '/img/geo-icon.png'
+		      icon: '../img/geo-icon.png'
 		    });
 		});
 	}
