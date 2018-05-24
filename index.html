@@ -5,13 +5,8 @@
 	<title>Document</title>
 </head>
 <body>
-	<svg width="65" height="65" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 60 60">
-	
-	<circle class="circle" r="30" cx="30" cy="30" stroke="red" fill="transparent" stroke-width="3" stroke-dasharray="200" stroke-dashoffset="200">
-		
-	</circle>
-
-</svg>
+	<svg width='20' height='20' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 30 30'><circle class='circle' r='12' cx='13' cy='13' stroke='red' fill='transparent' stroke-width='3' stroke-dasharray='80' stroke-dashoffset='80'>
+	</circle></svg>
 <button>
 	frg
 </button>
@@ -20,8 +15,12 @@
 	var circle = document.querySelector(".circle");
 	
 	var inter = setInterval(function(){
-		circle.style.strokeDashoffset -= 1;	
-		if(circle.style.strokeDashoffset <= -200) {
+		var value = parseInt(circle.getAttribute("stroke-dashoffset"));
+		value--;	
+
+		circle.setAttribute("stroke-dashoffset", value);
+		value--;			
+		if(circle.getAttribute("stroke-dashoffset") <= 0) {
 			clearInterval(inter);
 		}
 	}, 15);

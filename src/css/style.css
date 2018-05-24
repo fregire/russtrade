@@ -869,6 +869,7 @@ body {
   text-align: center;
 }
 .paths__slider {
+  position: relative;
   margin-bottom: 65px;
 }
 .paths__our-ways {
@@ -891,7 +892,7 @@ body {
   vertical-align: middle;
 }
 .paths__our-ways .slick-slide {
-  margin: 0 10px;
+  margin: 0 25px;
   outline: none;
 }
 .paths__our-ways .slick-arrow {
@@ -902,6 +903,30 @@ body {
 }
 .paths__our-ways .slick-next {
   right: -30px;
+}
+.paths__slider .slick-dots {
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+.paths__slider .slick-dots li {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+}
+.paths__slider .slick-dots li:hover {
+  border-color: #ffffff;
+}
+.paths__slider .slick-dots .slick-active {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.paths__slider .slick-dots .slick-active svg {
+  position: absolute;
+  left: -2.4px;
+  top: -2px;
 }
 /* TODO: расположить стрелки слайдера правильно */
 .paths__slider .slick-next {
