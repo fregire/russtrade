@@ -15,6 +15,17 @@
         -ms-flex: 1;
             flex: 1;
   }
+  /* Block - paths */
+  .paths__our-ways .slick-arrow {
+    top: auto;
+    bottom: -60px;
+  }
+  .paths__our-ways .slick-prev {
+    left: 20px;
+  }
+  .paths__our-ways .slick-next {
+    right: 20px;
+  }
 }
 @media screen and (max-width: 830px) {
   /* Block - header */
@@ -128,6 +139,25 @@
     -ms-flex-preferred-size: 48%;
         flex-basis: 48%;
     width: 48%;
+  }
+  /*** Страница - решения ***/
+  .path-slider__slide {
+    padding-bottom: 20px;
+    padding-top: 60px;
+  }
+  .path-slider__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .path-slider__img {
+    top: 0;
+    width: 100%;
+  }
+  .path-slider__content {
+    text-align: center;
+    padding-right: 0;
   }
 }
 @media screen and (max-width: 550px) {

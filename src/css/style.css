@@ -39,6 +39,7 @@ body {
 }
 /* Block - btn */
 .btn {
+  display: inline-block;
   padding: 15px 22px;
   text-transform: uppercase;
   font-size: 12px;
@@ -848,9 +849,103 @@ body {
   -webkit-transform: rotate(360deg);
       -ms-transform: rotate(360deg);
           transform: rotate(360deg);
+  left: auto;
 }
 .slick-next {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
+  right: auto;
+}
+/*** Страница - решения ***/
+/* Block - paths */
+.paths {
+  padding-bottom: 89px;
+}
+.paths__main-text {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 91px 30px;
+  text-align: center;
+}
+.paths__slider {
+  margin-bottom: 65px;
+}
+.paths__our-ways {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.paths__our-ways-img {
+  height: 62px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.paths__our-ways-img img {
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+.paths__our-ways .slick-slide {
+  margin: 0 10px;
+  outline: none;
+}
+.paths__our-ways .slick-arrow {
+  border: none;
+}
+.paths__our-ways .slick-prev {
+  left: -30px;
+}
+.paths__our-ways .slick-next {
+  right: -30px;
+}
+/* TODO: расположить стрелки слайдера правильно */
+.paths__slider .slick-next {
+  right: 50px;
+}
+/* Block - path-slider */
+.path-slider {
+  background: url(../img/path-slider__bg-item-1.jpg) no-repeat;
+  background-size: cover;
+  background-position: 0 40px;
+}
+.path-slider__wrapper {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.path-slider__slide {
+  padding-top: 40px;
+}
+.path-slider__img {
+  position: relative;
+  top: -30px;
+  width: 62.6%;
+  -ms-flex-preferred-size: 62.6%;
+      flex-basis: 62.6%;
+}
+.path-slider__content {
+  padding-right: 80px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: right;
+  line-height: 1.4;
+}
+.path-slider__download {
+  margin-top: 40px;
+  text-decoration: none;
 }

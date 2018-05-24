@@ -11,6 +11,15 @@
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/media.css">
+	<!-- Only for contacts page -->
+	<style>
+		@media screen and (max-width: 550px) {
+			.header {
+				height: auto;
+				padding-bottom: 60px;
+			}
+		}
+	</style>
 </head>
 <body>
 	<header class="header">
@@ -29,9 +38,29 @@
 					</form>
 				</div>
 			</div>
-			<div class="header__title">
-				<h1 class="headline">Доступ к закрытым предложениям производителей</h1>
-				<p>Обеспечим бизнес навигацию по Китаю вашему сотруднику в командировке</p>
+			<div class="header__contacts contacts">
+				<div class="contacts__phones">
+					<address>
+						<span>Поддержка для клиентов сервиса:</span>
+						<p class="contacts__phone phone phone--header">8 (800) 775 77 28</p>
+					</address>	
+					<address>
+						<span class="contacts__section-sell">Отдел продаж:</span>
+						<p class="contacts__phone phone phone--header">+7 (495) 181-01-78</p>
+					</address>
+				</div>
+				<form action="" class="contacts__form">
+					<p class="contacts__title">Задайте ваш вопрос или кратко опишите ситуацию. Мы очень быстро свяжемся с вами :)</p>
+					<div class="contacts__fields">
+						<div class="contacts__wrapper">
+							<input class="contacts__input input" type="text" name="name" placeholder="Ваше имя">
+							<input class="contacts__input input" type="tel" name="phone" placeholder="Ваш телефон">
+							<input class="contacts__input input" type="text" name="email" placeholder="Email">
+						</div>
+						<textarea class="contacts__textarea input" name="text" id="" cols="30" rows="10" placeholder="Дополнительная информация"></textarea>
+					</div>
+					<input class="contacts__btn btn" type="submit" value="Связаться с нами">
+				</form>
 			</div>
 		</div>
 		<nav class="header__menu menu">
@@ -48,84 +77,31 @@
 		</nav>	
 	</header>
 	<main class="main">
-			<section class="paths">
-				<div class="paths__main-text">
-					<h2 class="headline">Наши клиенты</h2>
-					<p>Клиент обраtщается к нам, запрашивает интересующие товары и узнает текущую стоимость. и узнает текущую стоимость.Клиент обраtщается к нам, запрашивает интересующие товарыКлиент обраtщается к нам, запрашивает интересующие товарыи узнает текущую стоимость.Клиент обраtщается к нам, запрашивает интересующие товары</p>
-				</div>
-				<div class="paths__slider path-slider">
-					<div class="path-slider__slide">
-						<div class="path-slider__wrapper">
-							<div class="path-slider__img">
-								<img src="img/paths__item-1.png" alt="">
-							</div>
-							<div class="path-slider__content">
-								<p class="path-slider__text">
-									Комплексное оснащение отелей, ресторанов,баров, концертных залов и зон отдыха
-								</p>
-								<a href="#" class="path-slider__download btn">Скачать презентацию</a>
-							</div>							
-						</div>
+			<section class="address">
+				<div class="address__slider">
+					<div class="address__slide">
+						<h2 class="address__city headline">Россия, Москва</h2>
+						<address class="address__item">ул.Киевская, дом 14, строение 4, оф.202</address>
+						<address class="address__item">Тел.: +7(977)941-8177</address>
+						<address class="address__item">E-mail: msk@russtrade.com</address>
 					</div>
-					<div class="path-slider__slide">
-						<div class="path-slider__wrapper">
-							<div class="path-slider__img">
-								<img src="img/paths__item-1.png" alt="">
-							</div>
-							<div class="path-slider__content">
-								<p class="path-slider__text">
-									Комплексное оснащение отелей, ресторанов,баров, концертных залов и зон отдыха
-								</p>
-								<a href="#" class="path-slider__download btn">Скачать презентацию</a>
-							</div>							
-						</div>
+					<div class="address__slide">
+						<h2 class="address__city headline">Россия, Москва</h2>
+						<address class="address__item">ул.Киевская, дом 14, строение 4, оф.202</address>
+						<address class="address__item">Тел.: +7(977)941-8177</address>
+						<address class="address__item">E-mail: msk@russtrade.com</address>
 					</div>
 				</div>
-				<div class="paths__our-ways">
-					<div class="paths__our-ways-item">
-						<div class="paths__our-ways-img">
-							<img src="img/RUSSTRADE-HOTELS.png" alt="">
+				<div class="address__map">
+					<div class="address__header">
+						<div class="address__wrapper">
+							<div class="address__item-city" data-lng="121.044" data-lat="-50.363">Пятигорск</div>
+							<div class="address__item-city" data-lng="131.044" data-lat="-27.363">Гуанчжоу</div>
+							<div class="address__item-city" data-lng="125.044" data-lat="-28.363">Санкт-Петербург</div>
 						</div>
-						
-						<p class="paths__our-ways-text">
-							Клиент обраtщается к нам, запрашивает интересующие товары и узнает текущую стоимость. и узнает текущую стоимость.Клиент обраtщается к нам, запрашивает интересующие товарыКлиент обраt
-						</p>
 					</div>
-					<div class="paths__our-ways-item">
-						<div class="paths__our-ways-img">
-							<img src="img/RUSSTRADE-baverrages.png" alt="">
-						</div>
+					<div class="address__map-main">
 						
-						<p class="paths__our-ways-text">
-							Клиент обраtщается к нам, запрашивает интересующие товары и узнает текущую стоимость. и узнает текущую стоимость.Клиент обраtщается к нам, запрашивает интересующие товарыКлиент обраt
-						</p>
-					</div>
-					<div class="paths__our-ways-item">
-						<div class="paths__our-ways-img">
-							<img src="img/russconctruction.png" alt="">
-						</div>
-						
-						<p class="paths__our-ways-text">
-							Клиент обраtщается к нам, запрашивает интересующие товары и узнает текущую стоимость. и узнает текущую стоимость.Клиент обраtщается к нам, запрашивает интересующие товарыКлиент обраt
-						</p>
-					</div>
-					<div class="paths__our-ways-item">
-						<div class="paths__our-ways-img">
-							<img src="img/RUSSTRADE-LIGHT-свет.png" alt="">
-						</div>
-						
-						<p class="paths__our-ways-text">
-							Клиент обраtщается к нам, запрашивает интересующие товары и узнает текущую стоимость. и узнает текущую стоимость.Клиент обраtщается к нам, запрашивает интересующие товарыКлиент обраt
-						</p>
-					</div>
-					<div class="paths__our-ways-item">
-						<div class="paths__our-ways-img">
-							<img src="img/RUSSTRADE-LIGHT-свет.png" alt="">
-						</div>
-						
-						<p class="paths__our-ways-text">
-							Клиент обраtщается к нам, запрашивает интересующие товары и узнает текущую стоимость. и узнает текущую стоимость.Клиент обраtщается к нам, запрашивает интересующие товарыКлиент обраt
-						</p>
 					</div>
 				</div>
 			</section>

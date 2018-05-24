@@ -69,9 +69,37 @@ $(document).ready(function(){
 	});
 
 	//Слайдер для страницы контактов
-	$(".address__slider").slick({
+	$(".address__slider, .path-slider").slick({
 		slidesToShow: 1
 	});
+
+
+	// Слайдер для направлений с мальеньким размером
+	$(".paths__our-ways").slick({
+		slidesToShow: 4,
+		responsive: [
+			{
+			  breakpoint: 1100,
+		      settings: {
+		        slidesToShow: 3
+		      }
+			},
+			{
+			  breakpoint: 1085,
+		      settings: {
+		        slidesToShow: 2
+		      }
+			},
+			{
+			  breakpoint: 600,
+		      settings: {
+		        slidesToShow: 1
+		      }
+			}
+
+		]
+	});
+
 
 	
 
