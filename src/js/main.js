@@ -74,7 +74,57 @@ $(document).ready(function(){
 	});
 
 
+	// Табы(вкладки) для схемы работы со слайдером
 
+	// Линия, которая перемещается под элементами
+	var $tabLine = $(".scheme__tab-underline");
+
+	// При загрузке страницы линия становится на место под первым пунктом
+	$tabLine.css("width", $(document.querySelector(".scheme__tab")).width());
+	$(".scheme__tab").first().addClass("scheme__tab--active");
+
+	// При клике на один из пунктов линия становится под этот пункт
+	$(".scheme__tab").on("click", function(){
+		// Очищение активного класса у всех элементов, 
+		// чтобы затем добавить его к текущему пункту
+		$('.scheme__tab').removeClass("scheme__tab--active");
+		var leftPos = $(this).position().left;
+		var widthLine = $(this).width();
+
+		$(this).addClass("scheme__tab--active");
+		$($tabLine).css("left", leftPos);
+		$($tabLine).css("width", widthLine);
+	});
+
+	function addOpacitySlick(){
+	    $(".scheme__group .slick-slide").addClass("opacity_025");
+		$('.scheme__group .slick-slide').removeClass('opacity_08');
+		$('.scheme__group .slick-slide').removeClass('opacity_06');
+		
+		$('.scheme__group .slick-current').removeClass(["opacity_06", "opacity_08", "opacity_025"])
+
+		$('.scheme__group .slick-current').next().addClass("opacity_08");
+		$('.scheme__group .slick-current').prev().addClass("opacity_08");
+
+	    $('.scheme__group .slick-current').next().next().addClass("opacity_06");
+	    $('.scheme__group .slick-current').prev().prev().addClass("opacity_06");
+
+	    $('.scheme__group .slick-current').next().next().next().addClass("opacity_025");
+	    $('.scheme__group .slick-current').prev().prev().prev().addClass("opacity_025");
+	}
+	$(".scheme__group").on("init", addOpacitySlick);
+	// Активация слайдера для Схемы работы
+	$(".scheme__group").slick({
+		slidesToShow: 7,
+		centerMode: true,
+		focusOnSelect: true
+	});
+
+
+	//$(".scheme__group").on("beforeChange", clearClassesSlick);
+	$(".scheme__group").on("afterChange", addOpacitySlick);	
+
+	// Слайдер с прогресс барами вместо точек
 	var valueOfDashOffset = 60;
 	var timerProgressBar;
 	var svgCircle = "<svg width='25' height='24' xmlns='http://www.w3.org/2000/svg''><circle class='circle' r='8.5' cx='11' cy='10' stroke='rgba(255, 255, 255, 1)' fill='transparent' stroke-width='3' stroke-dasharray='60' stroke-dashoffset='60'></circle></svg>";
@@ -147,7 +197,6 @@ $(document).ready(function(){
 
 
 });
-console.log(parseFloat(127.2));
 // Google карта 
 var cities = document.querySelectorAll(".address__item-city");
 function initMap() {
