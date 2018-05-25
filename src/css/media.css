@@ -26,6 +26,11 @@
   .paths__our-ways .slick-next {
     right: 20px;
   }
+  /* Block - adv */
+  .adv {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
 @media screen and (max-width: 830px) {
   /* Block - header */
@@ -219,6 +224,13 @@
   }
   .contacts__input {
     margin-top: 10px;
+  }
+  /* Block - adv */
+  .adv__item {
+    margin-top: 15px;
+  }
+  .adv__headline {
+    display: none;
   }
 }
 @media screen and (max-width: 380px) {

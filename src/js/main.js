@@ -79,40 +79,39 @@ $(document).ready(function(){
 	var timerProgressBar;
 	var svgCircle = "<svg width='25' height='24' xmlns='http://www.w3.org/2000/svg''><circle class='circle' r='8.5' cx='11' cy='10' stroke='rgba(255, 255, 255, 1)' fill='transparent' stroke-width='3' stroke-dasharray='60' stroke-dashoffset='60'></circle></svg>";
 	//Сладйре для направлений с кнопкой скачать презентацию
-	$(".path-slider").on('init', function(slick){
-		$('.path-slider .slick-dots .slick-active').append(svgCircle);
-		var $circle = $('.path-slider .slick-dots .slick-active').children("svg").children(".circle")[0];
+	$(".progress-slider").on('init', function(slick){
+		$('.progress-slider .slick-dots .slick-active').append(svgCircle);
+		var $circle = $('.progress-slider .slick-dots .slick-active').children("svg").children(".circle")[0];
 		$circle.setAttribute("stroke-dashoffset", valueOfDashOffset);
 		var value = valueOfDashOffset;
 		timerProgressBar = setInterval(function(){
 			value--;	
-			$circle.setAttribute("stroke-dashoffset", value);	
-			if($circle.getAttribute("stroke-dashoffset") <= 6) {
+			$($circle).attr("stroke-dashoffset", value);	
+			if($($circle).attr("stroke-dashoffset") <= 6) {
 				clearInterval(timerProgressBar);
-				$('.path-slider').slick('slickNext');
+				$('.progress-slider').slick('slickNext');
 			}
 		}, 70);
 	});
-	$(".path-slider").slick({
+	$(".progress-slider").slick({
 		dots: true
 	});
 	//  Вставка svg прогресс бара для слайд точекера
-	$(".path-slider").on('beforeChange', function(event, slick, currentSlide){
-		$(".path-slider .slick-dots li").children("svg").remove();
+	$(".progress-slider").on('beforeChange', function(event, slick, currentSlide){
+		$(".progress-slider .slick-dots li").children("svg").remove();
 		clearInterval(timerProgressBar);
 	});
-	$(".path-slider").on('afterChange', function(slick, currentSlide){
+	$(".progress-slider").on('afterChange', function(slick, currentSlide){
 		clearInterval(timerProgressBar);
-		$('.path-slider .slick-dots .slick-active').append(svgCircle);
-		var $circle = $('.path-slider .slick-dots .slick-active').children("svg").children(".circle")[0];
+		$('.progress-slider .slick-dots .slick-active').append(svgCircle);
+		var $circle = $('.progress-slider .slick-dots .slick-active').children("svg").children(".circle")[0];
 		var value = valueOfDashOffset;
 		timerProgressBar = setInterval(function(){
 			$($circle).attr("stroke-dashoffset", value);	
 			value--;	
-			console.log(value);
 			if($($circle).attr("stroke-dashoffset") <= 6) {
 				clearInterval(timerProgressBar);
-				$('.path-slider').slick('slickNext');
+				$('.progress-slider').slick('slickNext');
 			}
 		}, 70);
 	});
