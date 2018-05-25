@@ -32,6 +32,12 @@
         justify-content: space-around;
   }
 }
+@media screen and (max-width: 880px) {
+  /* Block - main-scheme */
+  .main-scheme__arrow {
+    display: none;
+  }
+}
 @media screen and (max-width: 830px) {
   /* Block - header */
   .header__menu {
