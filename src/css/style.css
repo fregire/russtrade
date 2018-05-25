@@ -56,6 +56,7 @@ body {
 .headline {
   font-size: 25px;
   line-height: 1.2;
+  font-weight: 600;
 }
 /* Block - header */
 .header {
@@ -930,6 +931,10 @@ body {
   position: absolute;
   left: -4px;
   top: -3px;
+}
+.paths__slider .slick-arrow {
+  background-image: url(../img/svg/arrow-left-icon.svg);
+  border-color: #fff;
 }
 /* TODO: расположить стрелки слайдера правильно */
 .paths__slider .slick-next {
