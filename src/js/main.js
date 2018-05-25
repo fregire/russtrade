@@ -75,52 +75,52 @@ $(document).ready(function(){
 
 
 
-
+	valueOfDashOffset = 80;
 	var svgCircle = "<svg width='22' height='22' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 32 32'><circle class='circle' r='12' cx='14' cy='14' stroke='rgba(255, 255, 255, 1)' fill='transparent' stroke-width='4.5' stroke-dasharray='80' stroke-dashoffset='80'></circle></svg>";
-	// Сладйре для направлений с кнопкой скачать презентацию
-	$(".path-slider").on('init', function(slick){
-		$('.path-slider .slick-dots .slick-active').append(svgCircle);
-		var $circle = $('.path-slider .slick-dots .slick-active').children("svg").children(".circle")[0];
-		$circle.setAttribute("stroke-dashoffset", 80);
-		var timer = setInterval(function(){
-			var value = parseInt($circle.getAttribute("stroke-dashoffset"));
-			value--;	
-			$circle.setAttribute("stroke-dashoffset", value);	
-			if($circle.getAttribute("stroke-dashoffset") <= 6) {
-				clearInterval(timer);
-				$('.path-slider').slick('slickNext');
-			}
-		}, 60);
-	});
+	//Сладйре для направлений с кнопкой скачать презентацию
+	// $(".path-slider").on('init', function(slick){
+	// 	$('.path-slider .slick-dots .slick-active').append(svgCircle);
+	// 	var $circle = $('.path-slider .slick-dots .slick-active').children("svg").children(".circle")[0];
+	// 	$circle.setAttribute("stroke-dashoffset", 80);
+	// 	var timer = setInterval(function(){
+	// 		var value = parseInt($circle.getAttribute("stroke-dashoffset"));
+	// 		value--;	
+	// 		$circle.setAttribute("stroke-dashoffset", value);	
+	// 		if($circle.getAttribute("stroke-dashoffset") <= 6) {
+	// 			clearInterval(timer);
+	// 			$('.path-slider').slick('slickNext');
+	// 		}
+	// 	}, 60);
+	// });
 	$(".path-slider").slick({
 		dots: true
 	});
 
-	// Удаление прогресс бара для точек в слайдере
+	// // Удаление прогресс бара для точек в слайдере
 	$(".path-slider .slick-arrow, .path-slider .slick-dots li").on("click", function(){
 		$(".slick-dots li").children("svg").remove();
 	});
-	// Вставка svg прогресс бара для точек слайдера
+	// // Вставка svg прогресс бара для точек слайдера
 
 	
 	$(".path-slider").on('beforeChange', function(event, slick, currentSlide){
 		$(".path-slider .slick-dots li").children("svg").remove();
-		console.log(slick);
+		valueOfDashOffset = 80;
 	});
 	$(".path-slider").on('afterChange', function(slick, currentSlide){
-		$(".path-slider .slick-dots li").children("svg").remove();
 		$('.path-slider .slick-dots .slick-active').append(svgCircle);
 		var $circle = $('.path-slider .slick-dots .slick-active').children("svg").children(".circle")[0];
-		$circle.setAttribute("stroke-dashoffset", 80);
+		$($circle).attr("stroke-dashoffset", valueOfDashOffset);
 		var timer = setInterval(function(){
-			var value = parseInt($circle.getAttribute("stroke-dashoffset"));
-			value--;	
-			$circle.setAttribute("stroke-dashoffset", value);	
-			if($circle.getAttribute("stroke-dashoffset") <= 6) {
+			valueOfDashOffset--;	
+			$($circle).attr("stroke-dashoffset", valueOfDashOffset);	
+			console.log(valueOfDashOffset);
+			if($($circle).attr("stroke-dashoffset") <= 6) {
 				clearInterval(timer);
 				$('.path-slider').slick('slickNext');
+				valueOfDashOffset = 80;
 			}
-		}, 60);
+		}, 200);
 	});
 
 	// Слайдер для направлений с мальеньким размером

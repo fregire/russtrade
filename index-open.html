@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta content="app-id=909649844" name="apple-itunes-app" />
+      <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+         '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+         })(window,document,'script','dataLayer','GTM-KSR4VC');
+      </script>
+      <!-- End Google Tag Manager -->
+      <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+      <meta content="width=1280" name="viewport" />
+      <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+      <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"09fb1b6c65","applicationID":"49586364","transactionName":"Jg0KF0RbCA9UQxtTSwoMEExbVQ0NHlhaUVwd","queueTime":0,"applicationTime":1264,"agent":""}</script>
+      <script type="text/javascript">
+      	window.NREUM || (NREUM = {}), __nr_require = function(e, t, n) {
+    function r(n) {
+        if (!t[n]) {
+            var o = t[n] = {
+                exports: {}
+            };
+            e[n][0].call(o.exports, function(t) {
+                var o = e[n][1][t];
+                return r(o || t)
+            }, o, o.exports)
+        }
+        return t[n].exports
+    }
+    if ("function" == typeof __nr_require) return __nr_require;
+    for (var o = 0; o < n.length; o++) r(n[o]);
+    return r
+}({
+    1: [function(e, t, n) {
+        function r() {}
+
+        function o(e, t, n) {
+            return function() {
+                return i(e, [f.now()].concat(u(arguments)), t ? null : this, n), t ? void 0 : this
+            }
+        }
+        var i = e("handle"),
+            a = e(2),
+            u = e(3),
+            c = e("ee").get("tracer"),
+            f = e("loader"),
+            s = NREUM;
+        "undefined" == typeof window.newrelic && (newrelic = s);
+        var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+            d = "api-",
+            l = d + "ixn-";
+        a(p, function(e, t) {
+            s[t] = o(d + t, !0, "api")
+        }), s.addPageAction = o(d + "addPageAction", !0), s.setCurrentRouteName = o(d + "routeName", !0), t.exports = newrelic, s.interaction = function() {
+            return (new r).get()
+        };
+        var m = r.prototype = {
+            createTracer: function(e, t) {
+                var n = {},
+                    r = this,
+                    o = "function" == typeof t;
+                return i(l + "tracer", [f.now(), e, n], r),
+                    function() {
+                        if (c.emit((o ? "" : "no-") + "fn-start", [f.now(), r, o], n), o) try {
+                            return t.apply(this, arguments)
+                        } catch (e) {
+                            throw c.emit("fn-err", [arguments, this, e], n), e
+                        } finally {
+                            c.emit("fn-end", [f.now()], n)
+                        }
+                    }
+            }
+        };
+        a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function(e, t) {
+            m[t] = o(l + t)
+        }), newrelic.noticeError = function(e) {
+            "string" == typeof e && (e = new Error(e)), i("err", [e, f.now()])
+        }
+    }, {}],
+    2: [function(e, t, n) {
+        function r(e, t) {
+            var n = [],
+                r = "",
+                i = 0;
+            for (r in e) o.call(e, r) && (n[i] = t(r, e[r]), i += 1);
+            return n
+        }
+        var o = Object.prototype.hasOwnProperty;
+        t.exports = r
+    }, {}],
+    3: [function(e, t, n) {
+        function r(e, t, n) {
+            t || (t = 0), "undefined" == typeof n && (n = e ? e.length : 0);
+            for (var r = -1, o = n - t || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = e[t + r];
+            return i
+        }
+        t.exports = r
+    }, {}],
+    4: [function(e, t, n) {
+        t.exports = {
+            exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart
+        }
+    }, {}],
+    ee: [function(e, t, n) {
+        function r() {}
+
+        function o(e) {
+            function t(e) {
+                return e && e instanceof r ? e : e ? c(e, u, i) : i()
+            }
+
+            function n(n, r, o, i) {
+                if (!d.aborted || i) {
+                    e && e(n, r, o);
+                    for (var a = t(o), u = m(n), c = u.length, f = 0; f < c; f++) u[f].apply(a, r);
+                    var p = s[y[n]];
+                    return p && p.push([b, n, r, a]), a
+                }
+            }
+
+            function l(e, t) {
+                v[e] = m(e).concat(t)
+            }
+
+            function m(e) {
+                return v[e] || []
+            }
+
+            function w(e) {
+                return p[e] = p[e] || o(n)
+            }
+
+            function g(e, t) {
+                f(e, function(e, n) {
+                    t = t || "feature", y[n] = t, t in s || (s[t] = [])
+                })
+            }
+            var v = {},
+                y = {},
+                b = {
+                    on: l,
+                    emit: n,
+                    get: w,
+                    listeners: m,
+                    context: t,
+                    buffer: g,
+                    abort: a,
+                    aborted: !1
+                };
+            return b
+        }
+
+        function i() {
+            return new r
+        }
+
+        function a() {
+            (s.api || s.feature) && (d.aborted = !0, s = d.backlog = {})
+        }
+        var u = "nr@context",
+            c = e("gos"),
+            f = e(2),
+            s = {},
+            p = {},
+            d = t.exports = o();
+        d.backlog = s
+    }, {}],
+    gos: [function(e, t, n) {
+        function r(e, t, n) {
+            if (o.call(e, t)) return e[t];
+            var r = n();
+            if (Object.defineProperty && Object.keys) try {
+                return Object.defineProperty(e, t, {
+                    value: r,
+                    writable: !0,
+                    enumerable: !1
+                }), r
+            } catch (i) {}
+            return e[t] = r, r
+        }
+        var o = Object.prototype.hasOwnProperty;
+        t.exports = r
+    }, {}],
+    handle: [function(e, t, n) {
+        function r(e, t, n, r) {
+            o.buffer([e], r), o.emit(e, t, n)
+        }
+        var o = e("ee").get("handle");
+        t.exports = r, r.ee = o
+    }, {}],
+    id: [function(e, t, n) {
+        function r(e) {
+            var t = typeof e;
+            return !e || "object" !== t && "function" !== t ? -1 : e === window ? 0 : a(e, i, function() {
+                return o++
+            })
+        }
+        var o = 1,
+            i = "nr@id",
+            a = e("gos");
+        t.exports = r
+    }, {}],
+    loader: [function(e, t, n) {
+        function r() {
+            if (!x++) {
+                var e = h.info = NREUM.info,
+                    t = d.getElementsByTagName("script")[0];
+                if (setTimeout(s.abort, 3e4), !(e && e.licenseKey && e.applicationID && t)) return s.abort();
+                f(y, function(t, n) {
+                    e[t] || (e[t] = n)
+                }), c("mark", ["onload", a() + h.offset], null, "api");
+                var n = d.createElement("script");
+                n.src = "https://" + e.agent, t.parentNode.insertBefore(n, t)
+            }
+        }
+
+        function o() {
+            "complete" === d.readyState && i()
+        }
+
+        function i() {
+            c("mark", ["domContent", a() + h.offset], null, "api")
+        }
+
+        function a() {
+            return E.exists && performance.now ? Math.round(performance.now()) : (u = Math.max((new Date).getTime(), u)) - h.offset
+        }
+        var u = (new Date).getTime(),
+            c = e("handle"),
+            f = e(2),
+            s = e("ee"),
+            p = window,
+            d = p.document,
+            l = "addEventListener",
+            m = "attachEvent",
+            w = p.XMLHttpRequest,
+            g = w && w.prototype;
+        NREUM.o = {
+            ST: setTimeout,
+            SI: p.setImmediate,
+            CT: clearTimeout,
+            XHR: w,
+            REQ: p.Request,
+            EV: p.Event,
+            PR: p.Promise,
+            MO: p.MutationObserver
+        };
+        var v = "" + location,
+            y = {
+                beacon: "bam.nr-data.net",
+                errorBeacon: "bam.nr-data.net",
+                agent: "js-agent.newrelic.com/nr-1071.min.js"
+            },
+            b = w && g && g[l] && !/CriOS/.test(navigator.userAgent),
+            h = t.exports = {
+                offset: u,
+                now: a,
+                origin: v,
+                features: {},
+                xhrWrappable: b
+            };
+        e(1), d[l] ? (d[l]("DOMContentLoaded", i, !1), p[l]("load", r, !1)) : (d[m]("onreadystatechange", o), p[m]("onload", r)), c("mark", ["firstbyte", u], null, "api");
+        var x = 0,
+            E = e(4)
+    }, {}]
+}, {}, ["loader"]);
+</script>
+      <link rel="stylesheet" media="screen" href="7148452/612344/css/fonts.css" />
+      <title>Банк «Открытие» - вклады, дебетовые карты, ипотечное кредитование и другие услуги для частных клиентов и бизнеса.</title>
+      <meta content="Кредитование бизнеса, РКО, обслуживание дебетовых карт, выдача ипотечных кредитов, вклады и др. услуги. Адреса отделений и банкоматов. тел. 8-800-700-7877." name="description" />
+      <meta content="Банк Открытие, банк, открытие, рко, кредитование, кредит, кредиты, малый средний бизнес, кредитные банки, московские банки, официальные сайты банков, банковские операции, ипотека" name="keywords" />
+      <meta content="kx08gzfSgwhGe34lFV-a74gvFT35oZo72e_kK_mudvg" name="google-site-verification" />
+      <meta content="5511ff78e7611888" name="yandex-verification" />
+      <meta name="robots" content="noyaca">
+      </meta>
+      <meta name="yandex-verification" content="9b6d15a9a445cda8">
+      </meta>
+      <link href="https://www.open.ru/" rel="canonical" />
+      <script type="text/javascript">
+         //<![CDATA[
+         window.gon={};gon.mobile=false;gon.city="Хабаровск";gon.region="Хабаровский край";gon.extended_city="Хабаровск";gon.extended_region="Хабаровский край";gon.feedback_triggered=false;
+         //]]>
+      </script>
+      <link rel="stylesheet" media="all" href="assets/front/application_main_page-e0ee135f4e512be3144f94e50eeccedbb9aa94123140608414e9f7672875d813.css" data-turbolinks-track="true" />
+      <script src="packs/front_commons.js"></script><script src="packs/front/application_main_page-0f810d8b95b99ace4c53.js"></script><script>I18n.defaultLocale = 'ru';
+         I18n.locale = 'ru';
+      </script>
+      <meta name="csrf-param" content="authenticity_token" />
+      <meta name="csrf-token" content="wSpdS3i4PJ+F53i3ZIj5vW06OrIu3eKS/ks18Qp77mewAg8F1yN+hBcpH4/C4SOIyJ2qyPaQAjXpr7SLNZLOAQ==" />
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/news/feed" />
+      <script src="https://www.google.com/recaptcha/api.js?onload=recaptchaLoaded&amp;render=explicit" async="async"></script>
+      <link rel="stylesheet" media="screen" href="assets/default/all-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" />
+   </head>
+   <body data-current-office-city="Хабаровск">
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KSR4VC"
+         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      <div id="main">
+         <header class="index header_main main-page-header">
+            <div class="shadow"></div>
+            <div class="header">
+               <a class="logo white" href="/">
+                  <div class="icon"><img class="front" src="assets/front/logo_small-cf563ed88a5fbcbdaabb2274329f91df7150e041b90c8b26d00a03cf1b1b2e38.svg" alt="Logo small" /></div>
+                  <div class="title"></div>
+               </a>
+               <form action="/search" id="main_search_form" method="GET"><input name="type" type="hidden" value="" /><input name="except_type" type="hidden" value="news" /><input class="input" maxlength="500" name="query" type="text" value="" /><input class="submit" name="" type="submit" value="" /><a class="close" href="#"></a></form>
+               <a class="b_search" href="#"></a>
+               <div class="menu">
+                  <a class="top-hidden-menu-link" href="#"><em class="top-menu-hidden"></em></a>
+                  <div class="top-menu-popup" id="top-menu-popup">
+                     <div class="top-menu-popup__content">
+                        <style type="text/css">#top-hidden-menu-list:after,
+                           #top-hidden-menu-list:before{
+                           content: '';
+                           display: table;
+                           clear:both;
+                           }
+                           #top-hidden-menu-list{
+                           border-radius: 8px;
+                           background-color: #fff;
+                           overflow: hidden;
+                           }
+                           #top-hidden-menu-list li{
+                           padding: 24px 18px;
+                           border-bottom: 1px solid #f5f5f5;
+                           }
+                           #top-hidden-menu-list li:hover{
+                           background-color:#e5f7fc;
+                           }
+                           #top-hidden-menu-list li:last-child{
+                           border-bottom: none;
+                           }
+                           #top-hidden-menu-list a{
+                           letter-spacing: 1px;
+                           font-size: 14px;
+                           color: #666;
+                           text-transform: uppercase;
+                           float: none;
+                           margin: 0;
+                           padding: 0;
+                           }
+                        </style>
+                        <ul id="top-hidden-menu-list">
+                           <li><a href="/about">О банке</a></li>
+                           <li><a href="/life">Открытие life</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <a class="menu__hidden-content" href="/about"><em>О банке</em></a><a class="menu__hidden-content" href="https://www.open.ru/life"><em>Открытие life</em></a><a href="/addresses/map?show_atms=true"><em>Банкоматы</em></a><a href="/addresses/map?show_atms=false"><em>Oфисы</em></a><a class="banking-link" href="#"><em class="popup-close-button popup-close-button--hidden"></em><em>Интернет-банк</em></a>
+                  <div class="internet-bank-popup" id="internet_bank_popup">
+                     <div class="internet-bank-content">
+                        <style type="text/css">.ibank-list {
+                           margin: 0;
+                           list-style-type: none;
+                           min-width:258px!important;
+                           overflow:hidden;
+                           border-radius:8px;
+                           -ms-border-radius:8px;
+                           -moz-border-radius:8px;
+                           -webkit-border-radius:8px;
+                           }
+                           .ibank-item {
+                           display: block;
+                           padding: 20px;
+                           background-color: #ffffff;
+                           }
+                           .ibank-item-default {
+                           background: white;
+                           border-bottom: 1px solid #cccccc;
+                           padding-bottom: 15px;
+                           }
+                           .ibank-item-blue{
+                           border-bottom: 1px solid #cccccc;
+                           }
+                           .ibank-item-content {
+                           background-repeat: no-repeat;
+                           background-position: 0 3px;
+                           padding-left: 40px;
+                           }
+                           .ibank-item-default .ibank-item-content,
+                           .ibank-item-blue .ibank-item-content {
+                           background-image: url(storage/files/Open_people.svg);
+                           }
+                           /*.ibank-item-blue .ibank-item-content {
+                           background-image: url(storage/files/Open_corporate.svg);
+                           }*/
+                           .ibank-item-nopicture{
+                           padding-bottom:30px;
+                           }
+                           .ibank-item-nopicture .ibank-item-content {
+                           margin-left: 0;
+                           padding-left: 0;
+                           }
+                           .ibank-item-title,.ibank-item-text{
+                           line-height: 24px;
+                           text-align: left;
+                           }
+                           .ibank-item-title{
+                           font-size: 16px;
+                           line-height: 24px;
+                           text-transform:none !important;
+                           color: #000;
+                           margin-bottom: 5px;
+                           }
+                           .ibank-item-text{
+                           font-size: 14px;
+                           color:#999;
+                           text-transform: none;
+                           }
+                           .ibank-item-text .more-banking{
+                           border-bottom: none;
+                           color:#00b4e3 !important;
+                           text-transform:none !important;
+                           font-size:inherit !important;
+                           }
+                           .ibank-item-text__link {
+                           display: inline-block;
+                           height: 100%;
+                           padding-top: 0;
+                           color: #000 !important;
+                           text-transform: none !important;
+                           font-size: inherit !important;
+                           padding-top: 0 !important;
+                           height: 0 !important;
+                           }
+                           .ibank-item-text .more-banking{
+                           color:#999 !important;
+                           border-bottom: 1px solid #f5f5f5;
+                           }
+                           .ibank-item-text__link:hover{
+                           color: #00b4e3 !important;
+                           }
+                           .ibank-item-text a.more-banking:hover{
+                           border-bottom: 1px solid #999999;
+                           }
+                           .ibank-hidden{
+                           display:none;
+                           }
+                           .simbol-beta {
+                           font-size: 12px;
+                           line-height: 10px;
+                           color: #09b9e2;
+                           vertical-align: top;
+                           font-style: italic;
+                           }
+                           /* стили для новой выпадашки*/
+                           header .menu a{
+                           margin-left: 0;
+                           }
+                           .internet-bank-popup .acco-item li{
+                           position: relative;
+                           left: 15px;
+                           }
+                           .internet-bank-popup .show-for-small li:before,
+                           .internet-bank-popup .show-for-corp  li:before{
+                           background-color: #006ab4;
+                           }
+                           .internet-bank-popup .show-for-small li a,
+                           .internet-bank-popup .show-for-corp li a,
+                           .internet-bank-popup .ibank-item-blue .ibank-item-text{
+                           color: #000;
+                           }
+                           .internet-bank-popup .acco-item li a{
+                           font-size: 14px;
+                           line-height: 24px;
+                           color: #00b4e3 ;
+                           text-transform: none;
+                           padding: 0;
+                           }
+                           .internet-bank-popup .acco-item li:before{
+                           display: block;
+                           content: '';
+                           position: absolute;
+                           width: 6px;
+                           height: 6px;
+                           background-color: #00b4e3;
+                           top: 10px;
+                           left: -15px;
+                           border-radius: 50%;
+                           }
+                           .internet-bank-popup .ibank-item-default .ibank-item-text,
+                           .internet-bank-popup .ibank-item-default .ibank-item-text_cont{
+                           color: #000;
+                           }
+                           .item-text_cont p {
+                           font-size: 14px;
+                           }
+                           .internet-bank-popup .acco-item,
+                           .internet-bank-popup.forSmall .acco-item,
+                           .internet-bank-popup.forCorp .acco-item{
+                           display: none;
+                           margin-top: 10px;
+                           }
+                           .internet-bank-popup.default .acco-item.show-default{
+                           display: block;
+                           }
+                           .internet-bank-popup.forSmall .acco-item.show-for-small{
+                           display: block;
+                           }
+                           .internet-bank-popup.forCorp .acco-item.show-for-corp{
+                           display: block;
+                           }
+                           .ibank-item-text.show-default,
+                           .ibank-item-text.show-for-small,
+                           .ibank-item-text.show-for-corp{
+                           cursor: pointer;
+                           }
+                           .ibank-item-text:hover {
+                           color: #00b4e3 !important;
+                           }
+                           .default .ibank-item-text.show-default:hover,
+                           .forSmall .ibank-item-text.show-for-small,
+                           .forCorp .ibank-item-text.show-for-corp:hover {
+                           cursor: auto;
+                           color: #000 !important;
+                           }
+                           .nn-no {
+                           border-bottom: none;
+                           }
+                           .nav-desktop #internet_bank_popup {
+                           right: -73px!important; /* Мобильный страницы */
+                           width: 258px !important; /* Мобильный страницы */
+                           }
+                        </style>
+                        <ul class="ibank-list">
+                           <li class="ibank-item ibank-item__hovered ibank-item-default">
+                              <div class="ibank-item-content">
+                                 <p class="ibank-item-title">Интернет-банк</p>
+                                 <p class="ibank-item-text show-default">для частных лиц</p>
+                                 <ul class="acco-item show-default">
+                                    <li><a href="https://online.open.ru/logon?from=main_menu" target="_blank">Текущая версия</a></li>
+                                    <li>
+                                       <a href="https://ib.open.ru/login?from=main_menu" target="_blank">
+                                          Новая версия <!-- span class="simbol-beta">&beta;</span -->
+                                       </a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="ibank-item ibank-item__hovered ibank-item-blue">
+                              <div class="ibank-item-content">
+                                 <p class="ibank-item-title">Интернет-банк</p>
+                                 <p class="ibank-item-text show-for-small">для малого бизнеса</p>
+                                 <ul class="acco-item show-for-small">
+                                    <li><a href="https://online.open.ru/Business?from=main_menu" target="_blank">Интернет-банк</a></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="ibank-item ibank-item__hovered ibank-item-blue">
+                              <div class="ibank-item-content">
+                                 <p class="ibank-item-title">Интернет-банк</p>
+                                 <p class="ibank-item-text show-for-corp">для среднего<br />и крупного бизнеса</p>
+                                 <ul class="acco-item show-for-corp">
+                                    <li><a href="https://dbo.ofc.ru?from=main_menu" target="_blank">&laquo;Бизнес Линк&raquo;</a></li>
+                                    <li><a href="https://ndbo.open.ru/logon?from=main_menu" target="_blank">&laquo;Открытие - Бизнес<br />Онлайн&raquo;</a></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="ibank-item ibank-item__hovered ibank-item-blue nn-no">
+                              <div class="item-text_cont">
+                                 <p class="ibank-item-text_cont"><a class="ibank-item-text__link" href="/bfko">Система &laquo;Линк&raquo;</a>, <a class="ibank-item-text__link" href="/bfko">&laquo;ПКБ-онлайн&raquo;</a></p>
+                              </div>
+                           </li>
+                        </ul>
+                        <script>
+                           $('#internet_bank_popup').css({'right': 17});
+                           $('#more-bankng').on('click',function(){
+                           	$('#ibank-main').fadeOut(600,function(){
+                           		$('#ibank-hidden').fadeIn(600)
+                           		window.ibamk = setInterval(function(){
+                           			if ($('#internet_bank_popup').hasClass('active')) {
+                           				return
+                           			} else {
+                           				$('#ibank-main').fadeIn(600);
+                           				$('#ibank-hidden').fadeOut(600);
+                           				clearInterval(window.ibank)
+                           		}})
+                           	});
+                           })
+                        </script><script>
+                           $(function() {
+                               var popupIB = $('#internet_bank_popup');
+                           	var changeLinks = function() {
+                           		var url = window.location.href;
+                           
+                           	    if (url.indexOf('sme') != -1 || url.indexOf('small') != -1) {
+                           	  		popupIB.addClass('forSmall').removeClass('forCorp default');
+                           	  	}
+                           	  	else if (url.indexOf('medium') != -1 || url.indexOf('corp') != -1) {
+                           	  		popupIB.addClass('forCorp').removeClass('forSmall default');
+                           	  	}
+                           	  	else {
+                           	        popupIB.addClass('default').removeClass('forCorp forSmall');
+                           	    }
+                           	}
+                           
+                           	changeLinks();
+                           
+                           	$( window ).on('hashchange', function() {
+                           	  	changeLinks();
+                           	})
+                               
+                               $('.ibank-item-text.show-default').on('click', function() {
+                                   popupIB.addClass('default').removeClass('forCorp forSmall');
+                                   
+                               })
+                           
+                               $('.ibank-item-text.show-for-small').on('click', function() {
+                                   popupIB.addClass('forSmall').removeClass('forCorp default');
+                                   
+                               })
+                           
+                               $('.ibank-item-text.show-for-corp').on('click', function() {
+                                   popupIB.addClass('forCorp').removeClass('forSmall default');
+                               })
+                           })
+                        </script>
+                     </div>
+                  </div>
+                  <a href="https://mobile.open.ru"><em><span><img src="assets/front/icon-apple-white-feedcaf1f3e41d491859619a0c5a1feb489383de92682ee95b549a66089dbd41.svg" alt="Icon apple white" /></span><span><img src="assets/front/icon-android-white-46d1f302d0667860e61f2f01aa777a1f146e6e78958ff7e336c679ad09338e1c.svg" alt="Icon android white" /></span></em></a>
+                  <a class="locale-switch--white" href="https://www.open.ru/en">
+                     <div class="circle"><span>EN</span></div>
+                  </a>
+               </div>
+            </div>
+            <div class="section-banner" style="display:none;">
+               <div class="video_container">
+                  <div class="video_elements_container">
+                     <video data-video-id="59" poster="https://cdn.open.ru/storage/video/59/thumb_1920x600_1_b955.jpg" preload="metadata" width="100%">
+                        <source src="https://cdn.open.ru/storage/video/59/1920x600_1_b955.mp4" type="video/mp4" />
+                     </video>
+                     <div class="video_overlay_content columns-12" style="background: rgba(51, 51, 51, 0.3);">
+                        <style type="text/css">.header-button{
+                           border: 1px solid #fff;border-radius: 8px;height:60px;width:220px;text-align:center;margin: 30px 0 120px;display:block;
+                           }
+                           .header-button span{
+                           transition: .4s color;
+                           -webkit-transition: .4s color;
+                           -moz-transition: .4s color;
+                           color:#fff;line-height:58px;font-size:21px;
+                           }
+                           .header-button:hover{
+                           background-color:#fff;
+                           }
+                           .header-button:hover span{
+                           color:#333;
+                           }
+                        </style>
+                        <div style="max-width:1200px;margin:0 auto;">
+                           <p style="margin-top:110px;color:#fff;font-size:42px;">До 4 рублей на бонусный счет</p>
+                           <p style="font-size: 21px; color: #FFFFFF;margin-top:25px"><span>за каждые 100 рублей, потраченных по карте Travel</span></p>
+                           <p>&nbsp;</p>
+                           <a class="header-button" href="/travel_card?from=main_banner"><span>Подробнее</span></a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="video_elements_container">
+                     <video data-video-id="47" poster="https://cdn.open.ru/storage/video/47/thumb_ae72c73413d8e4091670dcb850af62ca.jpg" preload="metadata" width="100%">
+                        <source src="https://cdn.open.ru/storage/video/47/ae72c73413d8e4091670dcb850af62ca.mp4" type="video/mp4" />
+                     </video>
+                     <div class="video_overlay_content columns-12" style="background: rgba(51, 51, 51, 0.1);">
+                        <style type="text/css">.header-button{
+                           border: 1px solid #fff;border-radius: 8px;height:60px;width:220px;text-align:center;margin: 30px 0 120px;display:block;
+                           }
+                           .header-button span{
+                           transition: .4s color;
+                           -webkit-transition: .4s color;
+                           -moz-transition: .4s color;
+                           color:#fff;line-height:58px;font-size:21px;
+                           }
+                           .header-button:hover{
+                           background-color:#fff;
+                           }
+                           .header-button:hover span{
+                           color:#333;
+                           }
+                        </style>
+                        <div style="max-width:1200px;margin:0 auto;">
+                           <p style="margin-top:110px;color:#fff;font-size:42px;">Вклад до 6,32%</p>
+                           <p style="font-size: 21px; color: #FFFFFF;margin-top:25px"><span>зарабатывайте каждую минуту</span></p>
+                           <p>&nbsp;</p>
+                           <a class="header-button" href="https://services.openbank.ru/ru/deposit_secure?from=main_banner"><span>Подробнее</span></a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="video_elements_container">
+                     <video data-video-id="46" poster="https://cdn.open.ru/storage/video/46/thumb_e93e42f6155ef99c6e633fa2b213aa39.jpg" preload="metadata" width="100%">
+                        <source src="https://cdn.open.ru/storage/video/46/e93e42f6155ef99c6e633fa2b213aa39.mp4" type="video/mp4" />
+                     </video>
+                     <div class="video_overlay_content columns-12" style="background: rgba(51, 51, 51, 0.0);">
+                        <style type="text/css">.header-button{
+                           border: 1px solid #fff;border-radius: 8px;height:60px;width:220px;text-align:center;margin: 30px 0 120px;display:block;
+                           }
+                           .header-button span{
+                           transition: .4s color;
+                           -webkit-transition: .4s color;
+                           -moz-transition: .4s color;
+                           color:#fff;line-height:58px;font-size:21px;
+                           }
+                           .header-button:hover{
+                           background-color:#fff;
+                           }
+                           .header-button:hover span{
+                           color:#333;
+                           }
+                        </style>
+                        <div style="max-width:1200px;margin:0 auto;">
+                           <p style="margin-top:110px;color:#fff;font-size:42px;">1 000 рублей за каждого друга</p>
+                           <p style="font-size: 21px; color: #FFFFFF;margin-top:25px"><span>Программа +1</span></p>
+                           <p>&nbsp;</p>
+                           <a class="header-button" href="https://mgm.open.ru/?from=main_banner"><span>Подробнее</span></a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="video_elements_container">
+                     <video data-video-id="41" poster="https://cdn.open.ru/storage/video/41/thumb_video_file.jpg" preload="metadata" width="100%">
+                        <source src="https://cdn.open.ru/storage/video/41/video_file.mp4" type="video/mp4" />
+                     </video>
+                     <div class="video_overlay_content columns-12" style="background: rgba(51, 51, 51, 0.3);">
+                        <style type="text/css">.header-img {
+                           max-width:1200px;
+                           margin:0 auto;
+                           padding-left: 450px;
+                           }
+                           .header-button {
+                           border: 1px solid #fff;
+                           border-radius: 8px;
+                           height:60px;
+                           width:220px;
+                           text-align:center;
+                           margin: 30px 0 120px;
+                           display:block;
+                           }
+                           .header-button span {
+                           transition: .4s color;
+                           -webkit-transition: .4s color;
+                           -moz-transition: .4s color;
+                           color:#fff;line-height:58px;font-size:21px;
+                           }
+                           .header-button:hover {
+                           background-color:#fff;
+                           }
+                           .header-button:hover span {
+                           color:#333;
+                           }
+                        </style>
+                        <div class="header-img">
+                           <p style="color: rgb(255, 255, 255); font-size: 42px; margin-top: 110px;">Ипотека 8,7% годовых</p>
+                           <p style="color: rgb(255, 255, 255); font-size: 21px; margin-top: 25px;"><span>Оформите онлайн на сайте</span></p>
+                           <p>&nbsp;</p>
+                           <a class="header-button" href="/credits/ipoteka?from=main_banner"><span>Подробнее</span></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="section-banner" data-section-id="39376" style="display:none;"></div>
+            <div class="section-banner" data-section-id="39378" style="display:none;">
+               <div class="video_container">
+                  <div class="video_elements_container">
+                     <video data-video-id="39" poster="https://cdn.open.ru/storage/video/39/thumb_video_file.jpg" preload="metadata" width="100%">
+                        <source src="https://cdn.open.ru/storage/video/39/video_file.mp4" type="video/mp4" />
+                     </video>
+                     <div class="video_overlay_content columns-12" style="background: rgba(51, 51, 51, 0.2);">
+                        <style type="text/css">.header-button {
+                           border: 1px solid #fff;
+                           border-radius: 8px;
+                           height:60px;
+                           width:180px;
+                           text-align:center;
+                           margin-top: 50px;
+                           margin-right: 20px !important;
+                           display:inline-block;
+                           }
+                           .header-button span
+                           {
+                           transition: .4s color;
+                           -webkit-transition: .4s color;
+                           -moz-transition: .4s color;
+                           color:#fff;
+                           line-height:58px;
+                           font-size:21px;
+                           }
+                           .header-button:hover
+                           {
+                           background-color:#fff;
+                           }
+                           .header-button:hover span
+                           {
+                           color:#333;
+                           }
+                        </style>
+                        <div style="max-width:1200px;margin:0 auto;">
+                           <p style="margin-top:110px;color:#fff;font-size:42px;">Счёт для бизнеса &mdash; до 4 месяцев бесплатно</p>
+                           <p style="font-size: 21px; color: #FFFFFF;margin-top:25px"><span>Открытие счёта и реквизиты без визита в банк</span></p>
+                           <!--p style="font-size: 21px; color: #FFFFFF;margin-top:25px"><span>Новый интернет-банк и удобный сервис онлайн-открытия счета<br />для клиентов малого бизнеса</span></p--><a class="header-button" href="/sme/rko_c?from=main_banner_sme1"><span>Подробнее</span></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="section-banner" data-section-id="39475" style="display:none;"></div>
+            <div class="section-banner" data-section-id="39377" style="display:none;">
+               <div class="video_container">
+                  <div class="video_elements_container">
+                     <video data-video-id="57" poster="https://cdn.open.ru/storage/video/57/thumb_zoom_anim_aae6.jpg" preload="metadata" width="100%">
+                        <source src="https://cdn.open.ru/storage/video/57/zoom_anim_aae6.mp4" type="video/mp4" />
+                     </video>
+                     <div class="video_overlay_content columns-12" style="background: rgba(51, 51, 51, 0.5);">
+                        <style type="text/css">.header-button {
+                           border: 1px solid #fff;
+                           border-radius: 8px;
+                           height:60px;
+                           width:180px;
+                           text-align:center;
+                           margin-top: 50px;
+                           margin-right: 20px !important;
+                           display:inline-block;
+                           }
+                           .header-button span
+                           {
+                           transition: .4s color;
+                           -webkit-transition: .4s color;
+                           -moz-transition: .4s color;
+                           color:#fff;
+                           line-height:58px;
+                           font-size:21px;
+                           }
+                           .header-button:hover
+                           {
+                           background-color:#fff;
+                           }
+                           .header-button:hover span
+                           {
+                           color:#333;
+                           }
+                        </style>
+                        <div style="max-width:1200px;margin:0 auto;">
+                           <p style="margin-top:110px;color:#fff;font-size:42px;">CorpBankOpen API</p>
+                           <p style="font-size: 21px; color: #FFFFFF;margin-top:25px"><span>Воспользуйтесь прямой интеграцией<br />между учетной системой вашей компании и банком</span></p>
+                           <a class="header-button" href="/corp/account_management"><span>Подробнее</span></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="section-banner" data-section-id="39379" style="display:none;"></div>
+         </header>
+         <div class="main-page-content">
+            <script src="packs/front/main_page_menu-b3bb4c37dd6b1629c6a7.js"></script>
+            <div class="menu-container">
+               <div class="sections-menu-container inner">
+                  <div class="sections-menu" data-default-color="#999999">
+                     <ul class="sections-menu-items">
+                        <li class="sections-menu-item" data-active-color="" data-section-code="people" data-section-id="39376"><a class="sections-menu-item-title">Частным клиентам</a></li>
+                        <span> </span>
+                        <li class="sections-menu-item" data-active-color="" data-section-code="small" data-section-id="39378"><a class="sections-menu-item-title">Малому бизнесу и ип</a></li>
+                        <span> </span>
+                        <li class="sections-menu-item" data-active-color="" data-section-code="medium" data-section-id="39475"><a class="sections-menu-item-title">Среднему бизнесу</a></li>
+                        <span> </span>
+                        <li class="sections-menu-item" data-active-color="#005d96" data-section-code="corp" data-section-id="39377"><a class="sections-menu-item-title">Корпорациям</a></li>
+                        <span> </span>
+                        <li class="sections-menu-item" data-active-color="#005d96" data-section-code="finance" data-section-id="39379"><a class="sections-menu-item-title">Финансовым институтам</a></li>
+                        <span> </span>
+                        <li class="sections-menu-item"><a class="sections-menu-item-title" href="http://pb.open.ru">Private Banking</a></li>
+                     </ul>
+                     <div class="sections-menu-marker-container">
+                        <div class="sections-menu-marker"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sections-menu-influenced-container">
+                  <div class="sections-menu-influenced" data-section-code="people">
+                     <style type="text/css">.inner:after {
+                        content: " ";
+                        clear: both;
+                        display: table;
+                        }
+                        .inner:before {
+                        content: "";
+                        display: table;
+                        }
+                     </style>
+                     <section>
+                        <div class="inner" id="nav" style="overflow: visible;">
+                           <div style="padding: 28px 0px 20px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">
+                              <span class="svg_container">
+                                 <span style="margin-top: 0px; margin-left: -160px; display: inline-block;">
+                                    <svg height="13" viewbox="0 0 18 13" width="18" xmlns="http://www.w3.org/2000/svg">
+                                       <g fill="none" fill-rule="evenodd">
+                                          <path d="M 1 4.5 h 16.5 v -3 c 0 -0.527 -0.486 -1 -1 -1 h -15 c -0.514 0 -1 0.473 -1 1 v 10 c 0 0.527 0.486 1 1 1 h 15 c 0.514 0 1 -0.473 1 -1 v -4" stroke="#cfcfcf" stroke-linecap="round"></path>
+                                          <rect fill="#cfcfcf" height="1" rx="0.5" width="9" x="2" y="8"></rect>
+                                       </g>
+                                    </svg>
+                                 </span>
+                                 <a href="/cards?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;"> Дебетовые карты</a>&nbsp; 
+                              </span>
+                              <article><a href="/travel_card?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none; cursor: pointer;">Карта Travel </a><a href="/smartcard?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Смарт Карта</a> <a href="/lukoilcard?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Карта ЛУКОЙЛ</a>&nbsp; <a href="https://mgm.open.ru/?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;" target="_blank">Приведи друга</a></article>
+                              <span class="svg_container">
+                                 <span style="margin-top: 0px; margin-left: -164px; display: inline-block;">
+                                    <svg height="13" viewbox="0 0 18 13" width="18" xmlns="http://www.w3.org/2000/svg">
+                                       <g fill="none" fill-rule="evenodd">
+                                          <path d="M 1 4.5 h 16.5 v -3 c 0 -0.527 -0.486 -1 -1 -1 h -15 c -0.514 0 -1 0.473 -1 1 v 10 c 0 0.527 0.486 1 1 1 h 15 c 0.514 0 1 -0.473 1 -1 v -4" stroke="#cfcfcf" stroke-linecap="round"></path>
+                                          <path d="M 13.646 6.646 l -3.5 3.5 l 0.708 0.708 l 3.5 -3.5 Z" fill="#cfcfcf" fill-rule="nonzero"></path>
+                                          <path d="M 12 7 a 1 1 0 1 1 -1.999 0.001 A 1 1 0 0 1 12 7 M 15 10 a 1 1 0 1 1 -1.999 0.001 A 1 1 0 0 1 15 10" fill="#cfcfcf"></path>
+                                       </g>
+                                    </svg>
+                                 </span>
+                                 <a href="/credit_cards?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;"> Кредитные карты</a>&nbsp; 
+                              </span>
+                              <article><a href="/cards/travel_credit?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Карта Travel кредитная</a> <a href="/smartcard_credit?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Смарт Карта кредитная</a>&nbsp;<a href="/cards/rzd_credit?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none; cursor: pointer;">Карта РЖД кредитная</a> <a href="/cards/lukoil_credit?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;" target="_blank">Карта ЛУКОЙЛ кредитная</a></article>
+                              <a class="mobile_app" href="/premium?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">премиальное обслуживание</a> <a href="/payroll?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">зарплатным клиентам</a><a href="/exchange-person?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">обмен валюты</a>
+                           </div>
+                           <div style="padding: 28px 0px 20px;">
+                              <span class="svg_container">
+                                 <span style="margin-top: -4px; margin-left: -85px; display: inline-block;">
+                                    <svg height="19" viewbox="0 0 16 19" width="16" xmlns="http://www.w3.org/2000/svg">
+                                       <g fill="none" fill-rule="evenodd">
+                                          <path d="M 5 4.471 C 5.05 3.64 5.617 2.958 6.424 3 h 3.052 c 0.828 -0.04 1.528 0.657 1.574 1.55 a 5.173 5.173 0 0 0 -0.015 0.188 c 2.982 2.135 5.028 4.9 4.966 7.78 c -0.152 4.15 -3.58 6.563 -8.143 6.482 C 3.35 19.08 0.154 16.703 0 12.51 c -0.06 -2.888 2.017 -5.693 5.003 -7.847 A 1.346 1.346 0 0 1 5 4.471 Z m 0.906 0.005 c 0.06 0.029 0.09 0.095 0.093 0.053 c 0 -0.013 0.002 -0.025 0.003 -0.038 a 0.368 0.368 0 0 1 -0.096 -0.015 Z M 7.983 4 H 6.397 c -0.195 -0.01 -0.357 0.168 -0.392 0.467 a 0.86 0.86 0 0 0 0.278 0.038 l 0.14 0.004 H 8.5 a 0.5 0.5 0 0 1 0 1 H 6.405 l -0.15 -0.005 c -0.306 -0.008 -0.473 -0.02 -0.62 -0.063 C 2.865 7.427 0.947 9.998 1 12.48 c 0.13 3.581 2.832 5.59 6.857 5.52 c 4.088 0.072 7.014 -1.988 7.143 -5.512 c 0.054 -2.49 -1.853 -5.035 -4.646 -7.008 c -0.181 -0.058 -0.26 -0.202 -0.302 -0.372 a 0.759 0.759 0 0 1 -0.022 -0.154 a 2.291 2.291 0 0 1 0.003 -0.226 l 0.008 -0.135 c 0.004 -0.055 0.009 -0.101 0.01 -0.076 c -0.02 -0.281 -0.274 -0.531 -0.551 -0.518 H 7.983 Z" fill="#cfcfcf" fill-rule="nonzero"></path>
+                                          <path d="M 10.5 8.5 L 5 13.992 L 6.008 15 L 11.5 9.5 Z" fill="#cfcfcf" fill-rule="nonzero"></path>
+                                          <path d="M 8 9.5 a 1.5 1.5 0 1 1 -2.998 0.002 A 1.5 1.5 0 0 1 8 9.5 M 12 13.5 a 1.5 1.5 0 1 1 -3 0 a 1.5 1.5 0 1 1 3 0" fill="#cfcfcf"></path>
+                                          <path d="M 10 3 L 11.5 0.783 C 11.252 0.603 10.995 0.5 10.695 0.5 c -0.512 0 -0.972 0.299 -1.296 0.776 C 9.076 0.799 8.512 0.5 8 0.5 s -0.87 0.299 -1.193 0.776 C 6.483 0.799 6.023 0.5 5.51 0.5 C 5.195 0.5 4.5 0.783 4.5 0.783 l 1.014 1.2" stroke="#cfcfcf" stroke-linecap="round" stroke-linejoin="round"></path>
+                                       </g>
+                                    </svg>
+                                 </span>
+                                 <a href="/deposits?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Вклады </a> 
+                              </span>
+                              <article><a href="https://services.openbank.ru/ru/deposit_secure?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Вклад &laquo;Надёжный&raquo;</a> <a href="https://services.openbank.ru/ru/deposit_premium/?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Вклад &laquo;Премиальный&raquo;</a> <a href="/deposits/my_moneybox?from=main_menu#aim14" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Счет &laquo;Моя копилка&raquo;</a> <a href="/deposits?from=main_menu#aim14" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Сравнить вклады</a></article>
+                              <span style="margin-top: -4px; margin-left: -231px; display: inline-block;">
+                                 <svg height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <g fill="none" fill-rule="evenodd">
+                                       <path d="M 15.419 5 c 0.375 0.927 0.581 1.94 0.581 3 a 8 8 0 1 1 -8 -8 c 1.968 0 3.793 0.75 5.187 1.929 c -0.384 0.507 -0.582 0.76 -0.594 0.763 A 7.205 7.205 0 0 0 8 1 a 7 7 0 1 0 6.492 4.376 c -0.176 -0.435 -0.107 -0.64 0.233 -0.762 c 0.227 -0.081 0.458 0.048 0.694 0.387 Z" fill="#cfcfcf" fill-rule="nonzero"></path>
+                                       <circle cx="6" cy="5" r="1.5" stroke="#cfcfcf"></circle>
+                                       <circle cx="10" cy="11" r="1.5" stroke="#cfcfcf"></circle>
+                                       <path d="M 12.47 2.03 L 5 12" stroke="#cfcfcf" stroke-linecap="round"></path>
+                                    </g>
+                                 </svg>
+                              </span>
+                              <a href="/credits/cash?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;"> Потребительские кредиты </a>
+                              <article><a href="/credits/cash/universal?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Кредит наличными</a> <a href="/credits/cash/professional?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Зарплатным клиентам</a> <a href="/credits/cash/pensions?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Пенсионерам</a> <a href="/credits/cash/refinance?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Рефинансирование</a></article>
+                              <a href="/investments?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Инвестиции</a> <a href="/pensions?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;"> Пенсионерам</a><a href="/coins?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;"> Монеты</a>
+                           </div>
+                           <div class="last" style="padding: 28px 0px 20px;">
+                              <span class="svg_container">
+                                 <span style="margin-top: -4px; margin-left: -90px; display: inline-block;">
+                                    <svg height="16" viewbox="0 0 17 16" width="17" xmlns="http://www.w3.org/2000/svg">
+                                       <g fill="none" fill-rule="evenodd" stroke="#cfcfcf" stroke-linecap="round" stroke-linejoin="round">
+                                          <path d="M 10.5 11.5 h -3 v 4 h -5 V 7.518 h -2 L 9 0.5 l 7.5 7.018 M 14.5 9.5 v 6 h -4"></path>
+                                       </g>
+                                    </svg>
+                                 </span>
+                                 <a href="/ipoteka?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Ипотека</a> 
+                              </span>
+                              <article><a href="https://ipotekaonline.open.ru?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Квартира от 8,7%</a> <a href="/ipoteka?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;"> Ипотечный калькулятор</a> <a href="https://peremena.open.ru?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;"> Открытие. Недвижимость</a> <a href="/ipoteka/refinancing?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;" target="_blank"> Рефинансирование</a></article>
+                              <span class="svg_container">
+                                 <span style="margin-top: -4px; margin-left: -90px; display: inline-block;">
+                                    <svg height="15" viewbox="0 0 17 15" width="17" xmlns="http://www.w3.org/2000/svg">
+                                       <g fill="none" fill-rule="evenodd" stroke="#cfcfcf" stroke-linecap="round" stroke-linejoin="round">
+                                          <path d="M 6.5 11.5 h -5 c -0.558 0 -1 -0.517 -1 -1.106 V 1.5 c 0 -0.59 0.44 -1 1 -1 h 14 c 0.559 0 1 0.41 1 1 v 8.894 c 0 0.589 -0.44 1.106 -1 1.106 h -7 V 14 M 6.5 14.5 h 4 M 1 9.5 h 13.5"></path>
+                                       </g>
+                                    </svg>
+                                 </span>
+                                 <span style="color: rgb(82, 82, 82); text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 3px; clear: both; font-size: 14px; font-weight: 400; margin-bottom: 12px; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none; float: left; position: relative;">Сервисы</span> 
+                              </span>
+                              <article style="overflow: inherit; padding-bottom: 108px;">
+                                 <span class="svg_container">
+                                    <span style="margin-left: -211px;">
+                                       <svg height="15px" ns1:xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1" viewbox="0 15 512 512" width="15px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:ns1="" xmlns:xml="http://www.w3.org/XML/1998/namespace" y="0px">
+                                          <path class="svg-footer" d="M 395.748 272.046 c -0.646 -64.841 52.88 -95.938 55.271 -97.483 c -30.075 -44.01 -76.925 -50.039 -93.62 -50.736 c -39.871 -4.037 -77.798 23.474 -98.033 23.474 c -20.184 0 -51.409 -22.877 -84.476 -22.276 c -43.458 0.646 -83.529 25.269 -105.906 64.19 c -45.152 78.35 -11.563 194.42 32.445 257.963 c 21.504 31.104 47.146 66.038 80.813 64.79 c 32.421 -1.294 44.681 -20.979 83.878 -20.979 c 39.196 0 50.215 20.979 84.524 20.335 c 34.888 -0.648 56.991 -31.699 78.347 -62.898 c 24.694 -36.084 34.862 -71.019 35.462 -72.812 C 463.678 375.26 396.422 349.495 395.748 272.046 Z M 331.28 81.761 C 349.149 60.082 361.21 30.005 357.92 0 c -25.739 1.048 -56.938 17.145 -75.405 38.775 c -16.57 19.188 -31.075 49.813 -27.188 79.218 C 284.061 120.235 313.392 103.391 331.28 81.761 Z" fill="#ccc"></path>
+                                       </svg>
+                                       <svg height="15px" ns2:xmlns:xml="http://www.w3.org/XML/1998/namespace" version="1.1" viewbox="0 0 475.071 475.071" width="15px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:ns2="" xmlns:xml="http://www.w3.org/XML/1998/namespace" y="0px">
+                                          <path class="svg-footer" d="M 65.947 153.884 c -8.183 0 -15.136 2.853 -20.844 8.566 c -5.708 5.711 -8.564 12.562 -8.564 20.555 v 122.772 c 0 8.179 2.855 15.126 8.564 20.837 c 5.708 5.712 12.657 8.562 20.841 8.562 c 8.186 0 15.085 -2.851 20.699 -8.562 c 5.618 -5.711 8.425 -12.658 8.425 -20.837 V 183.005 c 0 -7.996 -2.857 -14.847 -8.565 -20.555 C 80.794 156.74 73.939 153.884 65.947 153.884 Z" fill="#77c159"></path>
+                                          <path class="svg-footer" d="M 106.494 349.457 c 0 8.754 3.046 16.177 9.136 22.269 c 6.091 6.085 13.512 9.13 22.27 9.13 h 21.128 l 0.288 64.81 c 0 8.186 2.855 15.129 8.564 20.841 c 5.708 5.711 12.562 8.565 20.555 8.565 c 8.188 0 15.133 -2.854 20.844 -8.565 c 5.711 -5.712 8.564 -12.655 8.564 -20.841 v -64.81 h 39.397 v 64.81 c 0 8.186 2.854 15.129 8.562 20.841 c 5.715 5.711 12.662 8.565 20.848 8.565 c 8.179 0 15.126 -2.854 20.834 -8.565 c 5.708 -5.712 8.559 -12.655 8.559 -20.841 v -64.81 h 21.416 c 8.56 0 15.89 -3.039 21.98 -9.13 c 6.092 -6.092 9.138 -13.515 9.138 -22.269 V 159.308 H 106.494 V 349.457 Z" fill="#77c159"></path>
+                                          <path class="svg-footer" d="M 302.345 43.682 L 322.61 6.279 c 1.335 -2.474 0.855 -4.377 -1.424 -5.708 c -2.478 -1.143 -4.38 -0.572 -5.708 1.714 L 294.918 39.97 c -18.082 -7.994 -37.205 -11.991 -57.384 -11.991 c -20.174 0 -39.304 3.997 -57.387 11.991 L 159.591 2.286 c -1.328 -2.286 -3.234 -2.857 -5.708 -1.714 c -2.285 1.331 -2.758 3.234 -1.426 5.708 l 20.271 37.402 c -20.559 10.467 -36.923 25.076 -49.108 43.824 c -12.181 18.749 -18.273 39.259 -18.273 61.525 h 264.095 c 0 -22.266 -6.091 -42.777 -18.273 -61.525 C 338.982 68.758 322.717 54.148 302.345 43.682 Z M 185.144 98.068 c -2.187 2.19 -4.803 3.284 -7.849 3.284 c -3.046 0 -5.614 -1.093 -7.71 -3.284 c -2.091 -2.187 -3.14 -4.805 -3.14 -7.85 c 0 -3.046 1.049 -5.664 3.14 -7.854 c 2.093 -2.19 4.665 -3.282 7.71 -3.282 c 3.042 0 5.659 1.091 7.849 3.282 c 2.19 2.19 3.284 4.808 3.284 7.854 C 188.428 93.264 187.334 95.878 185.144 98.068 Z M 305.489 98.068 c -2.098 2.19 -4.668 3.284 -7.713 3.284 c -3.046 0 -5.657 -1.093 -7.848 -3.284 c -2.19 -2.187 -3.281 -4.805 -3.281 -7.85 c 0 -3.046 1.091 -5.664 3.281 -7.854 c 2.19 -2.19 4.802 -3.282 7.848 -3.282 c 3.045 0 5.615 1.091 7.713 3.282 c 2.088 2.19 3.139 4.808 3.139 7.854 C 308.628 93.264 307.58 95.878 305.489 98.068 Z" fill="#77c159"></path>
+                                          <path class="svg-footer" d="M 429.964 162.306 c -5.708 -5.614 -12.655 -8.422 -20.841 -8.422 c -7.991 0 -14.843 2.808 -20.551 8.422 c -5.711 5.616 -8.568 12.517 -8.568 20.699 v 122.772 c 0 8.179 2.857 15.126 8.568 20.837 c 5.708 5.712 12.56 8.562 20.551 8.562 c 8.186 0 15.133 -2.851 20.841 -8.562 c 5.715 -5.711 8.568 -12.658 8.568 -20.837 V 183.005 C 438.532 174.822 435.679 167.921 429.964 162.306 Z" fill="#77c159"></path>
+                                       </svg>
+                                    </span>
+                                 </span>
+                                 <a href="https://mobile.open.ru/?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Мобильное приложение</a> <!--a href="/services/payments?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom: 0px;">Платежи и переводы</a--> <a page-popup-button="" page-popup-id="61" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none; cursor: pointer;">Оплата девайсами</a> <a href="https://travel.open.ru/?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Билеты и отели</a> <a href="https://www.open.ru/p2p?from=main_menu" style="font-size: 16px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;" target="_blank">Платежи и переводы</a>
+                              </article>
+                              <span class="svg_container">
+                                 <span style="margin-top: -4px; margin-left: -154px; display: inline-block;">
+                                    <svg height="18" viewbox="0 0 17 18" width="17" xmlns="http://www.w3.org/2000/svg">
+                                       <g fill="none" fill-rule="evenodd" stroke="#cfcfcf" stroke-linecap="round">
+                                          <path d="M 16.5 8.5 v -2 c 0 -1 0 -1 -0.5 -1 H 1.497 c -0.274 0 -0.997 0 -0.997 0.666 V 8 c 0 0.5 0.997 0.5 0.997 0.875 v 7.559 C 1.497 17.5 2 17.5 2.5 17.5 h 12 c 1 0 1 0 1 -1.066 V 8.875 c 0 -0.275 -0.085 -0.375 -0.36 -0.375 H 3.5 M 9 5 c -0.423 -0.108 0.732 -4.062 4 -4 c 1.333 0.042 1.448 1.76 0 3 c -0.677 0.54 -1.812 1 -3 1 H 7 c -1.186 0 -2.32 -0.46 -3 -1 c -1.448 -1.237 -1.334 -2.958 0 -3 C 7.268 0.938 8.423 4.892 8 5"></path>
+                                       </g>
+                                    </svg>
+                                 </span>
+                                 <span style="color: rgb(82, 82, 82); text-transform: uppercase; letter-spacing: 0.5px; clear: both; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none; float: left; position: relative;"><a href="/specials?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Скидки и акции</a></span> 
+                              </span>
+                              <a href="/tariffs/cardfees?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Тарифы и документы</a><a href="/services/payments?from=main_menu" style="letter-spacing: 0.5px; font-size: 14px; font-weight: 400; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;">Информация о платежах</a>
+                           </div>
+                        </div>
+                        <!--div class="inner" id="nav" style="overflow:visible;border-top:1px solid #ddd;">
+                           <div style="padding: 28px 0; font-size: 14px; font-weight: 400; border-bottom: 0px"><span class="svg_container"><span style="margin-left: -116px;display:inline-block;margin-top:-4px;"><svg height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"> <defs> <lineargradient id="a" x1="50%" x2="50%" y1="0%" y2="100%"> <stop offset="0%" stop-color="#F78910"></stop> <stop offset="100%" stop-color="#F47301"></stop> </lineargradient> </defs> <g fill="none" fill-rule="evenodd"> <circle cx="10" cy="10" fill="url(#a)" r="10"></circle> <path d="M3.81 10.1s5.115 1.239 6.107 6.09l4.336-10.198c.101-.237-.001-.35-.247-.246L3.81 10.1z" fill="#FFF"></path> </g> </svg> </span> <a href="https://rocketbank.ru/?from=openru" style="margin-bottom: 4px;font-size: 14px; font-weight: 500; letter-spacing: 0.5px; border-bottom: 0px" target="_blank">Рокетбанк</a> </span>
+                           
+                           <article style="padding-bottom:0;">
+                           <p style="font-size: 16px; font-weight: 400;color:#999; line-height: 20px;">Банк, с которым<br />все просто</p>
+                           </article>
+                           </div>
+                           
+                           <div style="padding: 28px 0"><span class="svg_container"><span style="margin-left: -79px;display:inline-block;margin-top:-4px;"><img alt="точка" height="20px" src="storage/files/pictures/6428/content_Logo_Tochka_64px.png" width="20px" /> </span> <a href="https://tochka.com/?from=openru" style="margin-bottom: 4px;font-size: 14px; font-weight: 500; letter-spacing: 0.5px; border-bottom: 0px" target="_blank">Точка</a> </span>
+                           
+                           <article style="padding-bottom:0;">
+                           <p style="font-size: 16px; font-weight: 400;color:#999; line-height: 20px;">Тот самый банк<br />для предпринимателей</p>
+                           </article>
+                           </div>
+                           
+                           <div class="last" style="padding: 28px 0;position: relative;"><span class="svg_container"><span style="margin-left: -196px;display:inline-block;margin-top:-4px;"><img alt="точка" height="20px" src="storage/files/pictures/6434/content_Logo_OpenFactoring_64px.png" width="20px" /> </span> <a href="https://openfactoring.ru/?from=openru" style="margin-bottom: 4px;font-size: 14px; font-weight: 500; letter-spacing: 0.5px; border-bottom: 0px" target="_blank">Открытие факторинг</a> </span>
+                           
+                           <article style="padding-bottom:0;">
+                           <p style="font-size: 16px; font-weight: 400;color:#999; line-height: 20px;">Факторинг с особым отношением<br />к малому и среднему бизнесу</p>
+                           </article>
+                           </div>
+                           </div-->
+                     </section>
+                  </div>
+                  <div class="sections-menu-influenced" data-section-code="small">
+                     <section>
+                        <div class="inner" id="nav" style="overflow:visible;">
+                           <div style="padding: 28px 0 20px;   font-size: 16px; font-weight: 400; border-bottom: 0px">
+                              <span style="font-size: 14px; color: #525252; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px; text-transform: uppercase; margin-bottom: 12px; padding-bottom: 3px; float: left">Расчетное обслуживание</span>
+                              <article><a href="/sme/rko_c?from=main_menu_sme" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Открыть счет</a> <a href="/small/tariffs_conditions?from=main_menu_sme" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Тарифы</a> <a href="/sme/remote-banking?from=main_menu_sme" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Дистанционное обслуживание</a> <a href="/small/corp_cards?from=main_menu_sme" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Бизнес-карты</a></article>
+                              <a class="mobile_app" href="https://reg-openbank.ru/index.do?utm_source=open.ru&amp;utm_medium=sme_menu" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Регистрация бизнеса</a> <a href="/small/acquiring?from=main_menu_sme" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Эквайринг &mdash; прием карт</a> <a href="/online_cashbox?from=main_menu_sme" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Онлайн кассы</a> <a href="/sme/deposits?from=main_menu_sme" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Депозиты</a>
+                           </div>
+                           <div style="padding: 28px 0 20px;">
+                              <span style="font-size: 14px; color: #525252; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px; text-transform: uppercase; margin-bottom: 12px; padding-bottom: 3px; float: left">Кредитование</span>
+                              <article><a href="/sme/crediting?section=refinancing" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Рефинансирование</a> <a href="/sme/crediting?section=refinancing" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Кредиты</a> <a href="/small/safeguards?from=main_menu_sme" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Банковские гарантии</a> <a href="/sme/business/car_loan?from=main_menu_sme" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Овердрафт</a></article>
+                              <a href="/express_finance?from=main_menu_sme" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Экспресс-финансирование</a> <a href="/small/products_with_state?from=main_menu_sme" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Продукты с господдержкой</a> <a href="/internet_accounting?from=main_menu_sme" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Интернет-бухгалтерия</a> <a href="/payroll?from=main_menu_sme" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Зарплатный проект</a>
+                           </div>
+                           <div class="last" style="padding: 28px 0 20px; ">
+                              <span style="font-size: 14px;
+                                 color: #525252;
+                                 font-weight: 400;
+                                 letter-spacing: 0.5px;
+                                 border-bottom: 0px;
+                                 text-transform: uppercase;
+                                 margin-bottom: 12px;
+                                 padding-bottom: 3px;
+                                 float: left;">вэд и валютный контроль</span>
+                              <article><a href="/small/documentary_operations?from=main_menu_sme" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Документарные операции</a> <a href="/small/currency_control?from=main_menu_sme" style="font-size: 16px; font-weight: 400; border-bottom: 0px"> Валютный контроль</a> <a href="/small/conversion_oper?from=main_menu_sme" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Конверсионные операции</a><a>&nbsp;</a></article>
+                              <a href="https://openfactoring.ru/?from=openru" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Факторинг</a>&nbsp; <a href="/sme/actions?from=main_menu_sme" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Акции и спецпредложения</a> <a href="/sme/partners?from=main_menu_sme" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Стать партнером</a>
+                           </div>
+                        </div>
+                     </section>
+                  </div>
+                  <div class="sections-menu-influenced" data-section-code="medium">
+                     <section>
+                        <div class="inner" id="nav" style="overflow:visible;">
+                           <div style="padding: 28px 0 20px;   font-size: 16px; font-weight: 400; border-bottom: 0px">
+                              <a href="/medium/online_services" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Онлайн-сервисы</a>&nbsp;
+                              <article><a href="/medium/online_services#online_open_account" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Онлайн открытие счета</a> <a href="/medium/online_services#deposits_online" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Депозиты онлайн</a> <a href="/medium/online_services#conversion_online" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Конвертация онлайн</a> <a href="/medium/online_services#distance_service" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Дистанционное обслуживание</a></article>
+                              <a class="mobile_app" href="/medium/fea" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Вэд и валютный контроль</a> <a href="/medium/fea#conversion" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Конверсионные операции</a> <a href="/medium/fea#guarantees" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Международные аккредитивы и гарантии</a>
+                           </div>
+                           <div style="padding: 28px 0 20px; ">
+                              <!--span style="font-size: 14px; color: #525252; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px; text-transform: uppercase; margin-bottom: 12px; padding-bottom: 3px; float: left">Расчетные услуги</span--><a href="/medium/accounting_services" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Расчетные услуги</a>&nbsp;
+                              <article><a href="/medium/accounting_services#online_open_account" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Открытие и ведение счетов</a> <a href="/medium/accounting_services#package_offers" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Пакетные предложения для СБ</a> <a href="/medium/accounting_services#cash_transactions" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Кассовые операции</a> <a href="/medium/accounting_services#customs_card" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Таможенная карта</a></article>
+                              <a href="https://www.open.ru/medium/corp_cards" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Корпоративная карта</a> <a href="/medium/acquiring" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Эквайринг</a>
+                           </div>
+                           <div class="last" style="padding: 28px 0 20px; ">
+                              <a href="/medium/business_financing" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Финансирование бизнеса</a>&nbsp;
+                              <article><a href="/medium/business_financing#overdraft" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Овердрафт</a> <a href="/medium/business_financing#credits" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Кредиты и гарантии</a> <a href="/medium/business_financing#products-state" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Финансирование с господдержкой</a> <a href="/medium/business_financing#factoring" style="font-size: 16px; font-weight: 400; border-bottom: 0px">Факторинг</a></article>
+                              <!-- a href="/medium/fea#actions" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Акции и спецпредложения</a --> <a href="/medium/awards_ratings" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Наши награды</a> <a href="/medium/clients" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Наши клиенты</a>
+                           </div>
+                        </div>
+                     </section>
+                  </div>
+                  <div class="sections-menu-influenced" data-section-code="corp">
+                     <section>
+                        <div class="inner" id="nav" style="overflow:visible;">
+                           <div style="padding: 28px 0 20px;  font-size: 16px; font-weight: 400; border-bottom: 0px">
+                              <span style="font-size: 14px; color: #525252; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px; text-transform: uppercase; float: left"><a href="/corp/settlement_services" style="border-bottom: 0px; font-weight: 400;">Расчетные услуги</a> </span>
+                              <article><a href="/corp/settlement_services#bill" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Открытие и ведение счета</a> <a href="/corp/settlement_services#service" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Дистанционное обслуживание </a> <a href="/corp/settlement_services#pay" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Зарплатные проекты</a> <a href="/corp/settlement_services#cards" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Корпоративные карты</a></article>
+                              <a href="/corp/account_management" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Управление счетами и ликвидностью</a> <a href="/corp/rds" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Размещение средств</a> <a href="/corp/fundraising" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Инкассация средств</a>
+                           </div>
+                           <div style="padding: 28px 0 20px; ">
+                              <span style="font-size: 14px; color: #525252; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px; text-transform: uppercase; float: left"><a href="/corp/ved" style="border-bottom: 0px; font-weight: 400;">Внешнеэкономическая деятельность</a> </span>
+                              <article><a href="/corp/ved#tdf" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Торговое и долгосрочное финансирование</a> <a href="/corp/ved#md" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Международные расчеты</a> <a href="/corp/ved#ko" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Конверсионные операции</a> <a href="/corp/ved#hvr" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Хеджирование рисков </a></article>
+                              <a href="/corp/noble_metal" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Драгоценные металлы</a> <a href="/corp/investment_banking" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Инвестиционно-банковские услуги</a> <a href="/corp/broking" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Брокерское обслуживание</a>
+                           </div>
+                           <div class="last" style="padding: 28px 0 20px;">
+                              <span style="font-size: 14px; color: #525252; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px; text-transform: uppercase; float: left"><a href="/corp/business_financing" style="border-bottom: 0px; font-weight: 400;">Финансирование бизнеса</a> </span>
+                              <article><a href="/corp/business_financing#products" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Кредиты и кредитные линии</a> <a href="/corp/business_financing#overdraft" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Овердрафт</a> <a href="/corp/business_financing#factoring" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Факторинг</a> <a href="/corp/business_financing#fsg" style="font-size: 16px; font-weight: 400; border-bottom: 0pх; color: #005d96; cursor:default">Финансирование с господдержкой</a></article>
+                              <a href="/corp/guarantee" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Гарантии</a> <a href="/corp/acquiring" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Эквайринг</a> <a href="/corp/client_lukoil" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Корпоративным клиентам Лукойл</a> <a href="/corp/awards_ratings" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Рейтинги и награды</a>
+                           </div>
+                        </div>
+                     </section>
+                  </div>
+                  <div class="sections-menu-influenced" data-section-code="finance">
+                     <section>
+                        <div class="inner" id="nav" style="overflow:visible;">
+                           <div style="padding: 28px 0 20px;   font-size: 14px; font-weight: 400; border-bottom: 0px">
+                              <a href="/finance/currency" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Валютные и товарные рынки</a>&nbsp;
+                              <article><a href="/finance/currency#conversion" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Конверсионные операции</a> <a href="/finance/currency#hedge" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96"> Хеджирование рисков</a> <a href="/finance/currency#tools" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96"> Срочные инструменты</a> <a href="/finance/currency#structural" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96"> Структурные продукты</a></article>
+                              <a href="/depository" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px"> Депозитарий</a> <a href="/bank_agent" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px"> Банкам-партнерам</a>
+                           </div>
+                           <div style="padding: 28px 0 20px; ">
+                              <a href="/brokerage" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Брокерское обслуживание</a>
+                              <article>
+                                 <a href="/brokerage/advantages" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Услуги</a> <a href="/brokerage/disclosure" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Раскрытие информации</a> <a href="/brokerage/itrading" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Тарифы</a> <a href="/brokerage/clients" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Стать клиентом</a> <!--a href="brokerage/documents" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Документы</a-->
+                              </article>
+                              <a href="/finance/finance_markets" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px"> Денежный рынок</a> <a href="/finance/securities" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Ценные бумаги</a> <!--a href="/finance/group" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px"> Группа структурных решений</a-->
+                           </div>
+                           <div class="last" style="padding: 28px 0 20px; ">
+                              <a href="/finance/capital_markets" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Рынки капитала</a>
+                              <article><a href="/finance/capital_markets#placement" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Размещение</a><a href="/finance/capital_markets#brige" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96">Бридж-финансирование</a> <a href="/finance/capital_markets#security" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96"> Секьюритизация активов</a> <a href="/finance/capital_markets#structural" style="font-size: 16px; font-weight: 400; border-bottom: 0px; color: #005d96"> Структурное финансирование</a></article>
+                              <a href="/finance/repo" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px"> Операции РЕПО</a> <!--a href="/finance/securities" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Ценные бумаги</a--> <!--a href="/finance/agents" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Банкам-агентам</a--> <a href="/finance/group" style="font-size: 14px; font-weight: 400; letter-spacing: 0.5px; border-bottom: 0px">Группа структурных решений</a>
+                           </div>
+                        </div>
+                        <!--div class="inner" id="nav" style="overflow:visible;border-top:1px solid #ddd;">
+                           <div style="padding: 28px 0; font-size: 14px; font-weight: 400; border-bottom: 0px"><span class="svg_container"><span style="margin-left: -111px;display:inline-block;margin-top:-4px;"><svg height="20px" version="1.1" viewbox="0 0 16 16" width="20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs> <lineargradient id="linearGradient-1" x1="50%" x2="50%" y1="0%" y2="100%"> <stop offset="0%" stop-color="#F78910"></stop> <stop offset="100%" stop-color="#F47301"></stop> </lineargradient> </defs> <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1"> <g id="rocket_open_icons" transform="translate(-1011.000000, -319.000000)"> <g id="ic_rocket" transform="translate(1011.000000, 319.000000)"> <circle cx="8" cy="8" fill="url(#linearGradient-1)" id="Oval" r="8"></circle> <path d="M3.04761905,8.08015312 C3.04761905,8.08015297 7.1400021,9.07101963 7.93336344,12.952381 C7.93336344,12.952381 11.4026065,4.79370495 11.4026065,4.79370495 C11.4833548,4.6038077 11.4012601,4.512876 11.2050283,4.59667339 C11.2050283,4.59667339 3.04761905,8.08015297 3.04761905,8.08015312 Z" fill="#FFFFFF" id="Path"></path> </g> </g> </g> </svg> </span> <a href="https://rocketbank.ru/?from=openru" style="margin-bottom: 4px;font-size: 14px; font-weight: 500; letter-spacing: 0.5px; border-bottom: 0px" target="_blank">Рокетбанк</a> </span>
+                           
+                           <article style="padding-bottom:0;">
+                           <p style="font-size: 16px; font-weight: 400;color:#999; line-height: 20px;">Банк, с которым<br />все просто</p>
+                           </article>
+                           </div>
+                           
+                           <div style="padding: 28px 0"><span class="svg_container"><span style="margin-left: -79px;display:inline-block;margin-top:-4px;"><img alt="точка" height="20px" src="storage/files/pictures/6428/content_Logo_Tochka_64px.png" width="20px" /> </span> <a href="https://tochka.com/?from=openru" style="margin-bottom: 4px;font-size: 14px; font-weight: 500; letter-spacing: 0.5px; border-bottom: 0px" target="_blank">Точка</a> </span>
+                           
+                           <article style="padding-bottom:0;">
+                           <p style="font-size: 16px; font-weight: 400;color:#999; line-height: 20px;">Тот самый банк<br />для предпринимателей</p>
+                           </article>
+                           </div>
+                           
+                           <div class="last" style="padding: 28px 0;"><span class="svg_container"><span style="margin-left: -193px;display:inline-block;margin-top:-4px;"><img alt="точка" height="20px" src="storage/files/pictures/6434/content_Logo_OpenFactoring_64px.png" width="20px" /> </span> <a href="https://openfactoring.ru/?from=openru" style="margin-bottom: 4px;font-size: 14px; font-weight: 500; letter-spacing: 0.5px; border-bottom: 0px" target="_blank">Открытие факторинг</a> </span>
+                           
+                           <article style="padding-bottom:0;">
+                           <p style="font-size: 16px; font-weight: 400;color:#999; line-height: 20px;">Факторинг с особым отношением<br />к малому и среднему бизнесу</p>
+                           </article>
+                           </div>
+                           </div-->
+                     </section>
+                  </div>
+               </div>
+            </div>
+            <div class="sections-menu-influenced-container">
+               <div class="sections-menu-influenced" data-section-code="people">
+                  <style type="text/css">.bottom_item, .col{
+                     opacity:0;
+                     margin-top:30px;
+                     -webkit-transition:0.5s;
+                     -moz-transition: 0.5s;
+                     -o-transition: 0.5s;
+                     transition: 0.5s;
+                     }
+                     .animate .bottom_item,.animate .col {
+                     opacity:1;
+                     margin-top:0px;
+                     }
+                     .news-block__row{
+                     overflow:hidden;
+                     padding-top:30px;
+                     padding-bottom:0px;
+                     height:128px;
+                     -webkit-transition:padding-bottom 0.5s;
+                     -moz-transition: padding-bottom 0.5s;
+                     -o-transition: padding-bottom 0.5s;
+                     transition: padding-bottom 0.5s;
+                     }
+                     .news-list-item {
+                     margin-top:40px;
+                     opacity:0;
+                     -webkit-transition:0.5s;
+                     -moz-transition: 0.5s;
+                     -o-transition: 0.5s;
+                     transition: 0.5s;
+                     }
+                     .animate .news-block__row{
+                     padding-bottom:24px;
+                     }
+                     .animate .news-list-item {
+                     margin-top:0;
+                     opacity:1;
+                     }
+                     .news-block__row--header{
+                     height:auto;
+                     }
+                     .about-link{
+                     color: #666666; font-size: 18px;border-bottom:1px solid #ddd;cursor:pointer;
+                     }
+                     .about-link:hover{
+                     border-bottom:none;
+                     color: #666666;
+                     }
+                     .bottom_description a{
+                     color:#666;
+                     border-bottom: 1px solid #A8E0F5;
+                     }
+                     .bottom_description a:hover{
+                     color:#666;
+                     }
+                  </style>
+                  <div class="nav_menu_bottom" style="background: #f5f5f5;padding: 24px;">
+                     <div class="bottom_item" style="display: block;">
+                        <h3 class="bottom_title" style="text-align: center; padding-top: 10px; font-size: 40px">Частным клиентам</h3>
+                        <p class="bottom_description" style="text-align: center; padding-top: 10px; color: #666666; font-size: 18px; line-height: 27px">У нас можно открыть <a href="/deposits">депозит</a> с высокой ставкой, <a href="/cards">карту</a> с уникальным дизайном<br />и другие современные банковские продукты. Еще у нас удобные <a href="https://online.open.ru">интернет</a>- и <a href="http://app.open.ru">мобильный банк</a>,<br />и мы рады работать не только с вами, но и с вашим бизнесом.</p>
+                        <p>&nbsp;</p>
+                        <p style="text-align: center; font-size: 18px"><a class="bottom_link" href="/about">Подробнее о банке </a></p>
+                        <p>&nbsp;</p>
+                     </div>
+                  </div>
+                  <script>
+                     $(function() {
+                       $('.sections-menu-item a').eq(5).html('PRIVATE BANKING');
+                       var news = $('.news-block');
+                       var container = $('.sections-menu-influenced-container').eq(1);
+                       var inner = $('.container');
+                       setTimeout(function(){$('.header').addClass('active');},100)
+                     
+                     
+                     
+                     var newsInterval = setInterval(function() {
+                         var scroll = $(window).scrollTop() + window.innerHeight * 0.8;
+                         if (news.length > 0 && news.offset().top < scroll) {
+                           news.addClass('animate');
+                           animationChain($('.news-list-item'),{'padding-top':'0','opacity':'1'},300);
+                           
+                           a(newsInterval);
+                     
+                         }
+                       }, 200)
+                     
+                     
+                     var curenceInterval = setInterval(function() {
+                         var scroll = $(window).scrollTop() + window.innerHeight;
+                         if (container.offset().top < scroll) {
+                           container.addClass('animate');
+                           a(curenceInterval);
+                         }
+                       }, 200)
+                     
+                     var innerInterval = setInterval(function() {
+                         var scroll = $(window).scrollTop() + window.innerHeight * 0.8;
+                         if (inner.offset().top < scroll) {
+                           inner.addClass('animate');
+                           a(innerInterval);
+                         }
+                       }, 200)
+                     
+                     
+                     function a(id){
+                      clearInterval(id);
+                     }
+                     function animationChain(elem, propertyes, interval) {
+                           return elem.each(function(index, elem) {
+                             var self;
+                             self = $(elem);
+                             setInterval((function() {
+                               return self.css(propertyes);
+                             }), (index + 1) * interval);
+                           });
+                         };
+                     })
+                  </script>
+               </div>
+               <div class="sections-menu-influenced" data-section-code="small">
+                  <div class="nav_menu_bottom" style="background: #f5f5f5;padding: 24px;">
+                     <div class="bottom_item" style="display: block;">
+                        <h3 class="bottom_title" style="text-align: center; padding-top: 10px; font-size: 40px">Малому бизнесу</h3>
+                        <p class="bottom_description" style="text-align: center; padding-top: 10px; color: #666666; font-size: 18px; line-height: 27px">Мы хорошо умеем работать с представителями малого&nbsp;бизнеса.<br />Вы можете открыть у нас <a href="/sme/rko_c">расчетный счет</a>, вести <a href="/internet_accounting">интернет-бухгалтерию</a>.<br />Также мы с радостью организуем <a href="/small/acquiring">эквайринг</a> на ваших торговых точках,<br />поможем во внешнеэкономической деятельности и многое другое.</p>
+                        <p>&nbsp;</p>
+                        <p style="text-align: center; font-size: 18px"><a class="bottom_link" href="/about">Подробнее о банке </a></p>
+                        <p>&nbsp;</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="sections-menu-influenced" data-section-code="medium">
+                  <div class="nav_menu_bottom" style="background: #f5f5f5;padding: 24px;">
+                     <div class="bottom_item" style="display: block;">
+                        <h3 class="bottom_title" style="text-align: center; padding-top: 10px; font-size: 40px">Среднему бизнесу</h3>
+                        <p class="bottom_description" style="text-align: center; padding-top: 10px; color: #666666; font-size: 18px; line-height: 27px">Быстрорастущему среднему бизнесу мы предлагаем весь комплекс высокотехнологичных<br />решений для развития: начиная с момента подключения расчетно-кассового обслуживания<br />до финансирования сделок с внешними контрагентами.</p>
+                        <p>&nbsp;</p>
+                        <p style="text-align: center; font-size: 18px"><a class="bottom_link" href="https://open.ofc.ru/login.jsp#login">Открыть счет</a></p>
+                        <p>&nbsp;</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="sections-menu-influenced" data-section-code="corp">
+                  <div class="nav_menu_bottom" style="background: #f5f5f5;padding: 24px;">
+                     <div class="bottom_item" style="display: block;">
+                        <h3 class="bottom_title" style="text-align: center; padding-top: 10px; font-size: 40px">Корпорациям</h3>
+                        <p class="bottom_description" style="text-align: center; padding-top: 10px; color: #666666; font-size: 18px; line-height: 27px">Мы предлагаем весь спектр решений, закрывающий потребности по <a href="/corp/business_financing">финансированию бизнеса</a>,<br /><a href="/corp/settlement_services">осуществлению любых расчётов</a>, обслуживанию и структурированию <a href="/corp/ved">внешнеторговых контрактов</a>,<br />повышению эффективности <a href="/corp/account_management">ведения бизнеса</a> в целом. Мы также отдельно гордимся тем, что уже много лет<br />&laquo;Открытие&raquo; является одним из лидеров российского рынка <a href="/corp/noble_metal">драгоценных металлов</a></p>
+                        <p>&nbsp;</p>
+                        <p style="text-align: center; font-size: 18px"><a class="bottom_link" href="/about">Подробнее о банке </a></p>
+                        <p>&nbsp;</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="sections-menu-influenced" data-section-code="finance">
+                  <div class="nav_menu_bottom" style="background: #f5f5f5;padding: 24px;">
+                     <div class="bottom_item" style="display: block;">
+                        <h3 class="bottom_title" style="text-align: center; padding-top: 10px; font-size: 40px">Финансовым институтам</h3>
+                        <p class="bottom_description" style="text-align: center; padding-top: 10px; color: #666666; font-size: 18px; line-height: 27px">
+                           Инвестиционный блок &laquo;Открытие&raquo; &mdash; один из ведущих независимых российских игроков на инвестиционном поле,<br />оказывающий весь спектр инвестиционно-банковских услуг институциональным и корпоративным клиентам, включая независимые<br />исследования, торговлю ценными бумагами, первичные размещения и услуги структурного финансирования. <!--
+                              У нас сложились прочные деловые связи с ведущими операторами <a href="/finance/finance_markets">международного рынка</a>, и мы обеспечиваем своим клиентам<br />высокое качество и надежность при совершении операций <a href="finance/repo">РЕПО</a>, <a href="/brokerage">брокерском обслуживании</a>, проведении операций хеджирования <a href="/finance/markets">валютных</a>,<br /><a href="/finance/markets">товарных</a> и <a href="/finance/markets">процентных</a> рисков. Наш многолетний опыт организации эмиссии облигационных займов российских компаний и субъектов Федерации<br />обеспечивает устойчиво высокие позиции в рейтингах крупнейших организаторов и андеррайтеров облигационных выпусков.
+                              -->
+                        </p>
+                        <p>&nbsp;</p>
+                        <p style="text-align: center; font-size: 18px"><a class="bottom_link" href="/about">Подробнее о банке </a></p>
+                        <p>&nbsp;</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="news-block inner">
+               <div class="news-block__row news-block__row--header">
+                  <div class="news-block__cell">
+                     <div class="news-block__title">Новости банка</div>
+                  </div>
+                  <div class="news-block__cell"></div>
+                  <div class="news-block__cell">
+                     <div class="news-block__link"><a href="/about/press#newslist">Все новости</a></div>
+                     <div class="news-block__link"><a href="/about/media">СМИ о банке</a></div>
+                  </div>
+               </div>
+               <div class="news-block__row">
+                  <div class="news-block__cell news-list-item">
+                     <div class="news-list-item__date">
+                        <div class="news-list-item__day">21</div>
+                        <div class="news-list-item__month">мая</div>
+                     </div>
+                     <div class="news-list-item__title"><a href="/about/press/43672">Банк «Открытие» подключил Google Pay банкам-партнерам</a></div>
+                  </div>
+                  <div class="news-block__cell news-list-item">
+                     <div class="news-list-item__date">
+                        <div class="news-list-item__day">18</div>
+                        <div class="news-list-item__month">мая</div>
+                     </div>
+                     <div class="news-list-item__title"><a href="/about/press/43664">Изменение документов дистанционно-банковского обслуживания</a></div>
+                  </div>
+                  <div class="news-block__cell news-list-item">
+                     <div class="news-list-item__date">
+                        <div class="news-list-item__day">17</div>
+                        <div class="news-list-item__month">мая</div>
+                     </div>
+                     <div class="news-list-item__title"><a href="/about/press/43663">«Открытие» и ВКонтакте наградили победителей программы поддержки женщин-предпринимателей</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="sections-menu-influenced-container">
+               <div class="sections-menu-influenced" data-section-code="people">
+                  <ul class="bxslider">
+                     <li class="slide" data-show-on-sections="[39376]" style="background-color:#ffffff; background-image:url(storage/main_block/40045/preview_87f9eb98acf6706113734cba50325b54.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.0);"></div>
+                        <article>
+                           <span>
+                              <a href="https://services.openbank.ru/ru/deposit_secure?from=slider">
+                                 <strong>Откройте вклад до 6,32%</strong>
+                                 <p style="color: #FFFFFF; font-size: 24px;">Зарабатывайте каждую минуту</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <li class="slide" data-show-on-sections="[39376]" style="background-color:#ffffff; background-image:url(storage/main_block/40002/preview_2843f46391874af9e7efd53e70ffeb8d.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.3);"></div>
+                        <article>
+                           <span>
+                              <a href="/ipoteka?from=slider">
+                                 <strong>Ипотека по ставке 8,7% годовых</strong>
+                                 <p style="color: rgb(255, 255, 255); font-size: 24px;">Оформите онлайн на сайте</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <li class="slide" data-show-on-sections="[39376]" style="background-color:#ffffff; background-image:url(storage/main_block/39973/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.0);"></div>
+                        <article>
+                           <span>
+                              <a href="https://www.open.ru/cards/rzd?from=slider">
+                                 <strong>Раз, два, поехали!</strong>
+                                 <p style="color: #FFFFFF; font-size: 24px;">Бесплатный билет за накопленные баллы по карте РЖД</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <li class="slide" data-show-on-sections="[39376]" style="background-color:#ffffff; background-image:url(storage/main_block/39889/preview_1600x500_d868.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.3);"></div>
+                        <article>
+                           <span>
+                              <a href="/samsungpay?from=slider">
+                                 <strong>Samsung Pay</strong>
+                                 <p style="color: #fff; font-size: 24px">Плати смартфоном</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <svg class="svg-circle" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m0.812578,12c0,-6.180896 5.006526,-11.187422 11.187422,-11.187422c6.180897,0 11.187422,5.006526 11.187422,11.187422c0,6.180897 -5.006525,11.187422 -11.187422,11.187422c-6.180896,0 -11.187422,-5.006525 -11.187422,-11.187422z" xmlns="http://www.w3.org/2000/svg"></path>
+                     </svg>
+                  </ul>
+               </div>
+               <div class="sections-menu-influenced" data-section-code="small">
+                  <ul class="bxslider">
+                     <li class="slide" data-show-on-sections="[39378]" style="background-color:#ffffff; background-image:url(storage/main_block/40027/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.1);"></div>
+                        <article>
+                           <span>
+                              <a href="/sme/crediting?from=slider_sme">
+                                 <strong>Делать больше</strong>
+                                 <p style="color: #fff; font-size: 24px">Для новых клиентов, рефинансирование кредитов по ставке 10,5%</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <li class="slide" data-show-on-sections="[39378]" style="background-color:#ffffff; background-image:url(storage/main_block/39414/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.5);"></div>
+                        <article>
+                           <span>
+                              <a href="/sme/business/car_loan?from=slider_sme">
+                                 <strong>Овердрафт</strong>
+                                 <p style="color: #FFFFFF; font-size: 24px;">Кредитный лимит на пополнение своих оборотных средств без визита в офис банка</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <li class="slide" data-show-on-sections="[39378]" style="background-color:#ffffff; background-image:url(storage/main_block/39615/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.2);"></div>
+                        <article>
+                           <span>
+                              <a href="/sme/partners?from=slider_sme">
+                                 <strong>Партнерская программа</strong>
+                                 <p style="color: #FFFFFF; font-size: 24px;">Вознаграждение за рекомендацию банка клиентам и партнерам</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <svg class="svg-circle" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m0.812578,12c0,-6.180896 5.006526,-11.187422 11.187422,-11.187422c6.180897,0 11.187422,5.006526 11.187422,11.187422c0,6.180897 -5.006525,11.187422 -11.187422,11.187422c-6.180896,0 -11.187422,-5.006525 -11.187422,-11.187422z" xmlns="http://www.w3.org/2000/svg"></path>
+                     </svg>
+                  </ul>
+               </div>
+               <div class="sections-menu-influenced" data-section-code="medium">
+                  <ul class="bxslider">
+                     <li class="slide" data-show-on-sections="[39475]" style="background-color:#ffffff; background-image:url(storage/main_block/39944/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.3);"></div>
+                        <article>
+                           <span>
+                              <a href="/medium/business_financing#products-state">
+                                 <strong>Государственная поддержка бизнеса</strong>
+                                 <p style="color: #fff; font-size: 24px">льготное кредитование и гарантии</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <li class="slide" data-show-on-sections="[39475]" style="background-color:#ffffff; background-image:url(storage/main_block/39942/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.4);"></div>
+                        <article>
+                           <span>
+                              <a href="/medium/accounting_services#cash_transactions">
+                                 <strong>Операции с наличностью</strong>
+                                 <p style="color: #fff; font-size: 24px">вноси и снимай наличные 24/7</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <li class="slide" data-show-on-sections="[39475]" style="background-color:#ffffff; background-image:url(storage/main_block/39943/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.3);"></div>
+                        <article>
+                           <span>
+                              <a href="/medium/accounting_services#package_offers">
+                                 <strong>Выбери свой тариф и не переплачивай за ненужные опции</strong>
+                                 <p style="color: #fff; font-size: 24px">пакеты услуг для среднего бизнеса</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <svg class="svg-circle" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m0.812578,12c0,-6.180896 5.006526,-11.187422 11.187422,-11.187422c6.180897,0 11.187422,5.006526 11.187422,11.187422c0,6.180897 -5.006525,11.187422 -11.187422,11.187422c-6.180896,0 -11.187422,-5.006525 -11.187422,-11.187422z" xmlns="http://www.w3.org/2000/svg"></path>
+                     </svg>
+                  </ul>
+               </div>
+               <div class="sections-menu-influenced" data-section-code="corp">
+                  <ul class="bxslider">
+                     <li class="slide" data-show-on-sections="[39377]" style="background-color:#ffffff; background-image:url(storage/main_block/39421/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.3);"></div>
+                        <article>
+                           <span>
+                              <a href="/corp/rds">
+                                 <strong>Депозиты для корпоративных клиентов</strong>
+                                 <p style="color: #fff; font-size: 24px">Ваши деньги работают круглосуточно</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <li class="slide" data-show-on-sections="[39377]" style="background-color:#ffffff; background-image:url(storage/main_block/39684/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.2);"></div>
+                        <article>
+                           <span>
+                              <a href="/corp/noble_metal">
+                                 <strong>Драгоценные металлы</strong>
+                                 <p style="color: #FFFFFF; font-size: 24px">Торговля на ведущих площадках мира</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <li class="slide" data-show-on-sections="[39377]" style="background-color:#ffffff; background-image:url(storage/main_block/39686/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.3);"></div>
+                        <article>
+                           <span>
+                              <a href="/corp/settlement_services">
+                                 <strong>Дистанционное обслуживание</strong>
+                                 <p style="color: #fff; font-size: 24px">Совершайте операции и обменивайтесь электронными документами с банком из любой точки мира</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <svg class="svg-circle" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m0.812578,12c0,-6.180896 5.006526,-11.187422 11.187422,-11.187422c6.180897,0 11.187422,5.006526 11.187422,11.187422c0,6.180897 -5.006525,11.187422 -11.187422,11.187422c-6.180896,0 -11.187422,-5.006525 -11.187422,-11.187422z" xmlns="http://www.w3.org/2000/svg"></path>
+                     </svg>
+                  </ul>
+               </div>
+               <div class="sections-menu-influenced" data-section-code="finance">
+                  <ul class="bxslider">
+                     <li class="slide" data-show-on-sections="[39379]" style="background-color:#ffffff; background-image:url(storage/main_block/39423/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.3);"></div>
+                        <article>
+                           <span>
+                              <a href="/finance/repo">
+                                 <strong>ОПЕРАЦИИ РЕПО</strong>
+                                 <p style="color: #fff; font-size: 24px">Размещение и привлечение денежных средств под залог ценных бумаг</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <li class="slide" data-show-on-sections="[39379]" style="background-color:#ffffff; background-image:url(storage/main_block/39424/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.3);"></div>
+                        <article>
+                           <span>
+                              <a href="/finance/group">
+                                 <strong>Индивидуальные решения</strong>
+                                 <p style="color: #fff; font-size: 24px">&laquo;Единое окно&raquo; для крупнейших клиентов по всей линейке продуктов инвестиционного блока</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <li class="slide" data-show-on-sections="[39379]" style="background-color:#ffffff; background-image:url(storage/main_block/39425/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.3);"></div>
+                        <article>
+                           <span>
+                              <a href="/finance/markets">
+                                 <strong>Хеджирование рисков</strong>
+                                 <p style="color: #fff; font-size: 24px">Операции с валютой, товарами и процентными ставками</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <li class="slide" data-show-on-sections="[39379]" style="background-color:#ffffff; background-image:url(storage/main_block/39618/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.3);"></div>
+                        <article>
+                           <span>
+                              <a href="/finance/securities">
+                                 <strong>MOEX, LSE, NYSE, NASDAQ, Xetra, Euronext</strong>
+                                 <p style="color: #FFFFFF; font-size: 24px;">Торговые операции на ведущих биржевых площадках из QUIK</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <li class="slide" data-show-on-sections="[39379]" style="background-color:#ffffff; background-image:url(storage/main_block/39798/preview_picture.jpg);">
+                        <div class="banner-overlay" style="background: rgba(51, 51, 51, 0.3);"></div>
+                        <article>
+                           <span>
+                              <a href="/finance/capital_markets">
+                                 <strong>Рынки капитала с Открытием</strong>
+                                 <p style="color: #fff; font-size: 24px">Выпуск рублевых облигаций, еврооблигаций, кредитных нот, ЕСР</p>
+                                 <br/>
+                              </a>
+                           </span>
+                           <i class="auxiliary"></i>
+                        </article>
+                     </li>
+                     <svg class="svg-circle" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m0.812578,12c0,-6.180896 5.006526,-11.187422 11.187422,-11.187422c6.180897,0 11.187422,5.006526 11.187422,11.187422c0,6.180897 -5.006525,11.187422 -11.187422,11.187422c-6.180896,0 -11.187422,-5.006525 -11.187422,-11.187422z" xmlns="http://www.w3.org/2000/svg"></path>
+                     </svg>
+                  </ul>
+               </div>
+            </div>
+            <section class="section section--">
+               <div class="container">
+                  <div class="col col--4">
+                     <div class="pallet pallet--currency">
+                        <p class="pallet__title">Курс обмена в онлайне</p>
+                        <p class="pallet__title-date">Обновлено 25.05.2018 в 02:05</p>
+                        <p class="pallet__title-note">&nbsp;</p>
+                        <div class="pallet__content">
+                           <table class="pallet-table currency-table">
+                              <thead>
+                                 <tr>
+                                    <td class="currency-table__name">Валюта</td>
+                                    <td class="currency-table__sell">Покупка</td>
+                                    <td class="currency-table__buy">Продажа</td>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td class="currency-table__name">USD</td>
+                                    <td class="currency-table__sell">61.0</td>
+                                    <td class="currency-table__buy">62.12</td>
+                                 </tr>
+                                 <tr>
+                                    <td class="currency-table__name">EUR</td>
+                                    <td class="currency-table__sell">71.51</td>
+                                    <td class="currency-table__buy">72.75</td>
+                                 </tr>
+                                 <tr>
+                                    <td class="currency-table__name">&nbsp;</td>
+                                    <td class="currency-table__sell">&nbsp;</td>
+                                    <td class="currency-table__buy">&nbsp;</td>
+                                 </tr>
+                                 <tr>
+                                    <td class="currency-table__name">&nbsp;</td>
+                                    <td class="currency-table__sell">&nbsp;</td>
+                                    <td class="currency-table__buy">&nbsp;</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <p style="font-size: 16px"><a href="/exchange-person?exchangeType=online">Узнать подробнее</a></p>
+                           <p style="font-size: 16px"><a href="https://online.open.ru/logon?exblock=1" target="_blank">Обменять в интернет-банке</a></p>
+                           <p style="font-size: 16px"><a href="https://mobile.open.ru" target="_blank">Обменять в мобильном приложении</a></p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col col--4">
+                     <div class="pallet pallet--currency">
+                        <p class="pallet__title">Курсы обмена наличных</p>
+                        <p class="pallet__title-date">Обновлено 25.05.2018 в 08:10</p>
+                        <p class="pallet__title-note">&nbsp;</p>
+                        <div class="pallet__content">
+                           <table class="pallet-table currency-table">
+                              <thead>
+                                 <tr>
+                                    <td class="currency-table__name">Валюта</td>
+                                    <td class="currency-table__sell">Покупка</td>
+                                    <td class="currency-table__buy">Продажа</td>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td class="currency-table__name">USD</td>
+                                    <td class="currency-table__sell">60.95</td>
+                                    <td class="currency-table__buy">62.17</td>
+                                 </tr>
+                                 <tr>
+                                    <td class="currency-table__name">EUR</td>
+                                    <td class="currency-table__sell">71.46</td>
+                                    <td class="currency-table__buy">72.8</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <style type="text/css">.pallet__title-info {
+                              font-size: 13px;
+                              color: #999999;
+                              line-height: 1.25;
+                              padding-top: 7px;
+                              }
+                           </style>
+                           <p style="font-size: 16px"><a href="/exchange-person?exchangeType=cash">Узнать подробнее</a></p>
+                           <p style="font-size: 16px"><a href="/personal_currency">Индивидуальные курсы по запросу</a></p>
+                           <p class="pallet__title-info">При обмене наличной валюты на сумму менее 300 долларов США или Евро взимается комиссия в сумме 150 руб. за операцию.</p>
+                           <!--p style="font-size: 16px"><a href="/safe_deposit">Сейфовые ячейки</a></p--><!--p style="font-size: 16px; font-weight: 500;"><a href="/services">Платежи и переводы</a></p -->
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col col--4">
+                     <div class="pallet pallet--currency">
+                        <p class="pallet__title">Драгоценные металлы</p>
+                        <p class="pallet__title-date">Обновлено 25.05.2018 в 08:00</p>
+                        <p class="pallet__title-note">Данные котировки являются индикативными</p>
+                        <div class="pallet__content">
+                           <table class="pallet-table currency-table">
+                              <thead>
+                                 <tr>
+                                    <td class="currency-table__name">Валюта</td>
+                                    <td class="currency-table__sell">Покупка</td>
+                                    <td class="currency-table__buy">Продажа</td>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td class="currency-table__name">Золото</td>
+                                    <td class="currency-table__sell">2474.8</td>
+                                    <td class="currency-table__buy">2682.6</td>
+                                 </tr>
+                                 <tr>
+                                    <td class="currency-table__name">Палладий</td>
+                                    <td class="currency-table__sell">1856.7</td>
+                                    <td class="currency-table__buy">2018.7</td>
+                                 </tr>
+                                 <tr>
+                                    <td class="currency-table__name">Платина</td>
+                                    <td class="currency-table__sell">1730.8</td>
+                                    <td class="currency-table__buy">1877.1</td>
+                                 </tr>
+                                 <tr>
+                                    <td class="currency-table__name">Серебро</td>
+                                    <td class="currency-table__sell">31.55</td>
+                                    <td class="currency-table__buy">34.25</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                           <p style="font-size: 16px"><a href="/metal">Обезличенные металлические счета</a></p>
+                           <p style="font-size: 16px"><a href="/precious_metals">Операции со слитками</a></p>
+                           <p style="font-size: 16px"><a href="/coins">Памятные и инвестиционные монеты</a></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+         <div class="widgets-buttons">
+            <div class="widget_button communication-button" id="online_call_widget_button"><span class="label">Онлайн-звонок</span><a class="desktop" href="/online_call"><img class="widget-icon" src="assets/front/widget_buttons/online_call-021bed8e42d47f9d9360e5cae7cae7d4e4872b48f612d6357e7e16a36729d784.svg" alt="Online call" /></a></div>
+            <div class="widget_button communication-button" id="feedback_widget_button"><span class="label">По почте</span><a class="feedback feedback-popup-button" href=""><img class="widget-icon" src="assets/front/widget_buttons/feedback-154f7769b4969e52b73c75bbb509b69648f23394740c12bbf1961e477f117627.svg" alt="Feedback" /></a></div>
+            <div class="widget_button" id="question_widget_button"><span class="label">Задать вопрос</span><a href=""><img class="widget-icon" src="assets/front/widget_buttons/question-c2b815fb260aac360c9af48dc8c0ac0c4058120689fdd039ad5a240b07c9a093.svg" alt="Question" /></a></div>
+            <div class="widget_button" id="close_widget_button"><span class="label">Скрыть</span><a href=""><img class="widget-icon" src="assets/front/widget_buttons/close-84620cbe5369a9076b7ea860d807ac01ec6708ed2efdc06137a78b5f8088ac31.svg" alt="Close" /></a></div>
+         </div>
+         <div data-iframe-url="" id="chat-container"></div>
+         <footer>
+            <div class="page-content">
+               <a class="logo" href="https://www.open.ru"></a>
+               <div class="columns-row">
+                  <div class="columns-12 increase-footer-width">
+                     <div class="columns-row">
+                        <div class="columns-4 mr-5"></div>
+                        <div class="columns-3">
+                           <div class="town-container">
+                              <div class="town" data-form-src="/cities_form">Хабаровск</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="columns-row footer-menus">
+                        <div class="columns-4 mr-5">
+                           <div class="menu">
+                              <div class="info not_bottom_margin">Бесплатный звонок по России</div>
+                              <div class="phone" id="footer_federal_number"><a href="tel:8 800 700-78-77">8 800 700-78-77</a></div>
+                              <div class="info not_bottom_margin">Телефон в Москве</div>
+                              <div class="phone"><a href="tel:+7 495 787-78-77">+7 495 787-78-77</a></div>
+                           </div>
+                        </div>
+                        <div class="columns-3">
+                           <div class="menu">
+                              <span>Клиентам</span>
+                              <style type="text/css">a.footer-link:hover {
+                                 color: #00b4e3;
+                                 }
+                                 a.footer-link {
+                                 color: white;
+                                 }
+                                 .select2-dropdown {
+                                 z-index: 5000 !important;
+                                 }
+                              </style>
+                              <ul>
+                                 <li style="margin-left:-46px;">
+                                    <a class="footer-link" href="https://mobile.open.ru/">
+                                       <svg height="15px" style="enable-background:new 0 0 512 512;" version="1.1" viewbox="0 0 512 512" width="15px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                                          <path class="svg-footer" d="M395.748,272.046c-0.646-64.841,52.88-95.938,55.271-97.483c-30.075-44.01-76.925-50.039-93.62-50.736   c-39.871-4.037-77.798,23.474-98.033,23.474c-20.184,0-51.409-22.877-84.476-22.276c-43.458,0.646-83.529,25.269-105.906,64.19   c-45.152,78.35-11.563,194.42,32.445,257.963c21.504,31.104,47.146,66.038,80.813,64.79c32.421-1.294,44.681-20.979,83.878-20.979   c39.196,0,50.215,20.979,84.524,20.335c34.888-0.648,56.991-31.699,78.347-62.898c24.694-36.084,34.862-71.019,35.462-72.812   C463.678,375.26,396.422,349.495,395.748,272.046z M331.28,81.761C349.149,60.082,361.21,30.005,357.92,0   c-25.739,1.048-56.938,17.145-75.405,38.775c-16.57,19.188-31.075,49.813-27.188,79.218   C284.061,120.235,313.392,103.391,331.28,81.761z" fill="#FFFFFF"></path>
+                                       </svg>
+                                    </a>
+                                    <a class="footer-link" href="https://mobile.open.ru/">
+                                       <svg height="15px" style="enable-background:new 0 0 475.071 475.071;" version="1.1" viewbox="0 0 475.071 475.071" width="15px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                                          <path class="svg-footer" d="M65.947,153.884c-8.183,0-15.136,2.853-20.844,8.566c-5.708,5.711-8.564,12.562-8.564,20.555v122.772    c0,8.179,2.855,15.126,8.564,20.837c5.708,5.712,12.657,8.562,20.841,8.562c8.186,0,15.085-2.851,20.699-8.562    c5.618-5.711,8.425-12.658,8.425-20.837V183.005c0-7.996-2.857-14.847-8.565-20.555C80.794,156.74,73.939,153.884,65.947,153.884z    " fill="#FFFFFF"></path>
+                                          <path class="svg-footer" d="M106.494,349.457c0,8.754,3.046,16.177,9.136,22.269c6.091,6.085,13.512,9.13,22.27,9.13h21.128l0.288,64.81    c0,8.186,2.855,15.129,8.564,20.841c5.708,5.711,12.562,8.565,20.555,8.565c8.188,0,15.133-2.854,20.844-8.565    c5.711-5.712,8.564-12.655,8.564-20.841v-64.81h39.397v64.81c0,8.186,2.854,15.129,8.562,20.841    c5.715,5.711,12.662,8.565,20.848,8.565c8.179,0,15.126-2.854,20.834-8.565c5.708-5.712,8.559-12.655,8.559-20.841v-64.81h21.416    c8.56,0,15.89-3.039,21.98-9.13c6.092-6.092,9.138-13.515,9.138-22.269V159.308H106.494V349.457z" fill="#FFFFFF"></path>
+                                          <path class="svg-footer" d="M302.345,43.682L322.61,6.279c1.335-2.474,0.855-4.377-1.424-5.708c-2.478-1.143-4.38-0.572-5.708,1.714L294.918,39.97    c-18.082-7.994-37.205-11.991-57.384-11.991c-20.174,0-39.304,3.997-57.387,11.991L159.591,2.286    c-1.328-2.286-3.234-2.857-5.708-1.714c-2.285,1.331-2.758,3.234-1.426,5.708l20.271,37.402    c-20.559,10.467-36.923,25.076-49.108,43.824c-12.181,18.749-18.273,39.259-18.273,61.525h264.095    c0-22.266-6.091-42.777-18.273-61.525C338.982,68.758,322.717,54.148,302.345,43.682z M185.144,98.068    c-2.187,2.19-4.803,3.284-7.849,3.284c-3.046,0-5.614-1.093-7.71-3.284c-2.091-2.187-3.14-4.805-3.14-7.85    c0-3.046,1.049-5.664,3.14-7.854c2.093-2.19,4.665-3.282,7.71-3.282c3.042,0,5.659,1.091,7.849,3.282    c2.19,2.19,3.284,4.808,3.284,7.854C188.428,93.264,187.334,95.878,185.144,98.068z M305.489,98.068    c-2.098,2.19-4.668,3.284-7.713,3.284c-3.046,0-5.657-1.093-7.848-3.284c-2.19-2.187-3.281-4.805-3.281-7.85    c0-3.046,1.091-5.664,3.281-7.854c2.19-2.19,4.802-3.282,7.848-3.282c3.045,0,5.615,1.091,7.713,3.282    c2.088,2.19,3.139,4.808,3.139,7.854C308.628,93.264,307.58,95.878,305.489,98.068z" fill="#FFFFFF"></path>
+                                          <path class="svg-footer" d="M429.964,162.306c-5.708-5.614-12.655-8.422-20.841-8.422c-7.991,0-14.843,2.808-20.551,8.422    c-5.711,5.616-8.568,12.517-8.568,20.699v122.772c0,8.179,2.857,15.126,8.568,20.837c5.708,5.712,12.56,8.562,20.551,8.562    c8.186,0,15.133-2.851,20.841-8.562c5.715-5.711,8.568-12.658,8.568-20.837V183.005    C438.532,174.822,435.679,167.921,429.964,162.306z" fill="#FFFFFF"></path>
+                                       </svg>
+                                    </a>
+                                    <a class="footer-link" href="https://mobile.open.ru/" style="  margin-left: 8px;">Мобильное приложение</a>
+                                 </li>
+                                 <li><a class="footer-link" href="/about/details">Реквизиты</a></li>
+                                 <li><a class="footer-link" href="/about/info/press">Пресс-центр</a></li>
+                                 <!--li><a class='footer-link' href="http://www.otkritiefc.ru/" target="_blank">Корпоративный бизнес</a></li-->
+                                 <li><a class="footer-link" href="/insurances">Страхование</a></li>
+                                 <li><a class="footer-link" href="/about/m-property">Залоговое имущество</a></li>
+                                 <li><a class="footer-link" href="/depository">Депозитарное обслуживание</a></li>
+                                 <li><a class="footer-link" href="/safe_deposit">Сейфовые ячейки</a></li>
+                                 <li><a class="footer-link" href="http://talent.open.ru/" target="_blank">Карьера в банке</a></li>
+                                 <!--li><a class="footer-link" href="https://go.open.ru/" target="_blank">Открытие.Начало</a></li-->
+                                 <li><a class="footer-link" href="https://special.open.ru">Версия сайта для слабовидящих</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="columns-3">
+                           <div class="menu">
+                              <span>О банке</span><!--p><a href="/about" target="_blank">Общая информация</a> <a href="/about/supervisory" target="_blank"> Корпоративное управление</a> <a href="/about/holders" target="_blank"> Акционеры</a> <a href="http://ir.open.ru/reports" target="_blank"> Отчетность</a> <a href="/about/tenders">Тендеры</a> <a href="http://ir.open.ru/" target="_blank"> Раскрытие информации</a> <a href="http://ir.open.ru/en" target="_blank"> Раскрытие информации (ENG)</a> <a href="http://www.openbank.ru/about/logo/">Логотип банка</a></p-->
+                              <style type="text/css">a.footer-link:hover {
+                                 color: #00b4e3;
+                                 }
+                                 a.footer-link {
+                                 color: white;
+                                 }
+                              </style>
+                              <ul>
+                                 <!--li style="margin-left:-46px;"><a href="https://mobile.open.ru/"><svg height="15px" style="enable-background:new 0 0 512 512;" version="1.1" viewbox="0 0 512 512" width="15px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"> <path class="svg-footer" d="M395.748,272.046c-0.646-64.841,52.88-95.938,55.271-97.483c-30.075-44.01-76.925-50.039-93.62-50.736   c-39.871-4.037-77.798,23.474-98.033,23.474c-20.184,0-51.409-22.877-84.476-22.276c-43.458,0.646-83.529,25.269-105.906,64.19   c-45.152,78.35-11.563,194.42,32.445,257.963c21.504,31.104,47.146,66.038,80.813,64.79c32.421-1.294,44.681-20.979,83.878-20.979   c39.196,0,50.215,20.979,84.524,20.335c34.888-0.648,56.991-31.699,78.347-62.898c24.694-36.084,34.862-71.019,35.462-72.812   C463.678,375.26,396.422,349.495,395.748,272.046z M331.28,81.761C349.149,60.082,361.21,30.005,357.92,0   c-25.739,1.048-56.938,17.145-75.405,38.775c-16.57,19.188-31.075,49.813-27.188,79.218   C284.061,120.235,313.392,103.391,331.28,81.761z" fill="#FFFFFF"></path> </svg> </a><a href="https://mobile.openbank.ru/"> <svg height="15px" style="enable-background:new 0 0 475.071 475.071;" version="1.1" viewbox="0 0 475.071 475.071" width="15px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px"> <path class="svg-footer" d="M65.947,153.884c-8.183,0-15.136,2.853-20.844,8.566c-5.708,5.711-8.564,12.562-8.564,20.555v122.772    c0,8.179,2.855,15.126,8.564,20.837c5.708,5.712,12.657,8.562,20.841,8.562c8.186,0,15.085-2.851,20.699-8.562    c5.618-5.711,8.425-12.658,8.425-20.837V183.005c0-7.996-2.857-14.847-8.565-20.555C80.794,156.74,73.939,153.884,65.947,153.884z    " fill="#FFFFFF"></path> <path class="svg-footer" d="M106.494,349.457c0,8.754,3.046,16.177,9.136,22.269c6.091,6.085,13.512,9.13,22.27,9.13h21.128l0.288,64.81    c0,8.186,2.855,15.129,8.564,20.841c5.708,5.711,12.562,8.565,20.555,8.565c8.188,0,15.133-2.854,20.844-8.565    c5.711-5.712,8.564-12.655,8.564-20.841v-64.81h39.397v64.81c0,8.186,2.854,15.129,8.562,20.841    c5.715,5.711,12.662,8.565,20.848,8.565c8.179,0,15.126-2.854,20.834-8.565c5.708-5.712,8.559-12.655,8.559-20.841v-64.81h21.416    c8.56,0,15.89-3.039,21.98-9.13c6.092-6.092,9.138-13.515,9.138-22.269V159.308H106.494V349.457z" fill="#FFFFFF"></path> <path class="svg-footer" d="M302.345,43.682L322.61,6.279c1.335-2.474,0.855-4.377-1.424-5.708c-2.478-1.143-4.38-0.572-5.708,1.714L294.918,39.97    c-18.082-7.994-37.205-11.991-57.384-11.991c-20.174,0-39.304,3.997-57.387,11.991L159.591,2.286    c-1.328-2.286-3.234-2.857-5.708-1.714c-2.285,1.331-2.758,3.234-1.426,5.708l20.271,37.402    c-20.559,10.467-36.923,25.076-49.108,43.824c-12.181,18.749-18.273,39.259-18.273,61.525h264.095    c0-22.266-6.091-42.777-18.273-61.525C338.982,68.758,322.717,54.148,302.345,43.682z M185.144,98.068    c-2.187,2.19-4.803,3.284-7.849,3.284c-3.046,0-5.614-1.093-7.71-3.284c-2.091-2.187-3.14-4.805-3.14-7.85    c0-3.046,1.049-5.664,3.14-7.854c2.093-2.19,4.665-3.282,7.71-3.282c3.042,0,5.659,1.091,7.849,3.282    c2.19,2.19,3.284,4.808,3.284,7.854C188.428,93.264,187.334,95.878,185.144,98.068z M305.489,98.068    c-2.098,2.19-4.668,3.284-7.713,3.284c-3.046,0-5.657-1.093-7.848-3.284c-2.19-2.187-3.281-4.805-3.281-7.85    c0-3.046,1.091-5.664,3.281-7.854c2.19-2.19,4.802-3.282,7.848-3.282c3.045,0,5.615,1.091,7.713,3.282    c2.088,2.19,3.139,4.808,3.139,7.854C308.628,93.264,307.58,95.878,305.489,98.068z" fill="#FFFFFF"></path> <path class="svg-footer" d="M429.964,162.306c-5.708-5.614-12.655-8.422-20.841-8.422c-7.991,0-14.843,2.808-20.551,8.422    c-5.711,5.616-8.568,12.517-8.568,20.699v122.772c0,8.179,2.857,15.126,8.568,20.837c5.708,5.712,12.56,8.562,20.551,8.562    c8.186,0,15.133-2.851,20.841-8.562c5.715-5.711,8.568-12.658,8.568-20.837V183.005    C438.532,174.822,435.679,167.921,429.964,162.306z" fill="#FFFFFF"></path> </svg> </a><a href="https://mobile.openbank.ru/" style="  margin-left: 8px;">Мобильное приложение</a></li-->
+                                 <li><a class="footer-link" href="/about" target="_blank">Общая информация</a></li>
+                                 <li><a class="footer-link" href="/about/supervisory" target="_blank">Корпоративное управление</a></li>
+                                 <!--li><a class='footer-link' href="http://ir.open.ru/reports" target="_blank">Корпоративный бизнес</a></li-->
+                                 <li><a class="footer-link" href="/about/holders" target="_blank">Акционеры</a></li>
+                                 <li><a class="footer-link" href="https://ir.open.ru/reports" target="_blank">Отчетность</a></li>
+                                 <li><a class="footer-link" href="/about/tenders" target="_blank">Тендеры</a></li>
+                                 <li><a class="footer-link" href="https://ir.open.ru/" target="_blank">Инвесторам и акционерам</a></li>
+                                 <li><a class="footer-link" href="https://www.open.ru/disclosure" target="_blank">Раскрытие информации участником рынка ценных бумаг</a></li>
+                                 <li><a class="footer-link" href="https://open.ru/about/logo" target="_blank">Логотип банка</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="columns-2 increase-width">
+                           <div class="menu">
+                              <div class="footer-links">
+                                 <div class="main-link">
+                                    <span class="svg_container">
+                                       <svg height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                          <defs>
+                                             <lineargradient id="a" x1="50%" x2="50%" y1="0%" y2="100%">
+                                                <stop offset="0%" stop-color="#F78910 "></stop>
+                                                <stop offset="100%" stop-color="#F47301"></stop>
+                                             </lineargradient>
+                                          </defs>
+                                          <g fill="none" fill-rule="evenodd">
+                                             <circle cx="10" cy="10" fill="url(#a)" r="10"></circle>
+                                             <path d="M3.81 10.1s5.115 1.239 6.107 6.09l4.336-10.198c.101-.237-.001-.35-.247-.246L3.81 10.1z" fill="#FFF"></path>
+                                          </g>
+                                       </svg>
+                                    </span>
+                                    <a href="https://rocketbank.ru/?from=openru" target="_blank">Рокетбанк</a>
+                                 </div>
+                                 <div class="main-link"><span class="svg_container"><img alt="точка" height="20px" src="storage/files/pictures/6428/content_Logo_Tochka_64px.png" width="20px" /> </span> <a href="https://tochka.com/?from=openru" target="_blank">Точка</a></div>
+                                 <div class="main-link"><span class="svg_container"><img alt="точка" height="20px" src="storage/files/pictures/6434/content_Logo_OpenFactoring_64px.png" width="20px" /></span> <a href="https://openfactoring.ru/?from=openru" target="_blank">Открытие факторинг</a></div>
+                              </div>
+                              <span>Мы в соцсетях</span>
+                              <ul>
+                                 <li>
+                                    <a href="https://www.facebook.com/otkritie" target="_blank">
+                                       <svg height="15px" style="enable-background:new 0 0 155.139 155.139;" version="1.1" viewbox="0 0 155.139 155.139" width="15px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                                          <path class="svg-footer" d="M89.584,155.139V84.378h23.742l3.562-27.585H89.584V39.184   c0-7.984,2.208-13.425,13.67-13.425l14.595-0.006V1.08C115.325,0.752,106.661,0,96.577,0C75.52,0,61.104,12.853,61.104,36.452   v20.341H37.29v27.585h23.814v70.761H89.584z" fill="#FFFFFF"></path>
+                                       </svg>
+                                    </a>
+                                    <a href="https://www.facebook.com/otkritie" style="    margin-left: 8px;" target="_blank"> Facebook</a>
+                                 </li>
+                                 <li>
+                                    <a href="https://vk.com/otkritiecorp">
+                                       <svg height="15px" style="enable-background:new 0 0 548.358 548.358;" version="1.1" viewbox="0 -50 548.358 548.358" width="15px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                                          <path class="svg-footer" d="M545.451,400.298c-0.664-1.431-1.283-2.618-1.858-3.569c-9.514-17.135-27.695-38.167-54.532-63.102l-0.567-0.571   l-0.284-0.28l-0.287-0.287h-0.288c-12.18-11.611-19.893-19.418-23.123-23.415c-5.91-7.614-7.234-15.321-4.004-23.13   c2.282-5.9,10.854-18.36,25.696-37.397c7.807-10.089,13.99-18.175,18.556-24.267c32.931-43.78,47.208-71.756,42.828-83.939   l-1.701-2.847c-1.143-1.714-4.093-3.282-8.846-4.712c-4.764-1.427-10.853-1.663-18.278-0.712l-82.224,0.568   c-1.332-0.472-3.234-0.428-5.712,0.144c-2.475,0.572-3.713,0.859-3.713,0.859l-1.431,0.715l-1.136,0.859   c-0.952,0.568-1.999,1.567-3.142,2.995c-1.137,1.423-2.088,3.093-2.848,4.996c-8.952,23.031-19.13,44.444-30.553,64.238   c-7.043,11.803-13.511,22.032-19.418,30.693c-5.899,8.658-10.848,15.037-14.842,19.126c-4,4.093-7.61,7.372-10.852,9.849   c-3.237,2.478-5.708,3.525-7.419,3.142c-1.715-0.383-3.33-0.763-4.859-1.143c-2.663-1.714-4.805-4.045-6.42-6.995   c-1.622-2.95-2.714-6.663-3.285-11.136c-0.568-4.476-0.904-8.326-1-11.563c-0.089-3.233-0.048-7.806,0.145-13.706   c0.198-5.903,0.287-9.897,0.287-11.991c0-7.234,0.141-15.085,0.424-23.555c0.288-8.47,0.521-15.181,0.716-20.125   c0.194-4.949,0.284-10.185,0.284-15.705s-0.336-9.849-1-12.991c-0.656-3.138-1.663-6.184-2.99-9.137   c-1.335-2.95-3.289-5.232-5.853-6.852c-2.569-1.618-5.763-2.902-9.564-3.856c-10.089-2.283-22.936-3.518-38.547-3.71   c-35.401-0.38-58.148,1.906-68.236,6.855c-3.997,2.091-7.614,4.948-10.848,8.562c-3.427,4.189-3.905,6.475-1.431,6.851   c11.422,1.711,19.508,5.804,24.267,12.275l1.715,3.429c1.334,2.474,2.666,6.854,3.999,13.134c1.331,6.28,2.19,13.227,2.568,20.837   c0.95,13.897,0.95,25.793,0,35.689c-0.953,9.9-1.853,17.607-2.712,23.127c-0.859,5.52-2.143,9.993-3.855,13.418   c-1.715,3.426-2.856,5.52-3.428,6.28c-0.571,0.76-1.047,1.239-1.425,1.427c-2.474,0.948-5.047,1.431-7.71,1.431   c-2.667,0-5.901-1.334-9.707-4c-3.805-2.666-7.754-6.328-11.847-10.992c-4.093-4.665-8.709-11.184-13.85-19.558   c-5.137-8.374-10.467-18.271-15.987-29.691l-4.567-8.282c-2.855-5.328-6.755-13.086-11.704-23.267   c-4.952-10.185-9.329-20.037-13.134-29.554c-1.521-3.997-3.806-7.04-6.851-9.134l-1.429-0.859c-0.95-0.76-2.475-1.567-4.567-2.427   c-2.095-0.859-4.281-1.475-6.567-1.854l-78.229,0.568c-7.994,0-13.418,1.811-16.274,5.428l-1.143,1.711   C0.288,140.146,0,141.668,0,143.763c0,2.094,0.571,4.664,1.714,7.707c11.42,26.84,23.839,52.725,37.257,77.659   c13.418,24.934,25.078,45.019,34.973,60.237c9.897,15.229,19.985,29.602,30.264,43.112c10.279,13.515,17.083,22.176,20.412,25.981   c3.333,3.812,5.951,6.662,7.854,8.565l7.139,6.851c4.568,4.569,11.276,10.041,20.127,16.416   c8.853,6.379,18.654,12.659,29.408,18.85c10.756,6.181,23.269,11.225,37.546,15.126c14.275,3.905,28.169,5.472,41.684,4.716h32.834   c6.659-0.575,11.704-2.669,15.133-6.283l1.136-1.431c0.764-1.136,1.479-2.901,2.139-5.276c0.668-2.379,1-5,1-7.851   c-0.195-8.183,0.428-15.558,1.852-22.124c1.423-6.564,3.045-11.513,4.859-14.846c1.813-3.33,3.859-6.14,6.136-8.418   c2.282-2.283,3.908-3.666,4.862-4.142c0.948-0.479,1.705-0.804,2.276-0.999c4.568-1.522,9.944-0.048,16.136,4.429   c6.187,4.473,11.99,9.996,17.418,16.56c5.425,6.57,11.943,13.941,19.555,22.124c7.617,8.186,14.277,14.271,19.985,18.274   l5.708,3.426c3.812,2.286,8.761,4.38,14.853,6.283c6.081,1.902,11.409,2.378,15.984,1.427l73.087-1.14   c7.229,0,12.854-1.197,16.844-3.572c3.998-2.379,6.373-5,7.139-7.851c0.764-2.854,0.805-6.092,0.145-9.712   C546.782,404.25,546.115,401.725,545.451,400.298z" fill="#FFFFFF"></path>
+                                       </svg>
+                                    </a>
+                                    <a href="https://vk.com/otkritiecorp" style="    margin-left: 8px;" target="_blank"> ВКонтакте</a>
+                                 </li>
+                                 <li>
+                                    <a href="https://www.youtube.com/user/otkritiebank">
+                                       <svg height="14px" style="enable-background:new 0 0 215.094 215.094;" version="1.1" viewbox="0 -20 215.094 215.094" width="15px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                                          <path class="svg-footer" d="M28.302,32.547C12.673,32.547,0,45.22,0,60.849v93.396c0,15.629,12.673,28.302,28.302,28.302h158.491  c15.629,0,28.301-12.673,28.301-28.302V60.849c0-15.629-12.672-28.302-28.301-28.302H28.302z M90.547,145.583V69.511l50,38.036  L90.547,145.583z" fill="#FFFFFF"></path>
+                                       </svg>
+                                    </a>
+                                    <a href="https://www.youtube.com/user/otkritiebank" style="    margin-left: 8px;" target="_blank">YouTube</a>
+                                 </li>
+                              </ul>
+                              <p>&nbsp;</p>
+                           </div>
+                        </div>
+                        <div class="info feedback"><a class="feedback feedback-popup-button" href="javascript:void(0)">Задать вопрос</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="columns-row">
+                  <div class="columns-4 mr-5">
+                     <div class="info">© 2014-2018, ПАО Банк «ФК Открытие».<br>Генеральная лицензия Банка России № 2209 от 24.11.2014<br />115114,&nbsp;г.&nbsp;Москва,&nbsp;ул.&nbsp;Летниковская,&nbsp;д.&nbsp;2,&nbsp;стр.&nbsp;4</div>
+                  </div>
+                  <div class="columns-4">
+                     <div class="info"><a class="disclosure" href="http://www.e-disclosure.ru/portal/company.aspx?id=235">Центр раскрытия корпоративной информации</a><br /><a class="disclosure" href="http://otkritiefc.ru/For_CBRF">Максимальные процентные ставки по вкладам физических лиц</a></div>
+                  </div>
+                  <div class="columns-4">
+                     <div class="info">Банк «Открытие» &mdash; зарегистрированный товарный <br> знак ПАО Банк «Финансовая Корпорация Открытие»</div>
+                  </div>
+               </div>
+               <div class="columns-row">
+                  <div class="columns-12">
+                     <div class="info">ПАО Банк «ФК Открытие» <a class="disclosure" href="https://www.open.ru/cookie">использует файлы «cookie»</a> с целью персонализации сервисов и повышения удобства пользования веб-сайтом. «Cookie» представляют собой небольшие файлы, содержащие информацию о предыдущих посещениях веб-сайта. Если вы не хотите использовать файлы «cookie», измените настройки браузера.</div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+      </div>
+      <!-- Facebook Pixel Code -->
+      <script>
+         !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+         n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+         n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+         t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+         document,'script','https://connect.facebook.net/en_US/fbevents.js');
+         
+         fbq('init', '1119867324718486');
+         fbq('track', "PageView");
+      </script>
+      <noscript><img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1119867324718486&ev=PageView&noscript=1"
+         /></noscript>
+      <!-- End Facebook Pixel Code -->
+   </body>
+</html>
