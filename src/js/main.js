@@ -75,52 +75,46 @@ $(document).ready(function(){
 
 
 
-	valueOfDashOffset = 80;
-	var svgCircle = "<svg width='22' height='22' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 32 32'><circle class='circle' r='12' cx='14' cy='14' stroke='rgba(255, 255, 255, 1)' fill='transparent' stroke-width='4.5' stroke-dasharray='80' stroke-dashoffset='80'></circle></svg>";
+	var valueOfDashOffset = 60;
+	var timerProgressBar;
+	var svgCircle = "<svg width='25' height='24' xmlns='http://www.w3.org/2000/svg''><circle class='circle' r='8.5' cx='11' cy='10' stroke='rgba(255, 255, 255, 1)' fill='transparent' stroke-width='3' stroke-dasharray='60' stroke-dashoffset='60'></circle></svg>";
 	//Сладйре для направлений с кнопкой скачать презентацию
-	// $(".path-slider").on('init', function(slick){
-	// 	$('.path-slider .slick-dots .slick-active').append(svgCircle);
-	// 	var $circle = $('.path-slider .slick-dots .slick-active').children("svg").children(".circle")[0];
-	// 	$circle.setAttribute("stroke-dashoffset", 80);
-	// 	var timer = setInterval(function(){
-	// 		var value = parseInt($circle.getAttribute("stroke-dashoffset"));
-	// 		value--;	
-	// 		$circle.setAttribute("stroke-dashoffset", value);	
-	// 		if($circle.getAttribute("stroke-dashoffset") <= 6) {
-	// 			clearInterval(timer);
-	// 			$('.path-slider').slick('slickNext');
-	// 		}
-	// 	}, 60);
-	// });
+	$(".path-slider").on('init', function(slick){
+		$('.path-slider .slick-dots .slick-active').append(svgCircle);
+		var $circle = $('.path-slider .slick-dots .slick-active').children("svg").children(".circle")[0];
+		$circle.setAttribute("stroke-dashoffset", valueOfDashOffset);
+		var value = valueOfDashOffset;
+		timerProgressBar = setInterval(function(){
+			value--;	
+			$circle.setAttribute("stroke-dashoffset", value);	
+			if($circle.getAttribute("stroke-dashoffset") <= 6) {
+				clearInterval(timerProgressBar);
+				$('.path-slider').slick('slickNext');
+			}
+		}, 70);
+	});
 	$(".path-slider").slick({
 		dots: true
 	});
-
-	// // Удаление прогресс бара для точек в слайдере
-	$(".path-slider .slick-arrow, .path-slider .slick-dots li").on("click", function(){
-		$(".slick-dots li").children("svg").remove();
-	});
-	// // Вставка svg прогресс бара для точек слайдера
-
-	
+	//  Вставка svg прогресс бара для слайд точекера
 	$(".path-slider").on('beforeChange', function(event, slick, currentSlide){
 		$(".path-slider .slick-dots li").children("svg").remove();
-		valueOfDashOffset = 80;
+		clearInterval(timerProgressBar);
 	});
 	$(".path-slider").on('afterChange', function(slick, currentSlide){
+		clearInterval(timerProgressBar);
 		$('.path-slider .slick-dots .slick-active').append(svgCircle);
 		var $circle = $('.path-slider .slick-dots .slick-active').children("svg").children(".circle")[0];
-		$($circle).attr("stroke-dashoffset", valueOfDashOffset);
-		var timer = setInterval(function(){
-			valueOfDashOffset--;	
-			$($circle).attr("stroke-dashoffset", valueOfDashOffset);	
-			console.log(valueOfDashOffset);
+		var value = valueOfDashOffset;
+		timerProgressBar = setInterval(function(){
+			$($circle).attr("stroke-dashoffset", value);	
+			value--;	
+			console.log(value);
 			if($($circle).attr("stroke-dashoffset") <= 6) {
-				clearInterval(timer);
+				clearInterval(timerProgressBar);
 				$('.path-slider').slick('slickNext');
-				valueOfDashOffset = 80;
 			}
-		}, 200);
+		}, 70);
 	});
 
 	// Слайдер для направлений с мальеньким размером
