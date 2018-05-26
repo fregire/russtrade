@@ -278,6 +278,38 @@ $(document).ready(function(){
 		]
 	});
 
+	var numbers = $('.company__num span');
+	for(var i = 0; i < numbers.length; i++){
+		var currentNumber = $(numbers[i]).text();
+		raiseNumber(currentNumber, numbers[i]);
+	}
+
+	function raiseNumber(value, elem){
+		$({numberValue: 0}).animate({numberValue: value}, { 
+			duration: 2000, // Скорость анимации, где 500 = 0,5 одной секунды, то есть 500 миллисекунд 
+			easing: "linear", 
+			step: function(val) {  
+				$(elem).html(Math.ceil(val)); // Блок, где необходимо сделать анимацию 
+			} 
+		});
+	}
+	//var numb_start = $(".price").text(); // Получаем начальное число 
+	
+	// for(var i = 0; i < numbers.length; i++){
+	// 	var currentNumber = parseInt(numbers[i].textContent);
+	// 	$({numberValue: 0}).animate({numberValue: currentNumber}, {
+	// 	    duration: 2000,
+	// 	    easing: 'linear',
+	// 	    step: function() { 
+	// 	        $(numbers[i]).text(Math.ceil(this.numberValue)); 
+	// 	    }
+	// 	});
+	// }
+	// for(var i = 0; i < currentNumber.length; i++){
+	// 
+	// }
+
+
 
 	
 
