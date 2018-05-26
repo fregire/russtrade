@@ -325,6 +325,7 @@ body {
 	margin-bottom: 0;
 
 	list-style: none;
+	z-index: 10;
 }
 
 .menu__list li {
@@ -1206,14 +1207,107 @@ body {
 }
 
 .scheme__slider {
+	position: relative;
+
 	margin-bottom: 40px;
+	height: 200px;
 }
+
+
+.scheme__group {
+	top: 0;
+	left: 0;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+
+	z-index: -1;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 400ms;
+}
+
+.scheme__group--active {
+	z-index: 12;
+	position: static;
+
+	visibility: visible;
+	opacity: 1;
+}
+
+.scheme__group .slick-slide {
+	padding-top: 20px;
+
+	transition: all 400ms;
+	outline: none;
+}
+.scheme__group .slick-center {
+	transform: scale(1.2);
+}
+
+.scheme__group .slick-arrow {
+	top: 45%;
+	
+	background-image: url(../img/svg/arrow-right_scheme.svg);
+	border: none;
+}
+
+.scheme__group .slick-next {
+	right: -40px;
+}
+
+.scheme__group .slick-prev {
+	left: -40px;
+}
+
+.scheme__group .slick-pr
+.scheme__item {
+	text-align: center;
+}
+
+.scheme__item * {
+	display: inline-block;
+}
+
+.scheme__item-name {
+	display: block;
+	margin: 0 auto;
+
+	color: #3f3f3f;
+	font-size: 12px;
+	font-weight: 600;
+	-webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.scheme__group .slick-list {
+	padding: 0!important;
+	margin: 0 auto;
+	height: 100%;
+}
+
+
+.opacity_025 {
+	opacity: .25;
+}
+
+.opacity_06 {
+	opacity: .6;
+}
+
+
+.opacity_08 {
+	opacity: .8;
+}
+
 
 .scheme__tabs {
 	position: relative;
 
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	margin: 0 -30px;
 
 	border-bottom: 1px solid #ddd;
@@ -1249,51 +1343,6 @@ body {
 	transition: all 400ms;
 }
 
-
-.scheme__group .slick-slide {
-	padding-top: 20px;
-
-	transition: transform 400ms;
-	outline: none;
-}
-.scheme__group .slick-center {
-	transform: scale(1.2);
-}
-
-.scheme__item {
-	text-align: center;
-}
-
-.scheme__item * {
-	display: inline-block;
-}
-
-.scheme__item-name {
-	max-width: 88px;
-
-	color: #3f3f3f;
-	font-size: 12px;
-	font-weight: 600;
-}
-
-.scheme__group .slick-list {
-	padding: 0!important;
-	margin: 0 auto;
-}
-
-
-.opacity_025 {
-	opacity: .25;
-}
-
-.opacity_06 {
-	opacity: .6;
-}
-
-
-.opacity_08 {
-	opacity: .8;
-}
 
 
 /* Block - main-scheme */

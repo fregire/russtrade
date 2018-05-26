@@ -7,6 +7,11 @@ $(document).ready(function(){
 			} 
 		});
 	});
+	// При изменении размеров окна атрибут style удаляется у меню,
+	// чтобы меню могло вернуться в исходное положение
+	$(window).resize(function(){
+		$('.menu__list').removeAttr("style");
+	})
 
 	// Открытие/закрытие записи блога
 	$(".blog__more").click(function(){
@@ -83,24 +88,43 @@ $(document).ready(function(){
 	$tabLine.css("width", $(document.querySelector(".scheme__tab")).width());
 	$(".scheme__tab").first().addClass("scheme__tab--active");
 
+	// Первый пункт активен и виден пользователю
+	$($(".scheme__group")[0]).addClass("scheme__group--active");
+
 	// При клике на один из пунктов линия становится под этот пункт
 	$(".scheme__tab").on("click", function(){
+		var leftPos = $(this).position().left;
+		var widthLine = $(this).width();
+		var index = $(this).attr("data-index");
+		var marginTabs = 20;
+
+		$(".scheme__group").removeClass("scheme__group--active");
 		// Очищение активного класса у всех элементов, 
 		// чтобы затем добавить его к текущему пункту
 		$('.scheme__tab').removeClass("scheme__tab--active");
-		var leftPos = $(this).position().left;
-		var widthLine = $(this).width();
 
+		if($(window).width() <= 550){
+			// top у линии(обводки снизу) равен позиции элемента по отношению 
+			// к родителю + его высота, минус 6 - это высота самой обводки
+			var topPos = $(this).position().top + $(this).outerHeight() - 6;
+			$($tabLine).css("top", topPos);
+			// В медиа прописаны margin слева и справа для элементов
+			// при экранах меньше чем 550. Поэтому к ширине добавляем эти margin
+			widthLine += marginTabs;
+		};
+
+		$($(".scheme__group")[index]).addClass("scheme__group--active");
 		$(this).addClass("scheme__tab--active");
 		$($tabLine).css("left", leftPos);
 		$($tabLine).css("width", widthLine);
 	});
 
 	function addOpacitySlick(){
+		// Добавляем всем класс с прозрачностью .25
 	    $(".scheme__group .slick-slide").addClass("opacity_025");
+		// Очищаем все классы для пунктов
 		$('.scheme__group .slick-slide').removeClass('opacity_08');
 		$('.scheme__group .slick-slide').removeClass('opacity_06');
-		
 		$('.scheme__group .slick-current').removeClass(["opacity_06", "opacity_08", "opacity_025"])
 
 		$('.scheme__group .slick-current').next().addClass("opacity_08");
@@ -111,19 +135,46 @@ $(document).ready(function(){
 
 	    $('.scheme__group .slick-current').next().next().next().addClass("opacity_025");
 	    $('.scheme__group .slick-current').prev().prev().prev().addClass("opacity_025");
-	}
+	};
+
 	$(".scheme__group").on("init", addOpacitySlick);
 	// Активация слайдера для Схемы работы
 	$(".scheme__group").slick({
 		slidesToShow: 7,
 		centerMode: true,
-		focusOnSelect: true
+		focusOnSelect: true,
+		responsive: 
+		[{
+		  breakpoint: 1100,
+	      settings: {
+	        slidesToShow: 5
+	      }
+		},
+		{
+		  breakpoint: 800,
+	      settings: {
+	        slidesToShow: 3
+	      }
+	    },
+	    {
+	    	breakpoint: 500,
+	    	settings: {
+	    		slidesToShow: 1,
+	    		centerMode: true
+	    	}
+	    }]
 	});
-
-
-	//$(".scheme__group").on("beforeChange", clearClassesSlick);
 	$(".scheme__group").on("afterChange", addOpacitySlick);	
 
+	for(var i = 0; i < $('.scheme__group').length; i++){
+		var $groupSlides = $('.scheme__group .slick-track')[i];
+		console.log($($groupSlides).children().length); 
+		if($($groupSlides).children().length <= 7) {
+			$($('.scheme__group')[i].slick('focusOnSelect', false));
+			$($groupSlides).children().removeClass(["opacity_06", "opacity_08", "opacity_025"]);
+			console.log($($groupSlides).children()); 
+		}
+	}
 	// Слайдер с прогресс барами вместо точек
 	var valueOfDashOffset = 60;
 	var timerProgressBar;

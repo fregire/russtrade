@@ -171,6 +171,12 @@
 	}
 
 
+	/*** Страница - услуги ***/
+	.scheme__group .slick-slide {
+		height: 170px;
+	}
+
+
 }
 
 @media screen and (max-width: 550px){
@@ -227,9 +233,35 @@
 	.adv__item {
 		margin-top: 15px;
 	}
-	.adv__headline {
-		display: none;
+	/*** Страница - услуги ***/
+	.scheme__tabs {
+		justify-content: space-around;
 	}
+
+	.scheme__tab {
+		margin: 0 10px;
+		width: calc(49% - 10px);
+	}
+	.scheme-slider__content {
+		padding: 0 60px;
+	}
+
+	.scheme-slider .slick-prev {
+		left: 5px;
+	}
+
+	.scheme-slider .slick-next {
+		right: 5px;
+	}
+
+	.scheme__group .slick-prev {
+		left: -30px;
+	}
+
+	.scheme__group .slick-next {
+		right: -30px;
+	}
+
 
 }
 
@@ -258,5 +290,31 @@
 
 	.footer__social a {
 		width: 49%;
+	}
+
+	/*** Страница - услуги ***/
+	.services__scheme {
+		padding: 0 15px;
+	}
+	.scheme__content {
+		padding: 0;
+	}
+	.scheme__group .slick-prev {
+		left: -10px;
+	}
+	.scheme__group .slick-next {
+		right: -10px;
+	}
+	/*** Страница - услуги ***/
+	.scheme__tab {
+		width: 100%;
+	}
+	.scheme-slider__content {
+		padding: 0 10px;
+	}
+
+	.scheme-slider .slick-arrow {
+		top: auto;
+	 	bottom: 30px;
 	}
 }
