@@ -213,9 +213,7 @@ $(document).ready(function(){
 			if($($groupSlides).children().length <= 7) {
 				$($groupSlides).addClass("without-translate");	
 				$($groupSlides).children().addClass("scheme__item-usual");
-			} else {
-				console.log(g++);
-			}
+			} 
 		};	
 	};
 	centerIfNotASlider();
