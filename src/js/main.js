@@ -76,6 +76,25 @@ $(document).ready(function(){
 			$(this).removeClass("checkbox-field--checked");
 		}
 	});
+	
+	//// Копирование в буфер обмена телефона ////
+
+	var copyTelBtn = document.querySelectorAll('.phone'); 
+	for(var i = 0; i < copyTelBtn.length; i++){
+		copyTelBtn[i].addEventListener('click', function(event) {  
+		  // Выборка ссылки с электронной почтой 
+		  var phoneNumber = this; 
+		  var range = document.createRange();  
+		  range.selectNode(phoneNumber);  
+		  window.getSelection().addRange(range); 
+		  window.getSelection().removeAllRanges();  
+		  window.getSelection().addRange(range);
+		  document.execCommand('copy'); 
+		  window.getSelection().removeAllRanges(); 
+		});
+
+
+	};
 
 	///// Слайдер для страницы контактов ////
 
