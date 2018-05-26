@@ -989,6 +989,9 @@ body {
   text-decoration: none;
 }
 /*** Страница - услуги ***/
+.services {
+  padding-bottom: 50px;
+}
 .services__inner {
   max-width: 1035px;
   padding: 0 30px;
@@ -1096,8 +1099,11 @@ body {
 .scheme__group .slick-pr .scheme__item {
   text-align: center;
 }
-.scheme__item * {
-  display: inline-block;
+.scheme__item-usual {
+  opacity: 1!important;
+  -webkit-transform: scale(1) !important;
+      -ms-transform: scale(1) !important;
+          transform: scale(1) !important;
 }
 .scheme__item-name {
   display: block;
@@ -1247,4 +1253,8 @@ body {
 }
 .scheme-slider .slick-next {
   right: 5%;
+}
+.without-translate {
+  -webkit-transform: translate3d(0, 0, 0) !important;
+          transform: translate3d(0, 0, 0) !important;
 }

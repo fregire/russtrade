@@ -1,5 +1,6 @@
 $(document).ready(function(){
-	// Адаптивное меню 
+	//// Адаптивное меню  ////
+
 	$(".header .menu__btn, .menu__title").click(function(){
 		$(this).siblings(".header__menu-list").slideToggle(300, function(){
 			if($(this).css("display") === "none"){
@@ -13,7 +14,8 @@ $(document).ready(function(){
 		$('.menu__list').removeAttr("style");
 	})
 
-	// Открытие/закрытие записи блога
+	////  Открытие/закрытие записи блога ////
+
 	$(".blog__more").click(function(){
 		if($(this).siblings(".blog__text").hasClass("visually-hidden")){
 			$(this).siblings(".blog__intro").addClass("visually-hidden");
@@ -27,7 +29,8 @@ $(document).ready(function(){
 
 	});
 
-	// Форма поиска на сайте
+	////  Форма поиска на сайте ////
+
 	$(".options__search-btn").click(function(e) {
 		var btn = $(this);
 		if($(this).parent().hasClass("options__search--closed")){
@@ -62,7 +65,8 @@ $(document).ready(function(){
 	});
 
 
-	// Чекбокс для поиска в новостях
+	////  Чекбокс для поиска в новостях ////
+
 	$(".checkbox-field").click(function(){
 		if($(this).children(".checkbox-field__checkbox").prop("checked") === false){
 			$(this).children(".checkbox-field__checkbox").prop("checked", true);
@@ -73,13 +77,14 @@ $(document).ready(function(){
 		}
 	});
 
-	//Слайдер для страницы контактов
+	///// Слайдер для страницы контактов ////
+
 	$(".address__slider").slick({
 		slidesToShow: 1
 	});
 
 
-	// Табы(вкладки) для схемы работы со слайдером
+	//// Табы(вкладки) для схемы работы со слайдером ////
 
 	// Линия, которая перемещается под элементами
 	var $tabLine = $(".scheme__tab-underline");
@@ -92,13 +97,17 @@ $(document).ready(function(){
 	$($(".scheme__group")[0]).addClass("scheme__group--active");
 
 	// При клике на один из пунктов линия становится под этот пункт
-	$(".scheme__tab").on("click", function(){
+	$(".scheme__tab").on("click", moveUnderlineTab);
+	function moveUnderlineTab(){
 		var leftPos = $(this).position().left;
 		var widthLine = $(this).width();
-		var index = $(this).attr("data-index");
+
+		// Индекс, чтобы связать со слайдером сверху
+		var indexOfTab = $(this).attr("data-index");
 		var marginTabs = 20;
 
 		$(".scheme__group").removeClass("scheme__group--active");
+
 		// Очищение активного класса у всех элементов, 
 		// чтобы затем добавить его к текущему пункту
 		$('.scheme__tab').removeClass("scheme__tab--active");
@@ -113,28 +122,36 @@ $(document).ready(function(){
 			widthLine += marginTabs;
 		};
 
-		$($(".scheme__group")[index]).addClass("scheme__group--active");
+		// Для слайдера с заданным индексом добавляем класс
+		// чтобы он появился
+		$($(".scheme__group")[indexOfTab]).addClass("scheme__group--active");
+		// Делаем вкладку активной и перемещаем обводку снизу
 		$(this).addClass("scheme__tab--active");
 		$($tabLine).css("left", leftPos);
 		$($tabLine).css("width", widthLine);
-	});
+	}
+	//// Слайдер с иконками ////
 
+	// Функция для изменения прозрачности в слайдере - страницы 'Услуги' 
 	function addOpacitySlick(){
-		// Добавляем всем класс с прозрачностью .25
+		// Добавляем всем класс с прозрачностью 25%
 	    $(".scheme__group .slick-slide").addClass("opacity_025");
-		// Очищаем все классы для пунктов
+		// Очищаем все классы для элементов
 		$('.scheme__group .slick-slide').removeClass('opacity_08');
 		$('.scheme__group .slick-slide').removeClass('opacity_06');
+		// У текущего(посередине) элемента убираем все классы
+		// Чтобы он был с прозрачностью 100%
 		$('.scheme__group .slick-current').removeClass(["opacity_06", "opacity_08", "opacity_025"])
 
+		// Добавляем следующему и предыдущему элменту
+		// после текущего прозрачность в 80%
 		$('.scheme__group .slick-current').next().addClass("opacity_08");
 		$('.scheme__group .slick-current').prev().addClass("opacity_08");
 
+
+		//прозрачность в 60%
 	    $('.scheme__group .slick-current').next().next().addClass("opacity_06");
 	    $('.scheme__group .slick-current').prev().prev().addClass("opacity_06");
-
-	    $('.scheme__group .slick-current').next().next().next().addClass("opacity_025");
-	    $('.scheme__group .slick-current').prev().prev().prev().addClass("opacity_025");
 	};
 
 	$(".scheme__group").on("init", addOpacitySlick);
@@ -166,43 +183,41 @@ $(document).ready(function(){
 	});
 	$(".scheme__group").on("afterChange", addOpacitySlick);	
 
-	for(var i = 0; i < $('.scheme__group').length; i++){
-		var $groupSlides = $('.scheme__group .slick-track')[i];
-		if($($groupSlides).children().length <= 7) {
-			$($groupSlides).children().removeClass(["opacity_06", "opacity_08", "opacity_025"]);
-			// TODO: Исправить клик на слайдер если недостаточно слайдов
-			$($groupSlides).children().addClass("");
-			console.log($($groupSlides).children()); 
-		}
-	}
-	// Слайдер с прогресс барами вместо точек
-	var valueOfDashOffset = 60;
-	var timerProgressBar;
-	var svgCircle = "<svg width='25' height='24' xmlns='http://www.w3.org/2000/svg''><circle class='circle' r='8.5' cx='11' cy='10' stroke='rgba(255, 255, 255, 1)' fill='transparent' stroke-width='3' stroke-dasharray='60' stroke-dashoffset='60'></circle></svg>";
-	//Сладйре для направлений с кнопкой скачать презентацию
-	$(".progress-slider").on('init', function(slick){
-		$('.progress-slider .slick-dots .slick-active').append(svgCircle);
-		var $circle = $('.progress-slider .slick-dots .slick-active').children("svg").children(".circle")[0];
-		$circle.setAttribute("stroke-dashoffset", valueOfDashOffset);
-		var value = valueOfDashOffset;
-		timerProgressBar = setInterval(function(){
-			value--;	
-			$($circle).attr("stroke-dashoffset", value);	
-			if($($circle).attr("stroke-dashoffset") <= 6) {
-				clearInterval(timerProgressBar);
-				$('.progress-slider').slick('slickNext');
+	// Если в слайдере недостаточно слайдов (меньше 7)
+	// то мы перемещаем его в центр и убираем возможность 
+	// сделать фокус на элемент
+	function centerIfNotASlider(){
+		var g = 0;
+		for(var i = 0; i < $('.scheme__group').length; i++){
+			var $groupSlides = $('.scheme__group .slick-track')[i];
+			if($($groupSlides).children().length <= 7) {
+				$($groupSlides).addClass("without-translate");	
+				$($groupSlides).children().addClass("scheme__item-usual");
+			} else {
+				console.log(g++);
 			}
-		}, 70);
-	});
+		};	
+	};
+	centerIfNotASlider();
+	$(window).resize(centerIfNotASlider);
+
+	//// Слайдер с прогресс барами вместо точек ////
+	var valueOfDashOffset = 60;
+	var timerProgressBar; // Таймер для прогресс баров
+	var svgCircle = "<svg width='25' height='24' xmlns='http://www.w3.org/2000/svg''><circle class='circle' r='8.5' cx='11' cy='10' stroke='rgba(255, 255, 255, 1)' fill='transparent' stroke-width='3' stroke-dasharray='60' stroke-dashoffset='60'></circle></svg>";
+	//Слайдер с прогресс баром снизу
+	$(".progress-slider").on('init', moveSlidesWithProgressCircle);
 	$(".progress-slider").slick({
 		dots: true
 	});
 	//  Вставка svg прогресс бара для слайд точекера
-	$(".progress-slider").on('beforeChange', function(event, slick, currentSlide){
+	$(".progress-slider").on('beforeChange', function(){
 		$(".progress-slider .slick-dots li").children("svg").remove();
 		clearInterval(timerProgressBar);
 	});
-	$(".progress-slider").on('afterChange', function(slick, currentSlide){
+	$(".progress-slider").on('afterChange', moveSlidesWithProgressCircle);
+
+	function moveSlidesWithProgressCircle(){
 		clearInterval(timerProgressBar);
 		$('.progress-slider .slick-dots .slick-active').append(svgCircle);
 		var $circle = $('.progress-slider .slick-dots .slick-active').children("svg").children(".circle")[0];
@@ -215,9 +230,9 @@ $(document).ready(function(){
 				$('.progress-slider').slick('slickNext');
 			}
 		}, 70);
-	});
+	}
 
-	// Слайдер для направлений с мальеньким размером
+	//// Слайдер для направлений с мальеньким размером ////
 	$(".paths__our-ways").slick({
 		slidesToShow: 4,
 		responsive: [
@@ -248,7 +263,7 @@ $(document).ready(function(){
 
 
 });
-// Google карта 
+//// Google карта  ////
 var cities = document.querySelectorAll(".address__item-city");
 function initMap() {
     var uluru = {lat: -25.363, lng: 131.044};
