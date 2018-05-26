@@ -296,7 +296,7 @@ function initMap() {
       map: map,
       icon: '../img/geo-icon.png'
     });
-	for(let i = 0; i < cities.length; i++){
+	for(var i = 0; i < cities.length; i++){
 		cities[i].addEventListener("click", function(){
 			map = new google.maps.Map(document.querySelector('.address__map-main'), {
 		      zoom: 4,
