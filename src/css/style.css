@@ -22,8 +22,6 @@ body {
 img {
   max-width: 100%;
   height: auto;
-  /* Для IE */
-  border: none;
 }
 /* Block - visually-hidden */
 .visually-hidden {
@@ -301,7 +299,7 @@ img {
   padding: 0;
   outline: none;
   border: none;
-  background: url(../img/menu-icon.png) no-repeat;
+  background: url(../img/svg/menu.svg) no-repeat;
   background-position: center;
   background-size: 30px;
 }
@@ -579,11 +577,6 @@ img {
 }
 .blog__image {
   width: 425px;
-}
-.blog__intro,
-.blog__text {
-  /* Для IE 10 */
-  max-width: 600px;
 }
 .blog__more {
   margin-top: auto;
@@ -1339,4 +1332,14 @@ img {
 .without-translate {
   -webkit-transform: translate3d(0, 0, 0) !important;
           transform: translate3d(0, 0, 0) !important;
+}
+/* Для IE 10 */
+.blog__intro,
+.blog__text {
+  /* Для IE 10 */
+  max-width: 600px;
+}
+img {
+  /* Для IE */
+  border: none;
 }
