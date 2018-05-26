@@ -1254,6 +1254,11 @@ body {
 .scheme-slider .slick-next {
   right: 5%;
 }
+/*** Страница - politics ***/
+.politics {
+  padding: 110px 0;
+  text-align: center;
+}
 .without-translate {
   -webkit-transform: translate3d(0, 0, 0) !important;
           transform: translate3d(0, 0, 0) !important;
