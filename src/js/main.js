@@ -224,7 +224,7 @@ $(document).ready(function(){
 		var value = valueOfDashOffset;
 		timerProgressBar = setInterval(function(){
 			$($circle).attr("stroke-dashoffset", value);	
-			value--;	
+			value-=0.4;	
 			if($($circle).attr("stroke-dashoffset") <= 6) {
 				clearInterval(timerProgressBar);
 				$('.progress-slider').slick('slickNext');

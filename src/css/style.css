@@ -358,14 +358,34 @@ body {
 }
 .footer__directions a {
   width: 49%;
-  display: inline-block;
+  height: 50px;
   padding-top: 10px;
+}
+.footer__wrapper {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.footer__directions a,
+.footer__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer__directions a img {
+  display: inline-block;
+  vertical-align: middle;
 }
 .footer__social {
   width: 180px;
 }
 .footer__headline {
-  margin: 5px 0;
+  margin: 8px 0;
   color: #282828;
   font-size: 12px;
 }
@@ -671,6 +691,9 @@ body {
   display: table-cell;
   word-wrap: break-word;
   word-break: break-all;
+}
+.news__title:hover {
+  color: #008099;
 }
 /*** Страница поиска ***/
 /* Block - search */
