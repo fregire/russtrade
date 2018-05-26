@@ -22,7 +22,6 @@ img {
   height: auto;
   /* Для IE */
   border: none;
-  width: 100%;
 }
 /* Block - visually-hidden */
 .visually-hidden {
@@ -386,6 +385,7 @@ img {
 .footer__directions a img {
   display: inline-block;
   vertical-align: middle;
+  width: 100%;
 }
 .footer__social {
   width: 180px;
