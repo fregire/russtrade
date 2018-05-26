@@ -76,21 +76,22 @@ $(document).ready(function(){
 			$(this).removeClass("checkbox-field--checked");
 		}
 	});
-	
+
 	//// Копирование в буфер обмена телефона ////
 
 	var copyTelBtn = document.querySelectorAll('.phone'); 
 	for(var i = 0; i < copyTelBtn.length; i++){
-		copyTelBtn[i].addEventListener('click', function(event) {  
+		copyTelBtn[i].addEventListener('click', function(event) {
+		var selection = window.getSelection();  
 		  // Выборка ссылки с электронной почтой 
 		  var phoneNumber = this; 
 		  var range = document.createRange();  
 		  range.selectNode(phoneNumber);  
-		  window.getSelection().addRange(range); 
-		  window.getSelection().removeAllRanges();  
-		  window.getSelection().addRange(range);
+		  selection.addRange(range); 
+		  selection.removeAllRanges();  
+		  selection.addRange(range);
 		  document.execCommand('copy'); 
-		  window.getSelection().removeAllRanges(); 
+		  selection.removeAllRanges(); 
 		});
 
 
