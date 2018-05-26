@@ -111,6 +111,7 @@
   }
   .clients__item {
     max-width: 480px;
+    margin: 0 auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
