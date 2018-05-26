@@ -17,13 +17,13 @@ $(document).ready(function(){
 	////  Открытие/закрытие записи блога ////
 
 	$(".blog__more").click(function(){
-		if($(this).siblings(".blog__text").hasClass("visually-hidden")){
-			$(this).siblings(".blog__intro").addClass("visually-hidden");
-			$(this).siblings(".blog__text").removeClass("visually-hidden");
+		if($(this).siblings(".blog__text").hasClass("hidden")){
+			$(this).siblings(".blog__intro").addClass("hidden");
+			$(this).siblings(".blog__text").removeClass("hidden");
 			$(this).text("Свернуть обратно");	
 		} else {
-			$(this).siblings(".blog__intro").removeClass("visually-hidden");
-			$(this).siblings(".blog__text").addClass("visually-hidden");
+			$(this).siblings(".blog__intro").removeClass("hidden");
+			$(this).siblings(".blog__text").addClass("hidden");
 			$(this).text("Показать все");
 		}
 
@@ -228,7 +228,9 @@ $(document).ready(function(){
 	//Слайдер с прогресс баром снизу
 	$(".progress-slider").on('init', moveSlidesWithProgressCircle);
 	$(".progress-slider").slick({
-		dots: true
+		dots: true,
+		cssEase: 'cubic-bezier(0.86, 0, 0.07, 1)',
+		speed: 1000
 	});
 	//  Вставка svg прогресс бара для слайд точекера
 	$(".progress-slider").on('beforeChange', function(){

@@ -7,6 +7,8 @@
 html {
 	 -webkit-text-size-adjust: 100%;
 	 -webkit-tap-highlight-color: transparent;
+
+	 overflow-x: hidden;
 }
 
 body {
@@ -38,6 +40,9 @@ img {
   margin: -1px;
 }
 
+.hidden {
+	display: none;
+}
 /* Block - input */
 .input {
 	width: 292px;
@@ -492,7 +497,11 @@ img {
 	width: 20px;
 
 	text-align: center;
+	transition: all 400ms;
+}
 
+.social__item:hover{
+	opacity: .8;
 }
 /* Block - phone */
 .phone,
@@ -1120,11 +1129,6 @@ img {
 }
 
 /* Block - path-slider */
-.path-slider {
-	background: url(../img/path-slider__bg-item-1.jpg) no-repeat;
-	background-size: cover;
-	background-position: 0 40px;
-}
 
 
 .path-slider__wrapper {
@@ -1137,6 +1141,11 @@ img {
 
 .path-slider__slide {
 	padding-top: 40px;
+
+
+	background: url(../img/path-slider__bg-item-1.jpg) no-repeat;
+	background-size: cover;
+	background-position: 0 40px;
 }
 
 .path-slider__img {
@@ -1145,6 +1154,8 @@ img {
 
 	width: 62.6%;
 	flex-basis: 62.6%;
+
+	transition: all 1s;
 }
 
 .path-slider__content {
@@ -1164,8 +1175,16 @@ img {
 	text-decoration: none;
 }
 
+.path-slider .slick-arrow {
+	top: 55%;
+}
+.path-slider .slick-prev {
+	left: 5%;
+}
 
-
+.path-slider .slick-next {
+	right: 5%;
+}
 
 /*** Страница - услуги ***/
 .services {
@@ -1479,8 +1498,17 @@ img {
 }
 
 
+/*** Страница - news-item ***/
+.news-item {
+	padding: 80px 0;
+}
 
+.news-item__date {
+	display: block;
+	margin-top: 10px;
 
+	font-weight: 300;
+}
 
 
 
