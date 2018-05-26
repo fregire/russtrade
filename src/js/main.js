@@ -168,10 +168,10 @@ $(document).ready(function(){
 
 	for(var i = 0; i < $('.scheme__group').length; i++){
 		var $groupSlides = $('.scheme__group .slick-track')[i];
-		console.log($($groupSlides).children().length); 
 		if($($groupSlides).children().length <= 7) {
-			$($('.scheme__group')[i].slick('focusOnSelect', false));
 			$($groupSlides).children().removeClass(["opacity_06", "opacity_08", "opacity_025"]);
+			// TODO: Исправить клик на слайдер если недостаточно слайдов
+			$($groupSlides).children().addClass("");
 			console.log($($groupSlides).children()); 
 		}
 	}
