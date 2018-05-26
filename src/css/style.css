@@ -872,6 +872,8 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .address__item-city {
   margin: 0 45px;
@@ -882,6 +884,12 @@ img {
 .address__map-main {
   height: 340px;
   border-top: 1px solid #ababab;
+}
+.address__slider .slick-next {
+  right: -10px;
+}
+.address__slider .slick-prev {
+  left: -10px;
 }
 /* Block - slick */
 .slick-arrow {

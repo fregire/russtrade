@@ -296,18 +296,16 @@ function initMap() {
     var marker = new google.maps.Marker({
       position: uluru,
       map: map,
-      icon: '../img/geo-icon.png'
     });
 	for(var i = 0; i < cities.length; i++){
 		cities[i].addEventListener("click", function(){
 			map = new google.maps.Map(document.querySelector('.address__map-main'), {
 		      zoom: 4,
-		      center: {lat: parseFloat(cities[i].getAttribute('data-lat')), lng: parseInt(cities[i].getAttribute('data-lng'))}
+		      center: {lat: parseFloat(this.getAttribute('data-lat')), lng: parseInt(this.getAttribute('data-lng'))}
 		    });
 		    marker = new google.maps.Marker({
-		      position: {lat: parseFloat(cities[i].getAttribute('data-lat')), lng: parseInt(cities[i].getAttribute('data-lng'))},
+		      position: {lat: parseFloat(this.getAttribute('data-lat')), lng: parseInt(this.getAttribute('data-lng'))},
 		      map: map,
-		      icon: '../img/geo-icon.png'
 		    });
 		});
 	}
