@@ -20,7 +20,7 @@ body {
 	font-weight: normal;
 	color: #535353;
 	line-height: 1.28;
-
+	word-wrap: break-word;
 	overflow-x: hidden;
 }
 
@@ -623,6 +623,8 @@ img {
 	align-items: flex-start;
 	padding-bottom: 46px;
 	margin-bottom: 46px;
+
+	word-wrap: break-word;
 }
 
 .blog__item:after {
@@ -662,6 +664,12 @@ img {
 
 }
 
+.blog__intro,
+.blog__text {
+	/* Для IE 10 */
+	max-width: 600px;
+}
+
 .blog__more {
 	margin-top: auto;
 	padding-bottom: 5px;
@@ -675,6 +683,9 @@ img {
 
 .blog__more:hover {
 	cursor: pointer;
+}
+
+.blog__text {
 }
 
 
