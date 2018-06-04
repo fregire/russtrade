@@ -277,13 +277,23 @@ $(document).ready(function(){
 
 		]
 	});
-
 	var numbers = $('.company__num span');
-	for(var i = 0; i < numbers.length; i++){
-		var currentNumber = $(numbers[i]).text();
-		raiseNumber(currentNumber, numbers[i]);
+	var animated = false;
+	$(window).on("scroll", function(){
+		if($(window).scrollTop() >= 500){
+			if(animated === false){
+				animateNumbers();
+				animated = true;
+			}
+		}
+	});
+	function animateNumbers(){
+		for(var i = 0; i < numbers.length; i++){
+			var currentNumber = $(numbers[i]).text();
+			raiseNumber(currentNumber, numbers[i]);
+		}
 	}
-
+	
 	function raiseNumber(value, elem){
 		$({numberValue: 0}).animate({numberValue: value}, { 
 			duration: 2000, // Скорость анимации, где 500 = 0,5 одной секунды, то есть 500 миллисекунд 
@@ -293,21 +303,7 @@ $(document).ready(function(){
 			} 
 		});
 	}
-	//var numb_start = $(".price").text(); // Получаем начальное число 
 	
-	// for(var i = 0; i < numbers.length; i++){
-	// 	var currentNumber = parseInt(numbers[i].textContent);
-	// 	$({numberValue: 0}).animate({numberValue: currentNumber}, {
-	// 	    duration: 2000,
-	// 	    easing: 'linear',
-	// 	    step: function() { 
-	// 	        $(numbers[i]).text(Math.ceil(this.numberValue)); 
-	// 	    }
-	// 	});
-	// }
-	// for(var i = 0; i < currentNumber.length; i++){
-	// 
-	// }
 
 
 
